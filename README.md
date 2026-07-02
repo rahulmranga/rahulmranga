@@ -20,7 +20,7 @@ Systems builder. OSS: durable agent memory, provenance-safe compression, agent p
 
 ## Writing
 
-[medium.com/@rahulmohanrangarao](https://medium.com/@rahulmohanrangarao)
+[medium.com/@rahulmohanrangarao](https://medium.com/@rahulmohanrangarao) · [dev.to/rahulmranga](https://dev.to/rahulmranga)
 
 ## Elsewhere
 
