@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use or build on this work, please cite it — that's the whole point."
+title: "Rahul Rangarao — OSS work on provenance-preserving knowledge infrastructure"
+authors:
+  - family-names: Rangarao
+    given-names: Rahul
+    alias: rahulmranga
+url: "https://rahul-rangarao.dev"
+repository-code: "https://github.com/rahulmranga"
