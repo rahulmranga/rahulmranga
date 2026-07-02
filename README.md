@@ -63,4 +63,4 @@ Systems builder. OSS: durable agent memory, provenance-safe compression, agent p
 
 ## Elsewhere
 
-[github.com/rahulmranga](https://github.com/rahulmranga) · [rahulrangarao.dev](https://rahulrangarao.dev) · [innertrek.me](https://innertrek.me) (dad)
+[github.com/rahulmranga](https://github.com/rahulmranga) · [rahulrangarao.dev](https://rahulrangarao.dev) · [resume](https://rahulrangarao.dev/resume.html) · [innertrek.me](https://innertrek.me) (dad)
