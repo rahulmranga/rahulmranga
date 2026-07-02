@@ -16,3 +16,7 @@
 
 ## Demos
 - cosmic maze (RALPH × LODRI), ohm, geo-maze, brain-graph — https://rahulmranga.github.io/kompress-ultra/
+
+## Elsewhere
+- GitHub: https://github.com/rahulmranga
+- Profile: https://rahulrangarao.dev
