@@ -1,22 +1,22 @@
 # Rahul Rangarao
 
 > Systems builder. OSS: durable agent memory, provenance-safe compression, agent protocols.
-> Mission: attribution survives compression and reuse — plagiarism becomes structurally hard.
+> Mission: attribution survives compression and reuse · plagiarism becomes structurally hard.
 
 ## Projects
-- knowledge-worker (PyPI): local-first knowledge graph for durable AI-assistant memory — https://github.com/rahulmranga/knowledge-worker
-- headroom: compress tool outputs without losing provenance — https://github.com/headroomlabs-ai/headroom
-- AG-UI protocol: open protocol for agent-UI interop — https://protocol.vaked.dev
-- kompress (paper + notebook): provenance-preserving compression research — https://kompress.vaked.dev
-- longrun-eval-kompress: eval harness, with Peter Lodri — https://github.com/peterlodri-sec/longrun-eval-kompress
+- knowledge-worker (PyPI): local-first knowledge graph for durable AI-assistant memory · https://github.com/rahulmranga/knowledge-worker
+- AG-UI protocol: open protocol for agent-UI interop · https://protocol.vaked.dev
+- kompress (paper + notebook): provenance-preserving compression research · https://kompress.vaked.dev
+- longrun-eval-kompress: eval harness, with Peter Lodri · https://github.com/peterlodri-sec/longrun-eval-kompress
 
 ## Writing
 - Medium: https://medium.com/@rahulmohanrangarao
 - Dev.to: https://dev.to/rahulmranga
 
 ## Demos
-- cosmic maze (RALPH × LODRI), ohm, geo-maze, brain-graph — https://rahulmranga.github.io/kompress-ultra/
+- cosmic maze (RALPH × LODRI), ohm, geo-maze, brain-graph · https://rahulmranga.github.io/kompress-ultra/
 
 ## Elsewhere
 - GitHub: https://github.com/rahulmranga
 - Profile: https://rahulrangarao.dev
+- Resume: https://rahulrangarao.dev/resume.html
