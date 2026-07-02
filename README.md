@@ -4,6 +4,17 @@ Systems builder. OSS: durable agent memory, provenance-safe compression, agent p
 
 **Mission:** a knowledge substrate where attribution survives compression, retrieval, and reuse — plagiarism becomes structurally hard, not just discouraged.
 
+## 🎮 Games
+
+<div class="games-box">
+  <p class="chain"><strong>Mohan Rangarao</strong> → <strong>Rahul Rangarao</strong> → the kids · one chain, played three ways</p>
+  <ul>
+    <li><a href="https://rahulmranga.github.io/kompress-ultra/maze.html">cosmic maze</a> — RALPH × LODRI · daylight mode for dad ☀️</li>
+    <li><a href="https://rahulmranga.github.io/kompress-ultra/games.html">cosmic playground</a> — the kids' arcade, night sky 🌙</li>
+    <li><a href="https://rahulmranga.github.io/kompress-ultra/memory.html">space match</a> · <a href="https://rahulmranga.github.io/kompress-ultra/stars.html">star catcher</a></li>
+  </ul>
+</div>
+
 ## Projects
 
 - [`knowledge-worker`](https://github.com/rahulmranga/knowledge-worker) — local-first knowledge graph, durable AI-assistant memory ([PyPI](https://pypi.org/project/knowledge-worker/))
@@ -14,8 +25,9 @@ Systems builder. OSS: durable agent memory, provenance-safe compression, agent p
 
 ## Showcase
 
-- [cosmic maze](https://rahulmranga.github.io/kompress-ultra/maze.html) — RALPH × LODRI
-- [ohm](https://rahulmranga.github.io/kompress-ultra/ohm.html) — ॐ
+- [ohm](https://rahulmranga.github.io/kompress-ultra/ohm.html) — ॐ · 136.1 Hz Earth year tone
+- [spacetime](https://rahulmranga.github.io/kompress-ultra/spacetime.html) — Jupiter, light cones, geodesics
+- [org](https://rahulmranga.github.io/kompress-ultra/org.html) · [brain-dist](https://rahulmranga.github.io/kompress-ultra/brain-dist.html) — one knowledge graph, two lenses
 - geo-maze, brain-graph — in `kompress-ultra`
 
 ## Writing

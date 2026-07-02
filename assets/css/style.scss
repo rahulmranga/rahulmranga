@@ -1,0 +1,30 @@
+---
+---
+@import "jekyll-theme-primer";
+
+/* Bigger, easier reading */
+.markdown-body { font-size: 19px; line-height: 1.65; }
+.markdown-body h1 { font-size: 2.2em; }
+.markdown-body h2 { font-size: 1.6em; }
+
+/* Games — the one loud thing on the page */
+.games-box {
+  background: linear-gradient(135deg, #0a0d2a 0%, #241a45 100%);
+  border: 1px solid #2c3a8c;
+  border-radius: 14px;
+  padding: 22px 26px;
+  margin: 24px 0;
+  box-shadow: 0 0 22px rgba(44, 58, 140, 0.25);
+}
+.games-box p, .games-box li { color: #c9d4ee; }
+.games-box a { color: #9db9ff; font-weight: 600; }
+.games-box a:hover { color: #cfe4ff; }
+.games-box ul { margin-bottom: 0; }
+
+/* The chain — lineage line above the games */
+.chain {
+  font-size: 1.1em;
+  letter-spacing: 0.4px;
+  color: #aee3ff !important;
+  margin-top: 0;
+}
