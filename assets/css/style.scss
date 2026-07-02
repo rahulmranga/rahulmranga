@@ -7,24 +7,60 @@
 .markdown-body h1 { font-size: 2.2em; }
 .markdown-body h2 { font-size: 1.6em; }
 
-/* Games — the one loud thing on the page */
-.games-box {
-  background: linear-gradient(135deg, #0a0d2a 0%, #241a45 100%);
-  border: 1px solid #2c3a8c;
-  border-radius: 14px;
-  padding: 22px 26px;
-  margin: 24px 0;
-  box-shadow: 0 0 22px rgba(44, 58, 140, 0.25);
+/* The chain: family lineage rendered as graph nodes */
+.chain-widget {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+  margin: 20px 0 4px;
 }
-.games-box p, .games-box li { color: #c9d4ee; }
-.games-box a { color: #9db9ff; font-weight: 600; }
-.games-box a:hover { color: #cfe4ff; }
-.games-box ul { margin-bottom: 0; }
+.chain-node {
+  display: inline-block; padding: 8px 18px; border-radius: 22px;
+  border: 1.5px solid #2c3a8c; background: #f2f5ff;
+  color: #2c3a8c !important; font-weight: 600; text-decoration: none;
+  font-size: 0.95em;
+}
+a.chain-node:hover { background: #2c3a8c; color: #fff !important; }
+.chain-node.me {
+  background: #2c3a8c; color: #e6ecff !important;
+  box-shadow: 0 0 14px rgba(44, 58, 140, 0.35);
+}
+.chain-link { color: #8891b4; font-size: 1.2em; }
+.chain-caption { color: #6a7396; font-size: 0.9em; margin-top: 6px; }
 
-/* The chain — lineage line above the games */
-.chain {
-  font-size: 1.1em;
-  letter-spacing: 0.4px;
-  color: #aee3ff !important;
-  margin-top: 0;
+/* Game widgets */
+.games-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px; margin: 18px 0 28px;
 }
+.game-widget {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  gap: 4px; padding: 20px 14px; border-radius: 16px;
+  text-decoration: none !important;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.game-widget:hover { transform: translateY(-3px); }
+.gw-icon { font-size: 40px; line-height: 1; margin-bottom: 6px; }
+.gw-title { font-weight: 700; font-size: 1.05em; }
+.gw-desc { font-size: 0.85em; }
+.gw-tag {
+  margin-top: 8px; font-size: 0.75em; padding: 3px 12px; border-radius: 12px;
+}
+
+/* Daylight widget: dad's maze */
+.game-widget.day {
+  background: linear-gradient(180deg, #dceeff 0%, #fdf6e3 100%);
+  border: 1.5px solid #b7cdea;
+}
+.game-widget.day:hover { box-shadow: 0 6px 18px rgba(44, 58, 140, 0.18); }
+.game-widget.day .gw-title { color: #2c3a8c; }
+.game-widget.day .gw-desc { color: #5a648c; }
+.game-widget.day .gw-tag { background: #ffffffcc; color: #2c3a8c; }
+
+/* Night widgets: the kids' arcade */
+.game-widget.night {
+  background: linear-gradient(180deg, #0a0d2a 0%, #241a45 100%);
+  border: 1.5px solid #2c3a8c;
+}
+.game-widget.night:hover { box-shadow: 0 0 22px rgba(44, 58, 140, 0.45); }
+.game-widget.night .gw-title { color: #cfe4ff; }
+.game-widget.night .gw-desc { color: #8891b4; }
+.game-widget.night .gw-tag { background: #22307a; color: #9db9ff; }
