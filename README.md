@@ -58,6 +58,8 @@ Systems builder. OSS: durable agent memory, provenance-safe compression, agent p
 
 ## Writing
 
+- [Quantum Theory Decoded](https://rahulrangarao.dev/blog/quantum-theory-decoded/) · cross-entropy-of-future note on uncertainty, entropy, and decision-making
+
 [medium.com/@rahulmohanrangarao](https://medium.com/@rahulmohanrangarao) · [dev.to/rahulmranga](https://dev.to/rahulmranga)
 
 ## Elsewhere

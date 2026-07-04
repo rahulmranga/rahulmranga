@@ -1,0 +1,65 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://rahulrangarao.dev/blog/quantum-theory-decoded/#blogposting",
+  "headline": "Quantum Theory Decoded",
+  "alternativeHeadline": [
+    "A Notebook Map of Time, Entropy, and Observation",
+    "From Spacetime to Intuition: Decoding a Quantum Sketch"
+  ],
+  "description": "A readable decoding of a handwritten quantum theory note, moving from mass-energy equivalence and spacetime to entropy, observation, time, and intuition.",
+  "datePublished": "2026-07-04",
+  "dateModified": "2026-07-04",
+  "author": {
+    "@type": "Person",
+    "name": "Rahul Rangarao",
+    "identifier": "did:web:rahulrangarao.dev",
+    "url": "https://rahulrangarao.dev",
+    "sameAs": [
+      "https://medium.com/@rahulmohanrangarao",
+      "https://www.linkedin.com/in/rahul-mohan/",
+      "https://github.com/rahulmranga"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Rahul Rangarao",
+    "identifier": "did:web:rahulrangarao.dev",
+    "url": "https://rahulrangarao.dev"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://rahulrangarao.dev/blog/quantum-theory-decoded/"
+  },
+  "url": "https://rahulrangarao.dev/blog/quantum-theory-decoded/",
+  "image": [
+    "https://rahulrangarao.dev/assets/swarm-agents-hexagon.png",
+    "https://rahulrangarao.dev/assets/quantum-theory-note.jpg"
+  ],
+  "thumbnailUrl": "https://rahulrangarao.dev/assets/swarm-agents-hexagon.png",
+  "keywords": [
+    "quantum theory",
+    "entropy",
+    "spacetime",
+    "observation",
+    "philosophy",
+    "time"
+  ],
+  "isBasedOn": {
+    "@type": "CreativeWork",
+    "name": "Quantum Theory Decoded handwritten note",
+    "creator": {
+      "@type": "Person",
+      "name": "Rahul Rangarao",
+      "identifier": "did:web:rahulrangarao.dev"
+    },
+    "url": "https://rahulrangarao.dev/assets/quantum-theory-note.jpg",
+    "encodingFormat": "image/jpeg",
+    "sha256": "5d6e053510a09e4b4fddd489c06abb749d32870635d7445d12cdeedfd727cbd4"
+  },
+  "sameAs": [
+    "https://medium.com/@rahulmohanrangarao/quantum-theory-decoded",
+    "https://www.linkedin.com/in/rahul-mohan/",
+    "https://github.com/rahulmranga/rahulmranga"
+  ]
+}

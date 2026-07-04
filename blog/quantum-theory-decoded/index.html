@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantum Theory Decoded - Rahul Rangarao</title>
+  <meta name="description" content="A readable decoding of a handwritten quantum theory note, moving from mass-energy equivalence and spacetime to entropy, observation, time, and intuition.">
+  <link rel="canonical" href="https://rahulrangarao.dev/blog/quantum-theory-decoded/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Quantum Theory Decoded">
+  <meta property="og:description" content="A readable decoding of a handwritten quantum theory note, moving from mass-energy equivalence and spacetime to entropy, observation, time, and intuition.">
+  <meta property="og:url" content="https://rahulrangarao.dev/blog/quantum-theory-decoded/">
+  <meta property="og:image" content="https://rahulrangarao.dev/assets/swarm-agents-hexagon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Quantum Theory Decoded">
+  <meta name="twitter:description" content="A readable decoding of a handwritten quantum theory note, moving from mass-energy equivalence and spacetime to entropy, observation, time, and intuition.">
+  <meta name="twitter:image" content="https://rahulrangarao.dev/assets/swarm-agents-hexagon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": "https://rahulrangarao.dev/blog/quantum-theory-decoded/#blogposting",
+    "headline": "Quantum Theory Decoded",
+    "alternativeHeadline": [
+      "A Notebook Map of Time, Entropy, and Observation",
+      "From Spacetime to Intuition: Decoding a Quantum Sketch"
+    ],
+    "description": "A readable decoding of a handwritten quantum theory note, moving from mass-energy equivalence and spacetime to entropy, observation, time, and intuition.",
+    "datePublished": "2026-07-04",
+    "dateModified": "2026-07-04",
+    "author": {
+      "@type": "Person",
+      "name": "Rahul Rangarao",
+      "identifier": "did:web:rahulrangarao.dev",
+      "url": "https://rahulrangarao.dev",
+      "sameAs": [
+        "https://medium.com/@rahulmohanrangarao",
+        "https://www.linkedin.com/in/rahul-mohan/",
+        "https://github.com/rahulmranga"
+      ]
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Rahul Rangarao",
+      "identifier": "did:web:rahulrangarao.dev",
+      "url": "https://rahulrangarao.dev"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://rahulrangarao.dev/blog/quantum-theory-decoded/"
+    },
+    "url": "https://rahulrangarao.dev/blog/quantum-theory-decoded/",
+    "image": [
+      "https://rahulrangarao.dev/assets/swarm-agents-hexagon.png",
+      "https://rahulrangarao.dev/assets/quantum-theory-note.jpg"
+    ],
+    "thumbnailUrl": "https://rahulrangarao.dev/assets/swarm-agents-hexagon.png",
+    "keywords": [
+      "quantum theory",
+      "entropy",
+      "spacetime",
+      "observation",
+      "philosophy",
+      "time"
+    ],
+    "isBasedOn": {
+      "@type": "CreativeWork",
+      "name": "Quantum Theory Decoded handwritten note",
+      "creator": {
+        "@type": "Person",
+        "name": "Rahul Rangarao",
+        "identifier": "did:web:rahulrangarao.dev"
+      },
+      "url": "https://rahulrangarao.dev/assets/quantum-theory-note.jpg",
+      "encodingFormat": "image/jpeg",
+      "sha256": "5d6e053510a09e4b4fddd489c06abb749d32870635d7445d12cdeedfd727cbd4"
+    },
+    "sameAs": [
+      "https://medium.com/@rahulmohanrangarao/quantum-theory-decoded",
+      "https://www.linkedin.com/in/rahul-mohan/",
+      "https://github.com/rahulmranga/rahulmranga"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --ink: #1c2333;
+      --muted: #5a648c;
+      --faint: #8891b4;
+      --accent: #2c3a8c;
+      --rule: #dfe4f2;
+      --paper: #ffffff;
+      --soft: #f6f8fc;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .wrap {
+      width: min(100% - 32px, 920px);
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 30px;
+      font-size: 0.92rem;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 8px 0 10px;
+      font-size: clamp(2.35rem, 7vw, 4.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .dek {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.18rem;
+      line-height: 1.5;
+    }
+
+    .meta {
+      margin-top: 18px;
+      color: var(--faint);
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      margin: 32px 0 38px;
+      border: 1px solid var(--rule);
+      background: var(--soft);
+    }
+
+    .hero img,
+    .source img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    article {
+      max-width: 760px;
+    }
+
+    article h2 {
+      margin: 38px 0 8px;
+      color: var(--accent);
+      font-size: 1.35rem;
+      line-height: 1.2;
+    }
+
+    article p {
+      margin: 0 0 18px;
+    }
+
+    .source {
+      margin: 28px 0;
+      border: 1px solid var(--rule);
+      background: var(--soft);
+    }
+
+    figcaption {
+      padding: 10px 12px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .source-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 640px) {
+      body { font-size: 17px; }
+      nav { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <nav aria-label="Site">
+      <a href="/">Rahul Rangarao</a>
+      <a href="/resume.html">Resume</a>
+    </nav>
+
+    <header>
+      <div class="eyebrow">Essay</div>
+      <h1>Quantum Theory Decoded</h1>
+      <p class="dek">A handwritten note decoded into a practical model of observation, entropy, time, and decision-making.</p>
+      <div class="meta">Rahul Rangarao - July 4, 2026</div>
+    </header>
+
+    <figure class="hero">
+      <img src="/assets/swarm-agents-hexagon.png" alt="Agent network arranged around a central hexagon">
+    </figure>
+
+    <article>
+      <p>The page begins like a compressed timeline. "1905 - energy and mass are the same." Then, a few lines later, "1915 - existence of space-time where mass warps space." Those notes point to the moment physics stopped treating the universe as a fixed stage and started treating the stage itself as part of the system.</p>
+
+      <p>Special relativity said energy and mass are exchangeable. General relativity said space and time are not passive containers. Mass tells spacetime how to bend, and curved spacetime tells matter how to move. The note is not trying to reproduce Einstein's math. It is trying to hold the intuition: reality is a coupled system.</p>
+
+      <p>That is the first key to the page. This is not a textbook derivation of quantum theory. It is a working note about models: if observation, time, entropy, and probability are connected, how should a person reason under uncertainty?</p>
+
+      <figure class="source">
+        <img src="/assets/quantum-theory-note.jpg" alt="Original handwritten quantum theory note">
+        <figcaption>Original handwritten note used as the source material for this post.</figcaption>
+      </figure>
+
+      <h2>The Observer Problem</h2>
+      <p>On the upper right of the page there is a tiny observer sketch with the instruction "Be kind." It looks almost incidental, but it may be the most important line on the sheet.</p>
+
+      <p>Quantum theory forces the observer back into the model. In classical thinking, an observer can stand outside the system and measure it without changing it in any meaningful way. In quantum mechanics, measurement is not so simple. The act of observation selects, constrains, or updates what can be said about the system.</p>
+
+      <p>That does not mean consciousness creates reality. It means knowledge is physical. The information you have, the frame you occupy, the instruments you use, and the moment you measure all affect what can be said.</p>
+
+      <p>"Be kind" belongs there because once the observer is inside the system, judgment needs context. People move through different reference frames, histories, and information states. What looks obvious from one frame may be unavailable from another.</p>
+
+      <h2>Visualization: Past, Future, and the Known</h2>
+      <p>The center-left of the note sketches axes for space and time. There is a small figure labeled "Rahul observer" standing between arrows pointing toward past and future. The phrase "we know" sits nearby.</p>
+
+      <p>This is a useful simplification: the present is a local slice of information. The past is not fully possessed. The future is not fully absent. Each is constrained by what can be observed, inferred, remembered, modeled, and acted upon.</p>
+
+      <p>In everyday life we treat time like a line: past fixed, future open, present active. Physics complicates that. Relativity makes simultaneity frame-dependent. Thermodynamics gives us the arrow of time through entropy. Quantum theory gives us probabilities until interaction or measurement forces a more definite description.</p>
+
+      <p>The note's hypothesis at the bottom turns this into practical language: "time is relative; not real; do the cross entropy of future vis past." Stripped of shorthand: compare the future you expect against the past you have data for. Measure the mismatch. Update.</p>
+
+      <p>Cross entropy scores how well one probability distribution predicts another. In machine learning, it punishes confident wrong predictions. As a decision-making metaphor, it says: test your future model against reality instead of defending it by default.</p>
+
+      <h2>Entropy Is Real</h2>
+      <p>Several lines repeat a claim: "entropy is real - true." Entropy is useful here because it is mathematically precise and easy to recognize at human scale. Things spread out. Energy disperses. Order is costly. Perfect reversibility is not how ordinary systems behave.</p>
+
+      <p>The page also says, "thoughts are spiral - true." That line is not physics, but it works as a process note. Human thought rarely moves in straight lines. We return to the same idea from a different angle, carrying prior attempts forward.</p>
+
+      <p>That is how learning works. The same problem appears again, but the observer has changed. New information has entered the system. Structure can still be built locally through energy, attention, and time.</p>
+
+      <h2>Imaginary Numbers and the Math of Rotation</h2>
+      <p>The math box on the right points to imaginary numbers: the square root of -1, the strange symbol i, and the famous relation where powers of i rotate through values. This matters because complex numbers are not just mathematical decoration in quantum theory. They are part of the machinery.</p>
+
+      <p>Quantum states use complex amplitudes. Those amplitudes encode not just size, but phase. Phase is what lets waves interfere, cancel, reinforce, and rotate through possibility space.</p>
+
+      <p>The note seems to associate this with direction, compass points, and time. The exact shorthand is private, but the visual grammar is clear: direction, rotation, phase, and outcome are being placed in one field.</p>
+
+      <p>That is the second key: the page uses quantum theory as a prompt for orientation. What frame are you in? What information do you have? Which outcomes become more likely because of the path you keep taking?</p>
+
+      <h2>The Hexagon and the Swarm</h2>
+      <p>Near the math section, a small hexagonal diagram appears. It looks like a lattice, compass, or decision field. The hero image turns that hint into a clean agent network around a hexagon: simple nodes, a shared structure, and visible coordination paths.</p>
+
+      <p>That is a useful metaphor for coordination. A single agent sees locally. A network reveals global behavior. A single measurement gives a point. A field of measurements reveals structure.</p>
+
+      <p>The hexagon works because it is stable without being rigid. It appears in lattices, networks, and molecular structures. In this note, it can stand for compact relation: six directions, one center, many paths through the same constraint.</p>
+
+      <h2>The Human Translation</h2>
+      <p>The last lines are the most direct: "Future vis past - data for past you have. Future you have intuition; change your perspective; stop seeking approval."</p>
+
+      <p>That is where the note moves from physics language into decision-making. The past gives data. The future gives uncertainty. Intuition is not proof, but it is a compressed signal that may deserve testing.</p>
+
+      <p>To "change your perspective" is not to deny reality. It is to change reference frames. The frame changes what actions become thinkable.</p>
+
+      <p>To "stop seeking approval" is the observer taking responsibility for judgment. Approval asks another observer to decide the frame for you. Agency asks you to measure, accept uncertainty, and update from the result.</p>
+
+      <p>The decoded version is not "quantum theory explains everything." It is sharper than that:</p>
+
+      <p>Reality is relational. Observation matters. Time is frame-dependent. Entropy gives direction. Math gives a language for rotation and phase. The future is not known, but it can be modeled. The past is data, not a prison. The practical move is to observe clearly, update honestly, and act without outsourcing your frame.</p>
+
+      <p>That is a theory worth carrying forward.</p>
+
+      <div class="source-links">
+        <a href="/blog/quantum-theory-decoded.md">Markdown source</a>
+        <a href="/blog/quantum-theory-decoded.jsonld">JSON-LD</a>
+        <a href="/assets/quantum-theory-note.jpg">Source note image</a>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

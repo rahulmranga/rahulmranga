@@ -10,6 +10,7 @@
 - longrun-eval-kompress: eval harness, with Peter Lodri · https://github.com/peterlodri-sec/longrun-eval-kompress
 
 ## Writing
+- Quantum Theory Decoded: cross-entropy-of-future note on uncertainty, entropy, and decision-making · https://rahulrangarao.dev/blog/quantum-theory-decoded/
 - Medium: https://medium.com/@rahulmohanrangarao
 - Dev.to: https://dev.to/rahulmranga
 
