@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rahul Rangarao · Resume</title>
-<meta name="description" content="Rahul Rangarao · Analytics to AI Engineering · author of knowledge-worker">
+<meta name="description" content="Rahul Rangarao · AI and Analytics Engineer · author of knowledge-worker">
 <style>
   :root {
     --ink: #1c2333;
@@ -70,7 +70,7 @@
 
 <header>
   <h1>Rahul Rangarao</h1>
-  <div class="tagline">Analytics → AI Engineering</div>
+  <div class="tagline">AI and Analytics Engineer</div>
   <div class="contact">
     <span>North Brunswick, NJ</span>
     <span>rahulmohanrangarao@gmail.com</span>
@@ -86,14 +86,39 @@
 </section>
 
 <section>
+  <h2>Experience</h2>
+
+  <h3>Bristol Myers Squibb <span class="role">· Analytics Engineer, Global Product Development and Supply (GPS)</span></h3>
+  <div class="meta">New Brunswick, NJ · October 2023 – Present</div>
+  <ul>
+    <li>Developed 3 executive-level KPI dashboards and automated Python reporting solutions that improve operational visibility and support data-driven decision-making across <strong>CAR-T</strong> (cell therapy) operations.</li>
+    <li>Architected and deployed an AWS-based self-service data platform with <strong>dbt</strong> and <strong>CI/CD</strong> automation, enabling 50+ engineers to build approximately <strong>400</strong> production-grade data products.</li>
+    <li>Lead and mentor a team of <strong>five</strong> junior data developers, establishing engineering standards, code review practices, and development best practices.</li>
+    <li>Integrated <strong>LLM</strong>-extracted manufacturing information with <strong>ERP</strong> data (<strong>SAP</strong>) to build an end-to-end batch tracking graph that accelerates manufacturing release processes.</li>
+    <li>Delivered enterprise data products integrating manufacturing and quality systems for commercial <strong>CAR-T</strong> operations, contributing to an improvement in manufacturing success rates from approximately <strong>74% to 92%</strong>.</li>
+    <li>Collaborate closely with engineering, manufacturing, analytics, and business stakeholders to translate operational challenges into scalable data solutions, and design reusable analytics artifacts that improve reliability and long-term maintainability.</li>
+  </ul>
+
+  <h3>Mu Sigma Inc. <span class="role">· Senior Data Consultant</span></h3>
+  <div class="meta">Bangalore, India · July 2018 – March 2022</div>
+  <ul>
+    <li>Delivered advanced analytics, business intelligence, and data consulting solutions for Fortune 100 clients across retail, financial services, healthcare, and supply chain domains.</li>
+    <li>Managed a team of <strong>six analysts</strong> delivering more than <strong>30 analytical requests per week</strong> for a Fortune 50 pharmacy organization's customer analytics function.</li>
+    <li>Developed enterprise <strong>Power BI</strong> and <strong>Tableau</strong> dashboards that enabled marketing and sales teams to improve customer acquisition and retention through actionable business insights.</li>
+    <li>Revamped an enterprise risk prediction model using predictive analytics, helping a financial services client achieve approximately <strong>$500K</strong> in annualized revenue savings.</li>
+    <li>Designed an automated report rationalization process using intelligent string-matching algorithms, consolidating more than <strong>70 reports into seven standardized reports</strong> to support a Snowflake migration initiative.</li>
+  </ul>
+</section>
+
+<section>
   <h2>Open Source</h2>
   <h3>knowledge-worker <span class="role">· Author &amp; Maintainer</span></h3>
-  <div class="meta">Local-first personal knowledge graph for durable AI memory · <a href="https://pypi.org/project/knowledge-worker/">PyPI</a> · <a href="https://github.com/rahulmranga/knowledge-worker">GitHub</a> · May 2026 – present</div>
+  <div class="meta">Local-first knowledge graph for durable, provenance-backed AI memory · <a href="https://pypi.org/project/knowledge-worker/">PyPI</a> · <a href="https://github.com/rahulmranga/knowledge-worker">GitHub</a> · May 2026 – present</div>
   <ul>
-    <li>Designed and shipped a <strong>provenance-first knowledge graph engine</strong>: every durable claim must carry a source document and literal excerpt before entering the graph, enforced by deterministic validation.</li>
-    <li>Built the full CLI surface: ingest, query, path-finding, review/merge, context export, deep-dive pre-ingest workspaces, and an offline HTML graph visualizer.</li>
-    <li>Implemented a <strong>graph-analytics audit layer</strong> (PageRank, betweenness, k-core, community detection, weak-claim queues) so users can see what their AI memory actually knows, and where it is thin.</li>
-    <li>Architected open-web storage: canonical JSON-LD, append-only JSONL history, Turtle/RDF interchange; <strong>zero runtime dependencies</strong> in the core, with LLM backends (Anthropic, OpenAI, Ollama) as optional extras.</li>
+    <li>Designed a <strong>provenance-first knowledge graph architecture</strong> that validates every document before ingestion, enforced by deterministic validation, to improve data trust and traceability.</li>
+    <li>Built the full graph lifecycle: ingestion, query, path-finding, review/merge, context export, semantic inspection, and an offline HTML graph visualizer.</li>
+    <li>Implemented advanced graph analytics including <strong>PageRank, betweenness, k-core, community detection</strong>, semantic similarity scoring, and relationship analysis.</li>
+    <li>Built append-only graph storage supporting JSON-LD, RDF, and Turtle standards for interoperable knowledge exchange; <strong>zero runtime dependencies</strong> in the core, with optional LLM backends (Anthropic, OpenAI, Ollama).</li>
     <li>Established a 9-benchmark public test suite guarding provenance, recall, privacy boundaries, and context compactness; GitHub Actions CI across Python 3.10–3.13.</li>
     <li>Published to PyPI (v0.8.0); <strong>~500 downloads/month</strong> and adopted for real cross-session AI workflows.</li>
   </ul>
@@ -104,38 +129,35 @@
 </section>
 
 <section>
-  <h2>Experience</h2>
-  <h3>Bristol Myers Squibb <span class="role">· Analytics Professional</span></h3>
-  <div class="meta">New Brunswick NJ · Austin TX · Bengaluru India</div>
-  <ul>
-    <li>Delivered end-to-end analysis, from data ingestion to stakeholder-ready reporting, within a single day; recognized with the <strong>Impact Award</strong> (Sept 2021).</li>
-    <li>Recognized with a <strong>SPOT Award</strong> (Aug 2020) for stakeholder communication and building business context around analytics deliverables.</li>
-  </ul>
+  <h2>Technical Skills</h2>
+  <dl class="skills-grid">
+    <dt>Programming</dt><dd>Python, SQL, JavaScript (React)</dd>
+    <dt>AI &amp; Machine Learning</dt><dd>LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis &amp; A/B testing</dd>
+    <dt>Data Engineering</dt><dd>AWS Glue, dbt, Dagster, Snowflake, data warehousing, ETL pipelines, data modeling, JSON-LD, RDF, linked data, enterprise reporting</dd>
+    <dt>Cloud &amp; DevOps</dt><dd>AWS (Lambda, Glue, EC2, CloudFormation, CodeBuild), Git, GitHub, GitHub Actions, CI/CD</dd>
+    <dt>Visualization &amp; BI</dt><dd>Tableau, Power BI</dd>
+    <dt>Software Engineering</dt><dd>API development, software architecture, open source development, technical documentation, benchmark testing, version control</dd>
+  </dl>
 </section>
 
 <section>
   <h2>Education</h2>
-  <p><strong>The University of Texas at Austin</strong> · 2022 – 2023</p>
-</section>
-
-<section>
-  <h2>Skills</h2>
-  <dl class="skills-grid">
-    <dt>Languages &amp; Data</dt><dd>Python, SQL, Snowflake, data warehousing, JSON-LD / RDF / linked data</dd>
-    <dt>AI Engineering</dt><dd>LLM API integration (Anthropic, OpenAI, Ollama), agent context management, retrieval &amp; memory systems, prompt/context engineering</dd>
-    <dt>Graph &amp; Analysis</dt><dd>knowledge graphs, PageRank / betweenness / k-core / community detection, provenance modeling</dd>
-    <dt>Engineering Practice</dt><dd>CLI tooling, Python packaging (PyPI), GitHub Actions CI, benchmark-driven testing, local-first architecture</dd>
-  </dl>
+  <p><strong>M.S., Information Technology &amp; Management</strong> · The University of Texas at Austin · July 2022 – May 2023</p>
+  <p><strong>B.E., Electronics &amp; Communication Engineering</strong> · JSS Science and Technology University, Mysuru, India · August 2014 – May 2018</p>
 </section>
 
 <section>
   <h2>Certifications &amp; Awards</h2>
   <ul>
-    <li>Hands On Essentials: Data Warehouse · Snowflake, Oct 2022</li>
-    <li>Impact Award (2021) · SPOT Award (2020) · Bristol Myers Squibb</li>
-    <li>Programming for Everybody (Python) · Coursera, 2016</li>
+    <li>Hands-on Essentials: Data Warehouse · Snowflake, October 2022</li>
+    <li>Programming for Everybody (Getting Started with Python) · Coursera, 2016</li>
+    <li>1st Place, DFS Hackathon · Dover Fueling Solutions, September 2022</li>
+    <li>Bravo Award, Batch Genealogy Data Product Release 4 · Bristol Myers Squibb, April 2026</li>
+    <li>Bravo Award, AE AWS Tech Stack Implementation · Bristol Myers Squibb, July 2025</li>
+    <li>Bravo Award, Daily Aph vs. Budget Reporting · Bristol Myers Squibb, August 2024</li>
+    <li>Impact Award · Mu Sigma Inc., August 2021</li>
   </ul>
-  <p style="color: var(--muted); font-size: 9.5pt;">Languages: English · Kannada · Hindi</p>
+  <p style="color: var(--muted); font-size: 9.5pt;">Languages: English · Kannada · Hindi &nbsp;·&nbsp; Location: New Jersey, USA &nbsp;·&nbsp; Open to relocation across the US, preferably SW/Southern United States</p>
 </section>
 
 </body>
