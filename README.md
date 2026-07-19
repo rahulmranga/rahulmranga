@@ -1,5 +1,4 @@
 <a class="skip-link" href="#main">Skip to main content</a>
-
 <div class="site-shell">
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
@@ -9,7 +8,6 @@
       <a href="#games">Games</a>
       <a class="resume-link" href="https://rahulrangarao.dev/resume.html">Resume</a>
     </nav>
-
     <div class="hero">
       <div>
         <h1>Rahul Rangarao</h1>
@@ -25,7 +23,6 @@
       <img class="hero-image" src="assets/swarm-agents-hexagon.png" alt="Agent network arranged around a central hexagon">
     </div>
   </header>
-
   <main id="main">
     <section class="chain-section" aria-labelledby="chain-heading">
       <h2 id="chain-heading">The chain</h2>
@@ -38,7 +35,6 @@
       </div>
       <p class="chain-caption">one chain, played three ways · dad writes at <a href="https://innertrek.me">innertrek.me</a></p>
     </section>
-
     <section id="projects" class="content-section" aria-labelledby="projects-heading">
       <h2 id="projects-heading">Projects</h2>
       <div class="project-grid">
@@ -56,7 +52,6 @@
         </a>
       </div>
     </section>
-
     <section id="writing" class="content-section" aria-labelledby="writing-heading">
       <h2 id="writing-heading">Writing</h2>
       <article>
@@ -67,7 +62,6 @@
         <p class="supporting-copy">more at <a href="https://medium.com/@rahulmohanrangarao">medium.com/@rahulmohanrangarao</a> · <a href="https://dev.to/rahulmranga">dev.to/rahulmranga</a></p>
       </article>
     </section>
-
     <section id="games" class="content-section" aria-labelledby="games-heading">
       <h2 id="games-heading">Games</h2>
       <div class="games-grid">
@@ -77,7 +71,6 @@
         <a class="game-widget night" href="https://rahulmranga.github.io/kompress-ultra/stars.html"><span class="gw-icon">⭐</span><span class="gw-title">star catcher</span><span class="gw-desc">catch falling stars</span><span class="gw-tag">keys or touch</span></a>
       </div>
     </section>
-
     <section class="content-section" aria-labelledby="showcase-heading">
       <h2 id="showcase-heading">Showcase</h2>
       <div class="showcase-grid">
@@ -88,7 +81,6 @@
       </div>
     </section>
   </main>
-
   <footer class="site-footer">
     <span>© 2026 Rahul Rangarao</span>
     <a href="https://github.com/rahulmranga">github.com/rahulmranga</a>
