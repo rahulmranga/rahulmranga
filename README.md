@@ -1,4 +1,5 @@
 <a class="skip-link" href="#main">Skip to main content</a>
+<button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light and dark mode">🌙 Dark mode</button>
 <div class="site-shell">
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
@@ -89,3 +90,21 @@
     <a href="https://rahulrangarao.dev/llms.txt">llms.txt</a>
   </footer>
 </div>
+<script>
+(function () {
+  var key = 'rahul-theme';
+  var button = document.getElementById('theme-toggle');
+  if (!button) return;
+  function update() {
+    var dark = document.body.classList.contains('theme-dark');
+    button.textContent = dark ? '☀️ Light mode' : '🌙 Dark mode';
+  }
+  if (localStorage.getItem(key) === 'dark') document.body.classList.add('theme-dark');
+  button.addEventListener('click', function () {
+    document.body.classList.toggle('theme-dark');
+    localStorage.setItem(key, document.body.classList.contains('theme-dark') ? 'dark' : 'light');
+    update();
+  });
+  update();
+}());
+</script>
