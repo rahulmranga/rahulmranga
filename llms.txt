@@ -5,9 +5,7 @@
 
 ## Projects
 - knowledge-worker (PyPI): local-first knowledge graph for durable AI-assistant memory · https://github.com/rahulmranga/knowledge-worker
-- AG-UI protocol: open protocol for agent-UI interop · https://protocol.vaked.dev
-- kompress (paper + notebook): provenance-preserving compression research · https://kompress.vaked.dev
-- longrun-eval-kompress: eval harness, with Peter Lodri · https://github.com/peterlodri-sec/longrun-eval-kompress
+- entropy.om: open research and knowledge-sharing community · https://entropy-om.github.io/
 
 ## Writing
 - Quantum Theory Decoded: cross-entropy-of-future note on uncertainty, entropy, and decision-making · https://rahulrangarao.dev/blog/quantum-theory-decoded/
