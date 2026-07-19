@@ -31,7 +31,7 @@
         <span class="chain-arrow" aria-hidden="true">→</span>
         <span class="chain-node me">Rahul Rangarao</span>
         <span class="chain-arrow" aria-hidden="true">→</span>
-        <span class="chain-node kids">the kids</span>
+        <span class="chain-node kids">Artifacts &amp; games for the kids</span>
       </div>
       <p class="chain-caption">one chain, played three ways · dad writes at <a href="https://innertrek.me">innertrek.me</a></p>
     </section>
