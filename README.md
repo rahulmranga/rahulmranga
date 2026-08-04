@@ -42,14 +42,11 @@
         <a class="project-card" href="https://github.com/rahulmranga/knowledge-worker">
           <span class="project-tile tile-blue">kw</span><span><strong>knowledge-worker</strong><span class="card-description">Local-first knowledge graph for durable, provenance-backed AI-assistant memory.</span><small>PYPI · ~500 DL/MO · PYTHON</small></span>
         </a>
-        <a class="project-card" href="https://protocol.vaked.dev">
-          <span class="project-tile tile-indigo">ag</span><span><strong>AG-UI protocol</strong><span class="card-description">Open protocol for agent / UI interoperability.</span><small>PROTOCOL.VAKED.DEV</small></span>
+        <a class="project-card" href="https://github.com/rahulmranga/Dimensional-Accuracy-Assertion">
+          <span class="project-tile tile-indigo">da</span><span><strong>Dimensional-Accuracy-Assertion</strong><span class="card-description">Machine-vision defect detection: laser triangulation on a Raspberry Pi to measure nut and bolt dimensions.</span><small>GITHUB · PYTHON</small></span>
         </a>
-        <a class="project-card" href="https://kompress.vaked.dev">
-          <span class="project-tile tile-gold">kp</span><span><strong>kompress</strong><span class="card-description">The research case for provenance-preserving compression — paper + notebook.</span><small>RESEARCH · KOMPRESS.VAKED.DEV</small></span>
-        </a>
-        <a class="project-card" href="https://github.com/peterlodri-sec/longrun-eval-kompress">
-          <span class="project-tile tile-night">ev</span><span><strong>longrun-eval-kompress</strong><span class="card-description">Eval harness for long-running compression, with Peter Lodri.</span><small>GITHUB · COLLAB</small></span>
+        <a class="project-card" href="https://github.com/rahulmranga/bitcoin_metcalfe_law">
+          <span class="project-tile tile-gold">bm</span><span><strong>bitcoin_metcalfe_law</strong><span class="card-description">Replication of a paper testing Metcalfe's Law against Bitcoin network value.</span><small>GITHUB · JUPYTER NOTEBOOK</small></span>
         </a>
       </div>
     </section>
