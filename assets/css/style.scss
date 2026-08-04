@@ -46,9 +46,10 @@ body.theme-dark .theme-toggle { background: #141b35; border-color: #5265a5; colo
 .mission { max-width: 56ch; margin: 14px 0 0; color: #454e6b; }
 .mission strong { color: var(--ink); }
 .hero-image { width: 200px; height: 133px; object-fit: cover; border-radius: 14px; border: 1.5px solid var(--rule); }
-.profile-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-.profile-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 1.5px solid #c9d1ec; border-radius: 22px; font-weight: 600; text-decoration: none; }
-.profile-links a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.profile-links { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 20px; }
+.profile-links a { display: inline-flex; align-items: center; line-height: 0; border-radius: 4px; transition: transform .12s ease, opacity .12s ease; }
+.profile-links a:hover { transform: translateY(-1px); opacity: .85; }
+.profile-links img { height: 28px; display: block; }
 
 .content-section, .chain-section { margin-top: 56px; }
 .markdown-body .content-section h2, .markdown-body .chain-section h2 { margin: 0; padding-bottom: 8px; border-bottom: 1.5px solid var(--rule); color: var(--muted); font-size: .85em; text-transform: uppercase; letter-spacing: 2px; }
@@ -75,8 +76,8 @@ body.theme-dark .theme-toggle { background: #141b35; border-color: #5265a5; colo
 .card-description, .project-card small, .writing-card small { display: block; }
 .card-description { color: #454e6b; margin-top: 3px; font-size: .95em; }
 .project-card small, .writing-card small { color: #6a7396; margin-top: 6px; font-size: .82em; font-weight: 600; letter-spacing: .3px; }
-.writing-card { display: grid; grid-template-columns: 240px 1fr; gap: 20px; align-items: center; padding: 18px; border-radius: 16px; color: var(--ink) !important; transition: box-shadow .15s ease, transform .15s ease; }
-.writing-card img { width: 240px; height: 160px; object-fit: cover; object-position: top; border-radius: 10px; border: 1px solid var(--rule); }
+.writing-card { display: grid; grid-template-columns: 64px 1fr; gap: 16px; align-items: center; padding: 14px 18px; border-radius: 16px; color: var(--ink) !important; transition: box-shadow .15s ease, transform .15s ease; }
+.writing-card img { width: 64px; height: 64px; object-fit: cover; object-position: top; border-radius: 10px; border: 1px solid var(--rule); }
 .writing-card strong { font-size: 1.2em; }
 .writing-card .card-description { margin-top: 6px; }
 
@@ -111,7 +112,7 @@ body.theme-dark .theme-toggle { background: #141b35; border-color: #5265a5; colo
   .hero { grid-template-columns: 1fr; }
   .hero-image { width: 100%; height: auto; max-height: 220px; object-fit: cover; }
   .project-grid { grid-template-columns: 1fr; }
-  .writing-card { grid-template-columns: 1fr; }
-  .writing-card img { width: 100%; height: 190px; }
+  .writing-card { grid-template-columns: 56px 1fr; }
+  .writing-card img { width: 56px; height: 56px; }
 }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }

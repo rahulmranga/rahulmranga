@@ -15,10 +15,10 @@
         <p class="tagline">Systems builder · durable agent memory, provenance-safe compression, agent protocols</p>
         <p class="mission"><strong>Mission:</strong> a knowledge substrate where attribution survives compression, retrieval, and reuse — so plagiarism becomes structurally hard, not just discouraged.</p>
         <div class="profile-links" aria-label="Profiles elsewhere">
-          <a href="https://github.com/rahulmranga">GitHub</a>
-          <a href="https://medium.com/@rahulmohanrangarao">Medium</a>
-          <a href="https://dev.to/rahulmranga">Dev.to</a>
-          <a href="https://www.linkedin.com/in/rahul-mohan/">LinkedIn</a>
+          <a href="https://github.com/rahulmranga"><img src="https://img.shields.io/badge/GitHub-rahulmranga-181717?style=flat&logo=github&logoColor=white" alt="GitHub: rahulmranga"></a>
+          <a href="https://medium.com/@rahulmohanrangarao"><img src="https://img.shields.io/badge/Medium-rahulmohanrangarao-000000?style=flat&logo=medium&logoColor=white" alt="Medium: @rahulmohanrangarao"></a>
+          <a href="https://dev.to/rahulmranga"><img src="https://img.shields.io/badge/Dev.to-rahulmranga-0A0A0A?style=flat&logo=devdotto&logoColor=white" alt="Dev.to: rahulmranga"></a>
+          <a href="https://www.linkedin.com/in/rahul-mohan/"><img src="https://img.shields.io/badge/LinkedIn-rahul--mohan-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn: rahul-mohan"></a>
         </div>
       </div>
       <img class="hero-image" src="assets/swarm-agents-hexagon.png" alt="Agent network arranged around a central hexagon">
@@ -66,19 +66,19 @@
     <section id="games" class="content-section" aria-labelledby="games-heading">
       <h2 id="games-heading">Games</h2>
       <div class="games-grid">
-        <a class="game-widget day" href="https://rahulmranga.github.io/kompress-ultra/maze.html"><span class="gw-icon">🌀</span><span class="gw-title">cosmic maze</span><span class="gw-desc">RALPH × LODRI</span><span class="gw-tag">daylight for dad ☀️</span></a>
-        <a class="game-widget night" href="https://rahulmranga.github.io/kompress-ultra/games.html"><span class="gw-icon">🎪</span><span class="gw-title">cosmic playground</span><span class="gw-desc">the kids' arcade</span><span class="gw-tag">night sky 🌙</span></a>
-        <a class="game-widget night" href="https://rahulmranga.github.io/kompress-ultra/memory.html"><span class="gw-icon">🃏</span><span class="gw-title">space match</span><span class="gw-desc">flip cards, find pairs</span><span class="gw-tag">tap or click</span></a>
-        <a class="game-widget night" href="https://rahulmranga.github.io/kompress-ultra/stars.html"><span class="gw-icon">⭐</span><span class="gw-title">star catcher</span><span class="gw-desc">catch falling stars</span><span class="gw-tag">keys or touch</span></a>
+        <a class="game-widget day" href="/artifacts/maze.html"><span class="gw-icon">🌀</span><span class="gw-title">cosmic maze</span><span class="gw-desc">RALPH × LODRI</span><span class="gw-tag">daylight for dad ☀️</span></a>
+        <a class="game-widget night" href="/artifacts/games.html"><span class="gw-icon">🎪</span><span class="gw-title">cosmic playground</span><span class="gw-desc">the kids' arcade</span><span class="gw-tag">night sky 🌙</span></a>
+        <a class="game-widget night" href="/artifacts/memory.html"><span class="gw-icon">🃏</span><span class="gw-title">space match</span><span class="gw-desc">flip cards, find pairs</span><span class="gw-tag">tap or click</span></a>
+        <a class="game-widget night" href="/artifacts/stars.html"><span class="gw-icon">⭐</span><span class="gw-title">star catcher</span><span class="gw-desc">catch falling stars</span><span class="gw-tag">keys or touch</span></a>
       </div>
     </section>
     <section class="content-section" aria-labelledby="showcase-heading">
       <h2 id="showcase-heading">Showcase</h2>
       <div class="showcase-grid">
-        <a href="https://rahulmranga.github.io/kompress-ultra/ohm.html"><strong>ohm</strong><span>ॐ · 136.1 Hz Earth year tone</span></a>
-        <a href="https://rahulmranga.github.io/kompress-ultra/spacetime.html"><strong>spacetime</strong><span>Jupiter, light cones, geodesics</span></a>
-        <a href="https://rahulmranga.github.io/kompress-ultra/org.html"><strong>org</strong><span>one knowledge graph, org lens</span></a>
-        <a href="https://rahulmranga.github.io/kompress-ultra/brain-dist.html"><strong>brain-dist</strong><span>same graph, brain lens</span></a>
+        <a href="/artifacts/ohm.html"><strong>ohm</strong><span>ॐ · 136.1 Hz Earth year tone</span></a>
+        <a href="/artifacts/spacetime.html"><strong>spacetime</strong><span>Jupiter, light cones, geodesics</span></a>
+        <a href="/artifacts/org.html"><strong>org</strong><span>one knowledge graph, org lens</span></a>
+        <a href="/artifacts/brain-dist.html"><strong>brain-dist</strong><span>same graph, brain lens</span></a>
       </div>
     </section>
   </main>

@@ -13,7 +13,7 @@
 - Dev.to: https://dev.to/rahulmranga
 
 ## Demos
-- cosmic maze (RALPH × LODRI), ohm, geo-maze, brain-graph · https://rahulmranga.github.io/kompress-ultra/
+- cosmic maze (RALPH × LODRI), ohm, geo-maze, brain-graph · https://rahulrangarao.dev/artifacts/games.html
 
 ## Elsewhere
 - GitHub: https://github.com/rahulmranga
