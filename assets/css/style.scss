@@ -30,9 +30,19 @@ body {
 .theme-dark { background: #0b1020 !important; color: #e6ecff !important; }
 body.theme-dark a { color: #9db9ff !important; }
 body.theme-dark h1, body.theme-dark h2 { color: #e6ecff !important; }
+body.theme-dark .site-name, body.theme-dark .tagline, body.theme-dark .project-card strong, body.theme-dark .writing-card strong, body.theme-dark .showcase-grid strong { color: #c7d6ff !important; }
+body.theme-dark .mission, body.theme-dark .chain-caption, body.theme-dark .supporting-copy, body.theme-dark .site-footer { color: #a9b6de; }
+body.theme-dark .mission strong { color: #e6ecff; }
 body.theme-dark .project-card, body.theme-dark .writing-card, body.theme-dark .showcase-grid a { background: #141b35; border-color: #344275; color: #e6ecff !important; }
-body.theme-dark .project-card .card-description, body.theme-dark .writing-card .card-description, body.theme-dark .showcase-grid span { color: #a9b6de; }
+body.theme-dark .project-card .card-description, body.theme-dark .writing-card .card-description, body.theme-dark .showcase-grid span, body.theme-dark .project-card small, body.theme-dark .writing-card small { color: #a9b6de; }
 body.theme-dark .theme-toggle { background: #141b35; border-color: #5265a5; color: #dce6ff; }
+body.theme-dark .site-nav a:hover { background: #1b2544; }
+body.theme-dark .site-nav .resume-link { background: #4f6fe8; color: #fff !important; }
+body.theme-dark .site-nav .resume-link:hover { background: #6685ff; }
+body.theme-dark .chain-node { background: #182342; border-color: #5265a5; color: #dce6ff !important; }
+body.theme-dark .chain-node:hover, body.theme-dark .chain-node.me { background: #4f6fe8; border-color: #7890ff; color: #fff !important; }
+body.theme-dark .chain-node.kids { background: #141b35; border-color: #344275; color: #dce6ff !important; }
+body.theme-dark .chain-arrow { color: #7f8dbb; }
 .site-header { padding-top: 44px; }
 .site-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-bottom: 40px; }
 .site-nav a { display: inline-flex; align-items: center; padding: 10px 14px; border-radius: 10px; font-weight: 600; text-decoration: none; }
