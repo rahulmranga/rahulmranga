@@ -1,0 +1,3025 @@
+{
+  "centrality": {
+    "betweenness": [
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 30,
+        "id": "project:knowledge-worker",
+        "label": "knowledge-worker",
+        "score": 0.4249965493443756,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 24,
+        "id": "person:rahul-rangarao",
+        "label": "Rahul Rangarao",
+        "score": 0.36167948338755795,
+        "type": "person"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 12,
+        "id": "project:self-service-platform",
+        "label": "Enterprise self-service analytics platform",
+        "score": 0.1684163133852575,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 10,
+        "id": "project:batch-traceability",
+        "label": "Batch traceability data product",
+        "score": 0.08295293962995827,
+        "type": "project"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 8,
+        "id": "project:cxo-dashboards",
+        "label": "CXO-level KPI dashboards",
+        "score": 0.06795934799040386,
+        "type": "project"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "project:report-rationalization",
+        "label": "Report rationalization",
+        "score": 0.03399848828420256,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:cart-data-product",
+        "label": "CAR-T quality and manufacturing data product",
+        "score": 0.03220480462716487,
+        "type": "project"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:risk-prediction-model",
+        "label": "Enterprise risk prediction model",
+        "score": 0.027660948437345963,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:ci-cd",
+        "label": "CI/CD",
+        "score": 0.02387656511880115,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:community-detection",
+        "label": "Community detection",
+        "score": 0.021228433402346453,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "decision:provenance-first-architecture",
+        "label": "Validate every document before ingestion",
+        "score": 0.017699562916954212,
+        "type": "decision"
+      },
+      {
+        "community": 7,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:turtle",
+        "label": "Turtle",
+        "score": 0.017167504683032634,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:pagerank",
+        "label": "PageRank",
+        "score": 0.016845114857537216,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "project:kompress-ultra",
+        "label": "kompress-ultra",
+        "score": 0.01633228170495251,
+        "type": "project"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:ut-austin",
+        "label": "The University of Texas at Austin",
+        "score": 0.016295967662427285,
+        "type": "reference"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:pypi",
+        "label": "PyPI",
+        "score": 0.01628709454796411,
+        "type": "reference"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:api-development",
+        "label": "API development",
+        "score": 0.015500345065562455,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:software-architecture",
+        "label": "Software architecture",
+        "score": 0.014271911663216006,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:ai-context-management",
+        "label": "AI context management",
+        "score": 0.01370797594400079,
+        "type": "topic"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:enterprise-reporting",
+        "label": "Enterprise reporting",
+        "score": 0.012517992704328105,
+        "type": "topic"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:rdf",
+        "label": "RDF",
+        "score": 0.01184265010351967,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:data-modeling",
+        "label": "Data modeling",
+        "score": 0.011196227283183808,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "reference:bristol-myers-squibb",
+        "label": "Bristol Myers Squibb",
+        "score": 0.01053600184034967,
+        "type": "reference"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "decision:medallion-architecture",
+        "label": "Adopt a Medallion architecture",
+        "score": 0.010324361628709455,
+        "type": "decision"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:llm",
+        "label": "Large language models",
+        "score": 0.009454796411318148,
+        "type": "topic"
+      }
+    ],
+    "core_number": [
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 30,
+        "id": "project:knowledge-worker",
+        "label": "knowledge-worker",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 24,
+        "id": "person:rahul-rangarao",
+        "label": "Rahul Rangarao",
+        "score": 3.0,
+        "type": "person"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 12,
+        "id": "project:self-service-platform",
+        "label": "Enterprise self-service analytics platform",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 10,
+        "id": "project:batch-traceability",
+        "label": "Batch traceability data product",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 8,
+        "id": "project:cxo-dashboards",
+        "label": "CXO-level KPI dashboards",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "project:kompress-ultra",
+        "label": "kompress-ultra",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "project:report-rationalization",
+        "label": "Report rationalization",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:cart-data-product",
+        "label": "CAR-T quality and manufacturing data product",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:risk-prediction-model",
+        "label": "Enterprise risk prediction model",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:python",
+        "label": "Python",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "decision:provenance-first-architecture",
+        "label": "Validate every document before ingestion",
+        "score": 3.0,
+        "type": "decision"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:ai-context-management",
+        "label": "AI context management",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:analytics-engineering",
+        "label": "Analytics engineering",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:api-development",
+        "label": "API development",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:benchmark-suite",
+        "label": "Benchmark provenance and privacy boundaries",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "reference:bristol-myers-squibb",
+        "label": "Bristol Myers Squibb",
+        "score": 3.0,
+        "type": "reference"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:car-t",
+        "label": "CAR-T cell therapy",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:ci-cd",
+        "label": "CI/CD",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:durable-agent-memory",
+        "label": "Durable, provenance-backed AI memory",
+        "score": 3.0,
+        "type": "goal"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:provenance-invariant",
+        "label": "Enforce a hard provenance invariant",
+        "score": 3.0,
+        "type": "goal"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:enterprise-reporting",
+        "label": "Enterprise reporting",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:context-export",
+        "label": "Export compact context for an LLM",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:graph-analytics",
+        "label": "Graph analytics",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:llm",
+        "label": "Large language models",
+        "score": 3.0,
+        "type": "topic"
+      }
+    ],
+    "pagerank": [
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:snowflake",
+        "label": "Snowflake",
+        "score": 0.02427806568528533,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:software-architecture",
+        "label": "Software architecture",
+        "score": 0.021257233040697546,
+        "type": "topic"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:sap",
+        "label": "SAP ERP",
+        "score": 0.02118857799667112,
+        "type": "topic"
+      },
+      {
+        "community": 7,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:turtle",
+        "label": "Turtle",
+        "score": 0.020843181970882363,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:tableau",
+        "label": "Tableau",
+        "score": 0.019748176538191924,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:sql",
+        "label": "SQL",
+        "score": 0.019681362132580066,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "score": 0.019654313575227008,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:car-t",
+        "label": "CAR-T cell therapy",
+        "score": 0.01937695735143103,
+        "type": "topic"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:rdf",
+        "label": "RDF",
+        "score": 0.01933188449545727,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:api-development",
+        "label": "API development",
+        "score": 0.01924852385838441,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:ci-cd",
+        "label": "CI/CD",
+        "score": 0.019158308687078233,
+        "type": "topic"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:linked-data",
+        "label": "Linked data",
+        "score": 0.018879355272752994,
+        "type": "topic"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:enterprise-reporting",
+        "label": "Enterprise reporting",
+        "score": 0.018848342530523633,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:aws-glue",
+        "label": "AWS Glue",
+        "score": 0.018762254818243326,
+        "type": "topic"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:llm",
+        "label": "Large language models",
+        "score": 0.018710107877420043,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:k-core",
+        "label": "k-core",
+        "score": 0.018705269364212657,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:dbt",
+        "label": "dbt",
+        "score": 0.01862035066554451,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:analytics-engineering",
+        "label": "Analytics engineering",
+        "score": 0.018606974591310492,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:betweenness",
+        "label": "Betweenness centrality",
+        "score": 0.018584852227584756,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:databricks",
+        "label": "Databricks",
+        "score": 0.01846976586369383,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:aws-neptune",
+        "label": "AWS Neptune",
+        "score": 0.018403476609654933,
+        "type": "topic"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:github-actions",
+        "label": "GitHub Actions",
+        "score": 0.01836130011115169,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:data-warehousing",
+        "label": "Data warehousing",
+        "score": 0.018343440517388246,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:json-ld",
+        "label": "JSON-LD",
+        "score": 0.01830049400276278,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:graph-analytics",
+        "label": "Graph analytics",
+        "score": 0.018297125751192106,
+        "type": "topic"
+      }
+    ],
+    "semantic_in_degree": [
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 30,
+        "id": "project:knowledge-worker",
+        "label": "knowledge-worker",
+        "score": 7.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:python",
+        "label": "Python",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 12,
+        "id": "project:self-service-platform",
+        "label": "Enterprise self-service analytics platform",
+        "score": 2.0,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 10,
+        "id": "project:batch-traceability",
+        "label": "Batch traceability data product",
+        "score": 2.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:ai-context-management",
+        "label": "AI context management",
+        "score": 2.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:analytics-engineering",
+        "label": "Analytics engineering",
+        "score": 2.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:api-development",
+        "label": "API development",
+        "score": 2.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "reference:bristol-myers-squibb",
+        "label": "Bristol Myers Squibb",
+        "score": 2.0,
+        "type": "reference"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:car-t",
+        "label": "CAR-T cell therapy",
+        "score": 2.0,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:ci-cd",
+        "label": "CI/CD",
+        "score": 2.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:durable-agent-memory",
+        "label": "Durable, provenance-backed AI memory",
+        "score": 2.0,
+        "type": "goal"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:provenance-invariant",
+        "label": "Enforce a hard provenance invariant",
+        "score": 2.0,
+        "type": "goal"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:enterprise-reporting",
+        "label": "Enterprise reporting",
+        "score": 2.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:graph-analytics",
+        "label": "Graph analytics",
+        "score": 2.0,
+        "type": "topic"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:llm",
+        "label": "Large language models",
+        "score": 2.0,
+        "type": "topic"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:snowflake",
+        "label": "Snowflake",
+        "score": 2.0,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 8,
+        "id": "project:cxo-dashboards",
+        "label": "CXO-level KPI dashboards",
+        "score": 1.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "project:kompress-ultra",
+        "label": "kompress-ultra",
+        "score": 1.0,
+        "type": "project"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "project:report-rationalization",
+        "label": "Report rationalization",
+        "score": 1.0,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:cart-data-product",
+        "label": "CAR-T quality and manufacturing data product",
+        "score": 1.0,
+        "type": "project"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:risk-prediction-model",
+        "label": "Enterprise risk prediction model",
+        "score": 1.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:benchmark-suite",
+        "label": "Benchmark provenance and privacy boundaries",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:context-export",
+        "label": "Export compact context for an LLM",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:dfs-hackathon",
+        "label": "1st Place, DFS Hackathon",
+        "score": 1.0,
+        "type": "reference"
+      }
+    ],
+    "semantic_out_degree": [
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 24,
+        "id": "person:rahul-rangarao",
+        "label": "Rahul Rangarao",
+        "score": 24.0,
+        "type": "person"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 30,
+        "id": "project:knowledge-worker",
+        "label": "knowledge-worker",
+        "score": 21.0,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 12,
+        "id": "project:self-service-platform",
+        "label": "Enterprise self-service analytics platform",
+        "score": 9.0,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 10,
+        "id": "project:batch-traceability",
+        "label": "Batch traceability data product",
+        "score": 6.0,
+        "type": "project"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 8,
+        "id": "project:cxo-dashboards",
+        "label": "CXO-level KPI dashboards",
+        "score": 5.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "project:kompress-ultra",
+        "label": "kompress-ultra",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "project:report-rationalization",
+        "label": "Report rationalization",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "decision:provenance-first-architecture",
+        "label": "Validate every document before ingestion",
+        "score": 3.0,
+        "type": "decision"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:cart-data-product",
+        "label": "CAR-T quality and manufacturing data product",
+        "score": 2.0,
+        "type": "project"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:risk-prediction-model",
+        "label": "Enterprise risk prediction model",
+        "score": 2.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:benchmark-suite",
+        "label": "Benchmark provenance and privacy boundaries",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:context-export",
+        "label": "Export compact context for an LLM",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "decision:medallion-architecture",
+        "label": "Adopt a Medallion architecture",
+        "score": 1.0,
+        "type": "decision"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "project:ag-ui-protocol",
+        "label": "AG-UI protocol",
+        "score": 1.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "decision:zero-runtime-dependencies",
+        "label": "Keep the core dependency-free",
+        "score": 1.0,
+        "type": "decision"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "decision:graph-db-for-traceability",
+        "label": "Model batch traceability as a graph",
+        "score": 1.0,
+        "type": "decision"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "idea:offline-graph-visualizer",
+        "label": "Offline HTML graph visualizer",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:snowflake-certification",
+        "label": "Snowflake data warehouse certification",
+        "score": 1.0,
+        "type": "reference"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "decision:append-only-storage",
+        "label": "Use append-only graph storage",
+        "score": 1.0,
+        "type": "decision"
+      }
+    ]
+  },
+  "communities": [
+    {
+      "id": 0,
+      "members": [
+        "decision:append-only-storage",
+        "decision:graph-db-for-traceability",
+        "decision:medallion-architecture",
+        "project:batch-traceability",
+        "project:cart-data-product",
+        "project:self-service-platform",
+        "reference:bravo-aws-tech-stack",
+        "reference:bravo-batch-genealogy",
+        "topic:aws-glue",
+        "topic:aws-neptune",
+        "topic:benchmark-testing",
+        "topic:betweenness",
+        "topic:car-t",
+        "topic:ci-cd",
+        "topic:community-detection",
+        "topic:dagster",
+        "topic:data-modeling",
+        "topic:data-product-development",
+        "topic:data-warehousing",
+        "topic:databricks",
+        "topic:dbt"
+      ],
+      "size": 21,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "topic:car-t",
+          "label": "CAR-T cell therapy",
+          "score": 0.01937695735143103,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "topic:ci-cd",
+          "label": "CI/CD",
+          "score": 0.019158308687078233,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:aws-glue",
+          "label": "AWS Glue",
+          "score": 0.018762254818243326,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "topic:dbt",
+          "label": "dbt",
+          "score": 0.01862035066554451,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:betweenness",
+          "label": "Betweenness centrality",
+          "score": 0.018584852227584756,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "topic:databricks",
+          "label": "Databricks",
+          "score": 0.01846976586369383,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:aws-neptune",
+          "label": "AWS Neptune",
+          "score": 0.018403476609654933,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "topic:data-warehousing",
+          "label": "Data warehousing",
+          "score": 0.018343440517388246,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:benchmark-testing",
+          "label": "Benchmark testing",
+          "score": 0.01829451588118481,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "topic:data-product-development",
+          "label": "Data product development",
+          "score": 0.018196789219231117,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "topic:community-detection",
+          "label": "Community detection",
+          "score": 0.01812034625679275,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "topic:data-modeling",
+          "label": "Data modeling",
+          "score": 0.017897378973956095,
+          "type": "topic"
+        }
+      ],
+      "types": {
+        "decision": 3,
+        "project": 3,
+        "reference": 2,
+        "topic": 13
+      }
+    },
+    {
+      "id": 1,
+      "members": [
+        "decision:provenance-first-architecture",
+        "decision:zero-runtime-dependencies",
+        "goal:durable-agent-memory",
+        "goal:provenance-invariant",
+        "idea:benchmark-suite",
+        "idea:context-export",
+        "idea:offline-graph-visualizer",
+        "person:rahul-rangarao",
+        "project:ag-ui-protocol",
+        "project:knowledge-worker",
+        "project:kompress-ultra",
+        "reference:bristol-myers-squibb",
+        "reference:dfs-hackathon",
+        "topic:ai-context-management",
+        "topic:analytics-engineering",
+        "topic:api-development",
+        "topic:graph-analytics",
+        "topic:json-ld",
+        "topic:k-core",
+        "topic:knowledge-graphs"
+      ],
+      "size": 20,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 5,
+          "id": "topic:knowledge-graphs",
+          "label": "Knowledge graphs",
+          "score": 0.019654313575227008,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "topic:api-development",
+          "label": "API development",
+          "score": 0.01924852385838441,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:k-core",
+          "label": "k-core",
+          "score": 0.018705269364212657,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "topic:analytics-engineering",
+          "label": "Analytics engineering",
+          "score": 0.018606974591310492,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:json-ld",
+          "label": "JSON-LD",
+          "score": 0.01830049400276278,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "topic:graph-analytics",
+          "label": "Graph analytics",
+          "score": 0.018297125751192106,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "topic:ai-context-management",
+          "label": "AI context management",
+          "score": 0.017705435799883373,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "reference:bristol-myers-squibb",
+          "label": "Bristol Myers Squibb",
+          "score": 0.015979894319700982,
+          "type": "reference"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "reference:dfs-hackathon",
+          "label": "1st Place, DFS Hackathon",
+          "score": 0.015671131651057275,
+          "type": "reference"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 30,
+          "id": "project:knowledge-worker",
+          "label": "knowledge-worker",
+          "score": 0.012495766169319765,
+          "type": "project"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "goal:provenance-invariant",
+          "label": "Enforce a hard provenance invariant",
+          "score": 0.009634047170470885,
+          "type": "goal"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "goal:durable-agent-memory",
+          "label": "Durable, provenance-backed AI memory",
+          "score": 0.009195683655366462,
+          "type": "goal"
+        }
+      ],
+      "types": {
+        "decision": 2,
+        "goal": 2,
+        "idea": 3,
+        "person": 1,
+        "project": 3,
+        "reference": 2,
+        "topic": 7
+      }
+    },
+    {
+      "id": 2,
+      "members": [
+        "project:cxo-dashboards",
+        "reference:bravo-daily-aph",
+        "topic:pagerank",
+        "topic:power-bi",
+        "topic:software-architecture",
+        "topic:sql",
+        "topic:tableau"
+      ],
+      "size": 7,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "topic:software-architecture",
+          "label": "Software architecture",
+          "score": 0.021257233040697546,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "topic:tableau",
+          "label": "Tableau",
+          "score": 0.019748176538191924,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "topic:sql",
+          "label": "SQL",
+          "score": 0.019681362132580066,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:pagerank",
+          "label": "PageRank",
+          "score": 0.01757481939155433,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:power-bi",
+          "label": "Power BI",
+          "score": 0.017397387691191025,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "reference:bravo-daily-aph",
+          "label": "Bravo Award, Daily Aph vs. Budget Reporting",
+          "score": 0.014497882685298853,
+          "type": "reference"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 8,
+          "id": "project:cxo-dashboards",
+          "label": "CXO-level KPI dashboards",
+          "score": 0.0033976281101714425,
+          "type": "project"
+        }
+      ],
+      "types": {
+        "project": 1,
+        "reference": 1,
+        "topic": 5
+      }
+    },
+    {
+      "id": 3,
+      "members": [
+        "project:risk-prediction-model",
+        "topic:ab-testing",
+        "topic:linked-data",
+        "topic:llm",
+        "topic:llm-orchestration",
+        "topic:machine-learning"
+      ],
+      "size": 6,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:linked-data",
+          "label": "Linked data",
+          "score": 0.018879355272752994,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "topic:llm",
+          "label": "Large language models",
+          "score": 0.018710107877420043,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:machine-learning",
+          "label": "Machine learning",
+          "score": 0.01789753751304614,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:llm-orchestration",
+          "label": "LLM orchestration",
+          "score": 0.017812312524553172,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:ab-testing",
+          "label": "Hypothesis and A/B testing",
+          "score": 0.015666579914180842,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 5,
+          "id": "project:risk-prediction-model",
+          "label": "Enterprise risk prediction model",
+          "score": 0.003507437479435986,
+          "type": "project"
+        }
+      ],
+      "types": {
+        "project": 1,
+        "topic": 5
+      }
+    },
+    {
+      "id": 4,
+      "members": [
+        "reference:jss-university",
+        "reference:mu-sigma",
+        "reference:pypi",
+        "reference:snowflake-certification",
+        "reference:ut-austin",
+        "topic:snowflake"
+      ],
+      "size": 6,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "topic:snowflake",
+          "label": "Snowflake",
+          "score": 0.02427806568528533,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "reference:jss-university",
+          "label": "JSS Science and Technology University",
+          "score": 0.014613825396054363,
+          "type": "reference"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "reference:mu-sigma",
+          "label": "Mu Sigma Inc.",
+          "score": 0.013492114897119241,
+          "type": "reference"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "reference:ut-austin",
+          "label": "The University of Texas at Austin",
+          "score": 0.012432383933621453,
+          "type": "reference"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "reference:snowflake-certification",
+          "label": "Snowflake data warehouse certification",
+          "score": 0.012423615157082072,
+          "type": "reference"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "reference:pypi",
+          "label": "PyPI",
+          "score": 0.011828649237036871,
+          "type": "reference"
+        }
+      ],
+      "types": {
+        "reference": 5,
+        "topic": 1
+      }
+    },
+    {
+      "id": 5,
+      "members": [
+        "topic:prompt-engineering",
+        "topic:python",
+        "topic:rag",
+        "topic:rdf",
+        "topic:sap"
+      ],
+      "size": 5,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:sap",
+          "label": "SAP ERP",
+          "score": 0.02118857799667112,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:rdf",
+          "label": "RDF",
+          "score": 0.01933188449545727,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 5,
+          "id": "topic:python",
+          "label": "Python",
+          "score": 0.01828353945313735,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:rag",
+          "label": "Retrieval-augmented generation",
+          "score": 0.01824061844634299,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:prompt-engineering",
+          "label": "Prompt engineering",
+          "score": 0.017418457293717757,
+          "type": "topic"
+        }
+      ],
+      "types": {
+        "topic": 5
+      }
+    },
+    {
+      "id": 6,
+      "members": [
+        "project:report-rationalization",
+        "reference:impact-award",
+        "topic:enterprise-reporting",
+        "topic:github-actions"
+      ],
+      "size": 4,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "topic:enterprise-reporting",
+          "label": "Enterprise reporting",
+          "score": 0.018848342530523633,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:github-actions",
+          "label": "GitHub Actions",
+          "score": 0.01836130011115169,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "reference:impact-award",
+          "label": "Impact Award",
+          "score": 0.015589678556061727,
+          "type": "reference"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 6,
+          "id": "project:report-rationalization",
+          "label": "Report rationalization",
+          "score": 0.003564092668089523,
+          "type": "project"
+        }
+      ],
+      "types": {
+        "project": 1,
+        "reference": 1,
+        "topic": 2
+      }
+    },
+    {
+      "id": 7,
+      "members": [
+        "topic:turtle",
+        "topic:unified-data-model"
+      ],
+      "size": 2,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "topic:turtle",
+          "label": "Turtle",
+          "score": 0.020843181970882363,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 2,
+          "id": "topic:unified-data-model",
+          "label": "Unified Data Model",
+          "score": 0.011618506998958188,
+          "type": "topic"
+        }
+      ],
+      "types": {
+        "topic": 2
+      }
+    }
+  ],
+  "counts": {
+    "confidence": {
+      "edges": {
+        "high": 164
+      },
+      "nodes": {
+        "high": 72
+      }
+    },
+    "edge_types": {
+      "ABOUT": 53,
+      "CHALLENGES": 1,
+      "HAS_IDEA": 3,
+      "INVOLVES": 9,
+      "MADE_AT": 6,
+      "MENTIONED_IN": 71,
+      "RELATES_TO": 11,
+      "SERVES": 4,
+      "SUPPORTED_BY": 6
+    },
+    "node_types": {
+      "decision": 5,
+      "goal": 2,
+      "idea": 3,
+      "person": 1,
+      "project": 9,
+      "reference": 11,
+      "source": 1,
+      "topic": 40
+    }
+  },
+  "directed_flow": {
+    "idea_attractors": [],
+    "idea_generators": [],
+    "note": "Directed flow uses semantic edges only. Provenance/source projection edges are excluded so attractors and generators reflect relationship direction, not citation volume."
+  },
+  "generated_at": "2026-08-31T13:20:51.590099+00:00",
+  "legwork_queue": {
+    "idea_attractors": [],
+    "idea_generators": [],
+    "weak_claims": []
+  },
+  "low_confidence_edges": [],
+  "provenance_coverage": {
+    "edge_source_coverage": 1.0,
+    "edges_missing_source_id": [],
+    "edges_total": 164,
+    "edges_with_source_id": 164,
+    "excerpt_coverage": 1.0,
+    "missing_nodes": [],
+    "node_coverage": 1.0,
+    "nodes_with_provenance": 71,
+    "nodes_with_provenance_excerpt": 71,
+    "non_source_nodes": 71,
+    "provenance_edges": 77,
+    "provenance_edges_with_excerpt": 77
+  },
+  "ranked": {
+    "bridge_ideas": [
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 30,
+        "id": "project:knowledge-worker",
+        "label": "knowledge-worker",
+        "score": 0.4249965493443756,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 24,
+        "id": "person:rahul-rangarao",
+        "label": "Rahul Rangarao",
+        "score": 0.36167948338755795,
+        "type": "person"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 12,
+        "id": "project:self-service-platform",
+        "label": "Enterprise self-service analytics platform",
+        "score": 0.1684163133852575,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 10,
+        "id": "project:batch-traceability",
+        "label": "Batch traceability data product",
+        "score": 0.08295293962995827,
+        "type": "project"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 8,
+        "id": "project:cxo-dashboards",
+        "label": "CXO-level KPI dashboards",
+        "score": 0.06795934799040386,
+        "type": "project"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "project:report-rationalization",
+        "label": "Report rationalization",
+        "score": 0.03399848828420256,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:cart-data-product",
+        "label": "CAR-T quality and manufacturing data product",
+        "score": 0.03220480462716487,
+        "type": "project"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:risk-prediction-model",
+        "label": "Enterprise risk prediction model",
+        "score": 0.027660948437345963,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:ci-cd",
+        "label": "CI/CD",
+        "score": 0.02387656511880115,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:community-detection",
+        "label": "Community detection",
+        "score": 0.021228433402346453,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "decision:provenance-first-architecture",
+        "label": "Validate every document before ingestion",
+        "score": 0.017699562916954212,
+        "type": "decision"
+      },
+      {
+        "community": 7,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:turtle",
+        "label": "Turtle",
+        "score": 0.017167504683032634,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:pagerank",
+        "label": "PageRank",
+        "score": 0.016845114857537216,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "project:kompress-ultra",
+        "label": "kompress-ultra",
+        "score": 0.01633228170495251,
+        "type": "project"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:ut-austin",
+        "label": "The University of Texas at Austin",
+        "score": 0.016295967662427285,
+        "type": "reference"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:pypi",
+        "label": "PyPI",
+        "score": 0.01628709454796411,
+        "type": "reference"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:api-development",
+        "label": "API development",
+        "score": 0.015500345065562455,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:software-architecture",
+        "label": "Software architecture",
+        "score": 0.014271911663216006,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:ai-context-management",
+        "label": "AI context management",
+        "score": 0.01370797594400079,
+        "type": "topic"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:enterprise-reporting",
+        "label": "Enterprise reporting",
+        "score": 0.012517992704328105,
+        "type": "topic"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:rdf",
+        "label": "RDF",
+        "score": 0.01184265010351967,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:data-modeling",
+        "label": "Data modeling",
+        "score": 0.011196227283183808,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "reference:bristol-myers-squibb",
+        "label": "Bristol Myers Squibb",
+        "score": 0.01053600184034967,
+        "type": "reference"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "decision:medallion-architecture",
+        "label": "Adopt a Medallion architecture",
+        "score": 0.010324361628709455,
+        "type": "decision"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:llm",
+        "label": "Large language models",
+        "score": 0.009454796411318148,
+        "type": "topic"
+      }
+    ],
+    "idea_attractors": [],
+    "idea_generators": [],
+    "important_concepts": [
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:snowflake",
+        "label": "Snowflake",
+        "score": 0.02427806568528533,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:software-architecture",
+        "label": "Software architecture",
+        "score": 0.021257233040697546,
+        "type": "topic"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:sap",
+        "label": "SAP ERP",
+        "score": 0.02118857799667112,
+        "type": "topic"
+      },
+      {
+        "community": 7,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:turtle",
+        "label": "Turtle",
+        "score": 0.020843181970882363,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:tableau",
+        "label": "Tableau",
+        "score": 0.019748176538191924,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:sql",
+        "label": "SQL",
+        "score": 0.019681362132580066,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "score": 0.019654313575227008,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:car-t",
+        "label": "CAR-T cell therapy",
+        "score": 0.01937695735143103,
+        "type": "topic"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:rdf",
+        "label": "RDF",
+        "score": 0.01933188449545727,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:api-development",
+        "label": "API development",
+        "score": 0.01924852385838441,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:ci-cd",
+        "label": "CI/CD",
+        "score": 0.019158308687078233,
+        "type": "topic"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:linked-data",
+        "label": "Linked data",
+        "score": 0.018879355272752994,
+        "type": "topic"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:enterprise-reporting",
+        "label": "Enterprise reporting",
+        "score": 0.018848342530523633,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:aws-glue",
+        "label": "AWS Glue",
+        "score": 0.018762254818243326,
+        "type": "topic"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:llm",
+        "label": "Large language models",
+        "score": 0.018710107877420043,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:k-core",
+        "label": "k-core",
+        "score": 0.018705269364212657,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:dbt",
+        "label": "dbt",
+        "score": 0.01862035066554451,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:analytics-engineering",
+        "label": "Analytics engineering",
+        "score": 0.018606974591310492,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:betweenness",
+        "label": "Betweenness centrality",
+        "score": 0.018584852227584756,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:databricks",
+        "label": "Databricks",
+        "score": 0.01846976586369383,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:aws-neptune",
+        "label": "AWS Neptune",
+        "score": 0.018403476609654933,
+        "type": "topic"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:github-actions",
+        "label": "GitHub Actions",
+        "score": 0.01836130011115169,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:data-warehousing",
+        "label": "Data warehousing",
+        "score": 0.018343440517388246,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:json-ld",
+        "label": "JSON-LD",
+        "score": 0.01830049400276278,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:graph-analytics",
+        "label": "Graph analytics",
+        "score": 0.018297125751192106,
+        "type": "topic"
+      }
+    ],
+    "proof_trail": [
+      {
+        "confidence": "high",
+        "id": "topic:snowflake",
+        "label": "Snowflake",
+        "provenance": [
+          {
+            "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:software-architecture",
+        "label": "Software architecture",
+        "provenance": [
+          {
+            "excerpt": "**Software Engineering** \u2014 API development, software architecture, open source development, technical documentation, benchmark testing, version control",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:sap",
+        "label": "SAP ERP",
+        "provenance": [
+          {
+            "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems \u2014 **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:turtle",
+        "label": "Turtle",
+        "provenance": [
+          {
+            "excerpt": "**Knowledge & Semantics** \u2014 AWS Neptune, JSON-LD, RDF, Turtle, linked data",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:tableau",
+        "label": "Tableau",
+        "provenance": [
+          {
+            "excerpt": "**Visualization & BI** \u2014 Tableau, Power BI",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:sql",
+        "label": "SQL",
+        "provenance": [
+          {
+            "excerpt": "**Programming** \u2014 Python, SQL, JavaScript (React)",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "provenance": [
+          {
+            "excerpt": "Python \u00b7 AWS \u00b7 Knowledge Graphs",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:car-t",
+        "label": "CAR-T cell therapy",
+        "provenance": [
+          {
+            "excerpt": "Delivered an end-to-end data product, from requirements gathering through implementation, covering **800+ quality and manufacturing data points** for commercial **CAR-T** operations, contributing to an improvement in manufacturing success rates from **74% to 92%**.",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:rdf",
+        "label": "RDF",
+        "provenance": [
+          {
+            "excerpt": "**Knowledge & Semantics** \u2014 AWS Neptune, JSON-LD, RDF, Turtle, linked data",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:api-development",
+        "label": "API development",
+        "provenance": [
+          {
+            "excerpt": "**Software Engineering** \u2014 API development, software architecture, open source development, technical documentation, benchmark testing, version control",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:ci-cd",
+        "label": "CI/CD",
+        "provenance": [
+          {
+            "excerpt": "**Cloud & DevOps** \u2014 AWS (Lambda, Glue, EC2, Neptune, CloudFormation, CodeBuild), Git, GitHub, GitHub Actions, CI/CD",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:linked-data",
+        "label": "Linked data",
+        "provenance": [
+          {
+            "excerpt": "**Knowledge & Semantics** \u2014 AWS Neptune, JSON-LD, RDF, Turtle, linked data",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:enterprise-reporting",
+        "label": "Enterprise reporting",
+        "provenance": [
+          {
+            "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:aws-glue",
+        "label": "AWS Glue",
+        "provenance": [
+          {
+            "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:llm",
+        "label": "Large language models",
+        "provenance": [
+          {
+            "excerpt": "**AI & Machine Learning** \u2014 LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:k-core",
+        "label": "k-core",
+        "provenance": [
+          {
+            "excerpt": "Implemented advanced graph analytics including **PageRank, betweenness, k-core, community detection**, semantic similarity scoring, and relationship analysis.",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:dbt",
+        "label": "dbt",
+        "provenance": [
+          {
+            "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:analytics-engineering",
+        "label": "Analytics engineering",
+        "provenance": [
+          {
+            "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:betweenness",
+        "label": "Betweenness centrality",
+        "provenance": [
+          {
+            "excerpt": "Implemented advanced graph analytics including **PageRank, betweenness, k-core, community detection**, semantic similarity scoring, and relationship analysis.",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:databricks",
+        "label": "Databricks",
+        "provenance": [
+          {
+            "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:aws-neptune",
+        "label": "AWS Neptune",
+        "provenance": [
+          {
+            "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems \u2014 **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:github-actions",
+        "label": "GitHub Actions",
+        "provenance": [
+          {
+            "excerpt": "**Cloud & DevOps** \u2014 AWS (Lambda, Glue, EC2, Neptune, CloudFormation, CodeBuild), Git, GitHub, GitHub Actions, CI/CD",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:data-warehousing",
+        "label": "Data warehousing",
+        "provenance": [
+          {
+            "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:json-ld",
+        "label": "JSON-LD",
+        "provenance": [
+          {
+            "excerpt": "**Knowledge & Semantics** \u2014 AWS Neptune, JSON-LD, RDF, Turtle, linked data",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:graph-analytics",
+        "label": "Graph analytics",
+        "provenance": [
+          {
+            "excerpt": "Analytics and data platform engineer with 7+ years designing enterprise data products, cloud-native data platforms, and AI-enabled analytics across life sciences, manufacturing, retail, financial services, and supply chain. Builds modern data ecosystems on AWS, dbt, Snowflake, and Databricks, and integrates LLMs and knowledge graphs where they earn their place. Author of **knowledge-worker**, a published PyPI package giving AI assistants durable, provenance-backed memory: a local-first knowledge graph with graph analytics, LLM-backed ingest, and a hard provenance invariant. Generalist by nature \u2014 comfortable owning a problem from ingestion through modeling and tooling to the report on a stakeholder's desk \u2014 and experienced mentoring engineering teams and setting technical standards.",
+            "source_id": "source:resume",
+            "source_label": "Rahul Rangarao \u2014 resume"
+          }
+        ],
+        "type": "topic"
+      }
+    ],
+    "structural_core": [
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 30,
+        "id": "project:knowledge-worker",
+        "label": "knowledge-worker",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 24,
+        "id": "person:rahul-rangarao",
+        "label": "Rahul Rangarao",
+        "score": 3.0,
+        "type": "person"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 12,
+        "id": "project:self-service-platform",
+        "label": "Enterprise self-service analytics platform",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 10,
+        "id": "project:batch-traceability",
+        "label": "Batch traceability data product",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 8,
+        "id": "project:cxo-dashboards",
+        "label": "CXO-level KPI dashboards",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "project:kompress-ultra",
+        "label": "kompress-ultra",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "project:report-rationalization",
+        "label": "Report rationalization",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:cart-data-product",
+        "label": "CAR-T quality and manufacturing data product",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:risk-prediction-model",
+        "label": "Enterprise risk prediction model",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:python",
+        "label": "Python",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "decision:provenance-first-architecture",
+        "label": "Validate every document before ingestion",
+        "score": 3.0,
+        "type": "decision"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:ai-context-management",
+        "label": "AI context management",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:analytics-engineering",
+        "label": "Analytics engineering",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:api-development",
+        "label": "API development",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:benchmark-suite",
+        "label": "Benchmark provenance and privacy boundaries",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "reference:bristol-myers-squibb",
+        "label": "Bristol Myers Squibb",
+        "score": 3.0,
+        "type": "reference"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:car-t",
+        "label": "CAR-T cell therapy",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:ci-cd",
+        "label": "CI/CD",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:durable-agent-memory",
+        "label": "Durable, provenance-backed AI memory",
+        "score": 3.0,
+        "type": "goal"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:provenance-invariant",
+        "label": "Enforce a hard provenance invariant",
+        "score": 3.0,
+        "type": "goal"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:enterprise-reporting",
+        "label": "Enterprise reporting",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:context-export",
+        "label": "Export compact context for an LLM",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:graph-analytics",
+        "label": "Graph analytics",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:llm",
+        "label": "Large language models",
+        "score": 3.0,
+        "type": "topic"
+      }
+    ],
+    "weak_claim_queue": [],
+    "weak_claims": []
+  },
+  "schema_version": "memory-audit/v1",
+  "stats": {
+    "audit_edges": 154,
+    "communities": 8,
+    "edges": 164,
+    "max_core_number": 3,
+    "nodes": 72,
+    "semantic_components": 1,
+    "semantic_edges": 87,
+    "semantic_nodes": 71,
+    "source_nodes": 1,
+    "source_projection_edges": 70
+  }
+}

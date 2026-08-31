@@ -1,0 +1,1727 @@
+{
+  "edges": [
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "goal:durable-agent-memory",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Analytics and data platform engineer with 7+ years designing enterprise data products, cloud-native data platforms, and AI-enabled analytics across life sciences, manufacturing, retail, financial services, and supply chain. Builds modern data ecosystems on AWS, dbt, Snowflake, and Databricks, and integrates LLMs and knowledge graphs where they earn their place. Author of **knowledge-worker**, a published PyPI package giving AI assistants durable, provenance-backed memory: a local-first knowledge graph with graph analytics, LLM-backed ingest, and a hard provenance invariant. Generalist by nature \u2014 comfortable owning a problem from ingestion through modeling and tooling to the report on a stakeholder's desk \u2014 and experienced mentoring engineering teams and setting technical standards.",
+      "src": "goal:provenance-invariant",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems \u2014 **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.",
+      "src": "project:batch-traceability",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Delivered an end-to-end data product, from requirements gathering through implementation, covering **800+ quality and manufacturing data points** for commercial **CAR-T** operations, contributing to an improvement in manufacturing success rates from **74% to 92%**.",
+      "src": "project:cart-data-product",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.",
+      "src": "project:self-service-platform",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Developed CXO-level KPI dashboards and automated Python reporting that standardized enterprise KPIs and accelerated decision-making across CAR-T (cell therapy) operations.",
+      "src": "project:cxo-dashboards",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Designed an automated report rationalization process using intelligent string-matching, consolidating **70+ reports into seven standardized reports** to support a Snowflake migration.",
+      "src": "project:report-rationalization",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Enhanced an enterprise risk prediction model for a **fintech** client, enabling proactive account retention that preserved approximately **$500K** in recurring revenue.",
+      "src": "project:risk-prediction-model",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Also: **kompress-ultra** \u2014 context-management middleware experiments for AI agent frameworks (live-data TUI dashboards, knowledge-graph visualizations, Pages deploy pipeline). **AG-UI protocol** \u2014 open protocol work for agent/UI interoperability.",
+      "src": "project:kompress-ultra",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Also: **kompress-ultra** \u2014 context-management middleware experiments for AI agent frameworks (live-data TUI dashboards, knowledge-graph visualizations, Pages deploy pipeline). **AG-UI protocol** \u2014 open protocol work for agent/UI interoperability.",
+      "src": "project:ag-ui-protocol",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Designed a **provenance-first knowledge graph architecture** that validates every document before ingestion, enforced by deterministic validation, improving data trust, traceability, and explainability in AI-driven applications.",
+      "src": "decision:provenance-first-architecture",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Built append-only graph storage supporting **JSON-LD, RDF, and Turtle** for interoperable knowledge exchange; **zero runtime dependencies** in the core, with optional LLM backends (Anthropic, OpenAI, Ollama).",
+      "src": "decision:append-only-storage",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Built append-only graph storage supporting **JSON-LD, RDF, and Turtle** for interoperable knowledge exchange; **zero runtime dependencies** in the core, with optional LLM backends (Anthropic, OpenAI, Ollama).",
+      "src": "decision:zero-runtime-dependencies",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems \u2014 **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.",
+      "src": "decision:graph-db-for-traceability",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.",
+      "src": "decision:medallion-architecture",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Built the full graph lifecycle: ingestion, query, path-finding, review/merge, context export, semantic inspection, and an offline HTML graph visualizer.",
+      "src": "idea:offline-graph-visualizer",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Established a 9-benchmark public test suite guarding provenance, recall, privacy boundaries, and context compactness; GitHub Actions CI across Python 3.10\u20133.13.",
+      "src": "idea:benchmark-suite",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Built the full graph lifecycle: ingestion, query, path-finding, review/merge, context export, semantic inspection, and an offline HTML graph visualizer.",
+      "src": "idea:context-export",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Bristol Myers Squibb \u00b7 Analytics Engineer, Global Product Development and Supply (GPS)",
+      "src": "reference:bristol-myers-squibb",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Mu Sigma Inc. \u00b7 Senior Data Consultant",
+      "src": "reference:mu-sigma",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**M.S., Information Technology & Management** \u2014 The University of Texas at Austin \u00b7 July 2022 \u2013 May 2023",
+      "src": "reference:ut-austin",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**B.E., Electronics & Communication Engineering** \u2014 JSS Science and Technology University, Mysuru, India \u00b7 August 2014 \u2013 May 2018",
+      "src": "reference:jss-university",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "reference:pypi",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**1st Place, DFS Hackathon** \u2014 Dover Fueling Solutions \u00b7 September 2022",
+      "src": "reference:dfs-hackathon",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Bravo Award, Batch Genealogy Data Product Release 4** \u2014 Bristol Myers Squibb \u00b7 April 2026",
+      "src": "reference:bravo-batch-genealogy",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Bravo Award, AE AWS Tech Stack Implementation** \u2014 Bristol Myers Squibb \u00b7 July 2025",
+      "src": "reference:bravo-aws-tech-stack",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Bravo Award, Daily Aph vs. Budget Reporting** \u2014 Bristol Myers Squibb \u00b7 August 2024",
+      "src": "reference:bravo-daily-aph",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Impact Award** \u2014 Mu Sigma Inc. \u00b7 August 2021",
+      "src": "reference:impact-award",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Hands-on Essentials: Data Warehouse \u2014 Snowflake \u00b7 October 2022",
+      "src": "reference:snowflake-certification",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Programming** \u2014 Python, SQL, JavaScript (React)",
+      "src": "topic:python",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Programming** \u2014 Python, SQL, JavaScript (React)",
+      "src": "topic:sql",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "src": "topic:dbt",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "src": "topic:aws-glue",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "src": "topic:dagster",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "src": "topic:snowflake",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "src": "topic:databricks",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "src": "topic:data-modeling",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "src": "topic:data-warehousing",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "src": "topic:analytics-engineering",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.",
+      "src": "topic:unified-data-model",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "src": "topic:enterprise-reporting",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "src": "topic:data-product-development",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**AI & Machine Learning** \u2014 LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing",
+      "src": "topic:llm",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**AI & Machine Learning** \u2014 LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing",
+      "src": "topic:llm-orchestration",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**AI & Machine Learning** \u2014 LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing",
+      "src": "topic:prompt-engineering",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**AI & Machine Learning** \u2014 LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing",
+      "src": "topic:rag",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**AI & Machine Learning** \u2014 LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing",
+      "src": "topic:ai-context-management",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Python \u00b7 AWS \u00b7 Knowledge Graphs",
+      "src": "topic:knowledge-graphs",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Analytics and data platform engineer with 7+ years designing enterprise data products, cloud-native data platforms, and AI-enabled analytics across life sciences, manufacturing, retail, financial services, and supply chain. Builds modern data ecosystems on AWS, dbt, Snowflake, and Databricks, and integrates LLMs and knowledge graphs where they earn their place. Author of **knowledge-worker**, a published PyPI package giving AI assistants durable, provenance-backed memory: a local-first knowledge graph with graph analytics, LLM-backed ingest, and a hard provenance invariant. Generalist by nature \u2014 comfortable owning a problem from ingestion through modeling and tooling to the report on a stakeholder's desk \u2014 and experienced mentoring engineering teams and setting technical standards.",
+      "src": "topic:graph-analytics",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**AI & Machine Learning** \u2014 LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing",
+      "src": "topic:machine-learning",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**AI & Machine Learning** \u2014 LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing",
+      "src": "topic:ab-testing",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems \u2014 **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.",
+      "src": "topic:aws-neptune",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Knowledge & Semantics** \u2014 AWS Neptune, JSON-LD, RDF, Turtle, linked data",
+      "src": "topic:json-ld",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Knowledge & Semantics** \u2014 AWS Neptune, JSON-LD, RDF, Turtle, linked data",
+      "src": "topic:rdf",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Knowledge & Semantics** \u2014 AWS Neptune, JSON-LD, RDF, Turtle, linked data",
+      "src": "topic:turtle",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Knowledge & Semantics** \u2014 AWS Neptune, JSON-LD, RDF, Turtle, linked data",
+      "src": "topic:linked-data",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Cloud & DevOps** \u2014 AWS (Lambda, Glue, EC2, Neptune, CloudFormation, CodeBuild), Git, GitHub, GitHub Actions, CI/CD",
+      "src": "topic:ci-cd",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Cloud & DevOps** \u2014 AWS (Lambda, Glue, EC2, Neptune, CloudFormation, CodeBuild), Git, GitHub, GitHub Actions, CI/CD",
+      "src": "topic:github-actions",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Visualization & BI** \u2014 Tableau, Power BI",
+      "src": "topic:tableau",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Visualization & BI** \u2014 Tableau, Power BI",
+      "src": "topic:power-bi",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Software Engineering** \u2014 API development, software architecture, open source development, technical documentation, benchmark testing, version control",
+      "src": "topic:api-development",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Software Engineering** \u2014 API development, software architecture, open source development, technical documentation, benchmark testing, version control",
+      "src": "topic:software-architecture",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "**Software Engineering** \u2014 API development, software architecture, open source development, technical documentation, benchmark testing, version control",
+      "src": "topic:benchmark-testing",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems \u2014 **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.",
+      "src": "topic:sap",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Delivered an end-to-end data product, from requirements gathering through implementation, covering **800+ quality and manufacturing data points** for commercial **CAR-T** operations, contributing to an improvement in manufacturing success rates from **74% to 92%**.",
+      "src": "topic:car-t",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Implemented advanced graph analytics including **PageRank, betweenness, k-core, community detection**, semantic similarity scoring, and relationship analysis.",
+      "src": "topic:pagerank",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Implemented advanced graph analytics including **PageRank, betweenness, k-core, community detection**, semantic similarity scoring, and relationship analysis.",
+      "src": "topic:betweenness",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Implemented advanced graph analytics including **PageRank, betweenness, k-core, community detection**, semantic similarity scoring, and relationship analysis.",
+      "src": "topic:k-core",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "source:resume",
+      "excerpt": "Implemented advanced graph analytics including **PageRank, betweenness, k-core, community detection**, semantic similarity scoring, and relationship analysis.",
+      "src": "topic:community-detection",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "dst": "project:knowledge-worker",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "INVOLVES"
+    },
+    {
+      "confidence": "high",
+      "dst": "project:batch-traceability",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "INVOLVES"
+    },
+    {
+      "confidence": "high",
+      "dst": "project:cart-data-product",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "INVOLVES"
+    },
+    {
+      "confidence": "high",
+      "dst": "project:self-service-platform",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "INVOLVES"
+    },
+    {
+      "confidence": "high",
+      "dst": "project:cxo-dashboards",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "INVOLVES"
+    },
+    {
+      "confidence": "high",
+      "dst": "project:report-rationalization",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "INVOLVES"
+    },
+    {
+      "confidence": "high",
+      "dst": "project:risk-prediction-model",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "INVOLVES"
+    },
+    {
+      "confidence": "high",
+      "dst": "project:kompress-ultra",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "INVOLVES"
+    },
+    {
+      "confidence": "high",
+      "dst": "project:ag-ui-protocol",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "INVOLVES"
+    },
+    {
+      "confidence": "high",
+      "dst": "reference:bristol-myers-squibb",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "dst": "reference:mu-sigma",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "dst": "reference:ut-austin",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "dst": "reference:jss-university",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "dst": "reference:bristol-myers-squibb",
+      "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems \u2014 **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.",
+      "src": "project:batch-traceability",
+      "type": "MADE_AT"
+    },
+    {
+      "confidence": "high",
+      "dst": "reference:bristol-myers-squibb",
+      "excerpt": "Delivered an end-to-end data product, from requirements gathering through implementation, covering **800+ quality and manufacturing data points** for commercial **CAR-T** operations, contributing to an improvement in manufacturing success rates from **74% to 92%**.",
+      "src": "project:cart-data-product",
+      "type": "MADE_AT"
+    },
+    {
+      "confidence": "high",
+      "dst": "reference:bristol-myers-squibb",
+      "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.",
+      "src": "project:self-service-platform",
+      "type": "MADE_AT"
+    },
+    {
+      "confidence": "high",
+      "dst": "reference:bristol-myers-squibb",
+      "excerpt": "Developed CXO-level KPI dashboards and automated Python reporting that standardized enterprise KPIs and accelerated decision-making across CAR-T (cell therapy) operations.",
+      "src": "project:cxo-dashboards",
+      "type": "MADE_AT"
+    },
+    {
+      "confidence": "high",
+      "dst": "reference:mu-sigma",
+      "excerpt": "Designed an automated report rationalization process using intelligent string-matching, consolidating **70+ reports into seven standardized reports** to support a Snowflake migration.",
+      "src": "project:report-rationalization",
+      "type": "MADE_AT"
+    },
+    {
+      "confidence": "high",
+      "dst": "reference:mu-sigma",
+      "excerpt": "Enhanced an enterprise risk prediction model for a **fintech** client, enabling proactive account retention that preserved approximately **$500K** in recurring revenue.",
+      "src": "project:risk-prediction-model",
+      "type": "MADE_AT"
+    },
+    {
+      "confidence": "high",
+      "dst": "goal:durable-agent-memory",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "dst": "goal:provenance-invariant",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "dst": "goal:durable-agent-memory",
+      "excerpt": "Also: **kompress-ultra** \u2014 context-management middleware experiments for AI agent frameworks (live-data TUI dashboards, knowledge-graph visualizations, Pages deploy pipeline). **AG-UI protocol** \u2014 open protocol work for agent/UI interoperability.",
+      "src": "project:kompress-ultra",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "dst": "goal:provenance-invariant",
+      "excerpt": "Designed a **provenance-first knowledge graph architecture** that validates every document before ingestion, enforced by deterministic validation, improving data trust, traceability, and explainability in AI-driven applications.",
+      "src": "decision:provenance-first-architecture",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "dst": "idea:offline-graph-visualizer",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "HAS_IDEA"
+    },
+    {
+      "confidence": "high",
+      "dst": "idea:benchmark-suite",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "HAS_IDEA"
+    },
+    {
+      "confidence": "high",
+      "dst": "idea:context-export",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "HAS_IDEA"
+    },
+    {
+      "confidence": "high",
+      "dst": "project:knowledge-worker",
+      "excerpt": "Built the full graph lifecycle: ingestion, query, path-finding, review/merge, context export, semantic inspection, and an offline HTML graph visualizer.",
+      "src": "idea:offline-graph-visualizer",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "project:knowledge-worker",
+      "excerpt": "Established a 9-benchmark public test suite guarding provenance, recall, privacy boundaries, and context compactness; GitHub Actions CI across Python 3.10\u20133.13.",
+      "src": "idea:benchmark-suite",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "project:knowledge-worker",
+      "excerpt": "Built the full graph lifecycle: ingestion, query, path-finding, review/merge, context export, semantic inspection, and an offline HTML graph visualizer.",
+      "src": "idea:context-export",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "project:knowledge-worker",
+      "excerpt": "Designed a **provenance-first knowledge graph architecture** that validates every document before ingestion, enforced by deterministic validation, improving data trust, traceability, and explainability in AI-driven applications.",
+      "src": "decision:provenance-first-architecture",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "project:knowledge-worker",
+      "excerpt": "Built append-only graph storage supporting **JSON-LD, RDF, and Turtle** for interoperable knowledge exchange; **zero runtime dependencies** in the core, with optional LLM backends (Anthropic, OpenAI, Ollama).",
+      "src": "decision:append-only-storage",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "project:knowledge-worker",
+      "excerpt": "Built append-only graph storage supporting **JSON-LD, RDF, and Turtle** for interoperable knowledge exchange; **zero runtime dependencies** in the core, with optional LLM backends (Anthropic, OpenAI, Ollama).",
+      "src": "decision:zero-runtime-dependencies",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "project:batch-traceability",
+      "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems \u2014 **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.",
+      "src": "decision:graph-db-for-traceability",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "project:self-service-platform",
+      "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.",
+      "src": "decision:medallion-architecture",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "reference:bristol-myers-squibb",
+      "excerpt": "Designed a **provenance-first knowledge graph architecture** that validates every document before ingestion, enforced by deterministic validation, improving data trust, traceability, and explainability in AI-driven applications.",
+      "src": "decision:provenance-first-architecture",
+      "type": "CHALLENGES"
+    },
+    {
+      "confidence": "high",
+      "dst": "reference:bravo-batch-genealogy",
+      "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems \u2014 **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.",
+      "src": "project:batch-traceability",
+      "type": "SUPPORTED_BY"
+    },
+    {
+      "confidence": "high",
+      "dst": "reference:bravo-aws-tech-stack",
+      "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.",
+      "src": "project:self-service-platform",
+      "type": "SUPPORTED_BY"
+    },
+    {
+      "confidence": "high",
+      "dst": "reference:bravo-daily-aph",
+      "excerpt": "Developed CXO-level KPI dashboards and automated Python reporting that standardized enterprise KPIs and accelerated decision-making across CAR-T (cell therapy) operations.",
+      "src": "project:cxo-dashboards",
+      "type": "SUPPORTED_BY"
+    },
+    {
+      "confidence": "high",
+      "dst": "reference:impact-award",
+      "excerpt": "Designed an automated report rationalization process using intelligent string-matching, consolidating **70+ reports into seven standardized reports** to support a Snowflake migration.",
+      "src": "project:report-rationalization",
+      "type": "SUPPORTED_BY"
+    },
+    {
+      "confidence": "high",
+      "dst": "reference:pypi",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "SUPPORTED_BY"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:snowflake",
+      "excerpt": "Hands-on Essentials: Data Warehouse \u2014 Snowflake \u00b7 October 2022",
+      "src": "reference:snowflake-certification",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "reference:dfs-hackathon",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "SUPPORTED_BY"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:python",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:knowledge-graphs",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:graph-analytics",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:json-ld",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:rdf",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:turtle",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:linked-data",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:llm",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:pagerank",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:betweenness",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:k-core",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:community-detection",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:github-actions",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:ci-cd",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:benchmark-testing",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:api-development",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:software-architecture",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:ai-context-management",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "src": "project:knowledge-worker",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:aws-neptune",
+      "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems \u2014 **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.",
+      "src": "project:batch-traceability",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:sap",
+      "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems \u2014 **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.",
+      "src": "project:batch-traceability",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:llm",
+      "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems \u2014 **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.",
+      "src": "project:batch-traceability",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:knowledge-graphs",
+      "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems \u2014 **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.",
+      "src": "project:batch-traceability",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:car-t",
+      "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems \u2014 **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.",
+      "src": "project:batch-traceability",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:car-t",
+      "excerpt": "Delivered an end-to-end data product, from requirements gathering through implementation, covering **800+ quality and manufacturing data points** for commercial **CAR-T** operations, contributing to an improvement in manufacturing success rates from **74% to 92%**.",
+      "src": "project:cart-data-product",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:data-product-development",
+      "excerpt": "Delivered an end-to-end data product, from requirements gathering through implementation, covering **800+ quality and manufacturing data points** for commercial **CAR-T** operations, contributing to an improvement in manufacturing success rates from **74% to 92%**.",
+      "src": "project:cart-data-product",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:dbt",
+      "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.",
+      "src": "project:self-service-platform",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:aws-glue",
+      "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.",
+      "src": "project:self-service-platform",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:databricks",
+      "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.",
+      "src": "project:self-service-platform",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:ci-cd",
+      "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.",
+      "src": "project:self-service-platform",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:unified-data-model",
+      "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.",
+      "src": "project:self-service-platform",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:analytics-engineering",
+      "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.",
+      "src": "project:self-service-platform",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:data-modeling",
+      "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.",
+      "src": "project:self-service-platform",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:data-warehousing",
+      "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.",
+      "src": "project:self-service-platform",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:python",
+      "excerpt": "Developed CXO-level KPI dashboards and automated Python reporting that standardized enterprise KPIs and accelerated decision-making across CAR-T (cell therapy) operations.",
+      "src": "project:cxo-dashboards",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:enterprise-reporting",
+      "excerpt": "Developed CXO-level KPI dashboards and automated Python reporting that standardized enterprise KPIs and accelerated decision-making across CAR-T (cell therapy) operations.",
+      "src": "project:cxo-dashboards",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:tableau",
+      "excerpt": "Developed CXO-level KPI dashboards and automated Python reporting that standardized enterprise KPIs and accelerated decision-making across CAR-T (cell therapy) operations.",
+      "src": "project:cxo-dashboards",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:power-bi",
+      "excerpt": "Developed CXO-level KPI dashboards and automated Python reporting that standardized enterprise KPIs and accelerated decision-making across CAR-T (cell therapy) operations.",
+      "src": "project:cxo-dashboards",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:snowflake",
+      "excerpt": "Designed an automated report rationalization process using intelligent string-matching, consolidating **70+ reports into seven standardized reports** to support a Snowflake migration.",
+      "src": "project:report-rationalization",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:enterprise-reporting",
+      "excerpt": "Designed an automated report rationalization process using intelligent string-matching, consolidating **70+ reports into seven standardized reports** to support a Snowflake migration.",
+      "src": "project:report-rationalization",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:machine-learning",
+      "excerpt": "Enhanced an enterprise risk prediction model for a **fintech** client, enabling proactive account retention that preserved approximately **$500K** in recurring revenue.",
+      "src": "project:risk-prediction-model",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:ab-testing",
+      "excerpt": "Enhanced an enterprise risk prediction model for a **fintech** client, enabling proactive account retention that preserved approximately **$500K** in recurring revenue.",
+      "src": "project:risk-prediction-model",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:ai-context-management",
+      "excerpt": "Also: **kompress-ultra** \u2014 context-management middleware experiments for AI agent frameworks (live-data TUI dashboards, knowledge-graph visualizations, Pages deploy pipeline). **AG-UI protocol** \u2014 open protocol work for agent/UI interoperability.",
+      "src": "project:kompress-ultra",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:knowledge-graphs",
+      "excerpt": "Also: **kompress-ultra** \u2014 context-management middleware experiments for AI agent frameworks (live-data TUI dashboards, knowledge-graph visualizations, Pages deploy pipeline). **AG-UI protocol** \u2014 open protocol work for agent/UI interoperability.",
+      "src": "project:kompress-ultra",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:api-development",
+      "excerpt": "Also: **kompress-ultra** \u2014 context-management middleware experiments for AI agent frameworks (live-data TUI dashboards, knowledge-graph visualizations, Pages deploy pipeline). **AG-UI protocol** \u2014 open protocol work for agent/UI interoperability.",
+      "src": "project:ag-ui-protocol",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:python",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:sql",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:analytics-engineering",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:graph-analytics",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:prompt-engineering",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:rag",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "dst": "topic:llm-orchestration",
+      "excerpt": "Rahul Rangarao",
+      "src": "person:rahul-rangarao",
+      "type": "RELATES_TO"
+    }
+  ],
+  "nodes": [
+    {
+      "body": "Analytics engineer, data engineer, and data platform engineer.",
+      "confidence": "high",
+      "excerpt": "Rahul Rangarao",
+      "id": "person:rahul-rangarao",
+      "label": "Rahul Rangarao",
+      "type": "person"
+    },
+    {
+      "body": "Give AI assistants memory that survives across sessions.",
+      "confidence": "high",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "id": "goal:durable-agent-memory",
+      "label": "Durable, provenance-backed AI memory",
+      "type": "goal"
+    },
+    {
+      "body": "Every claim in the graph must cite the source it came from.",
+      "confidence": "high",
+      "excerpt": "Analytics and data platform engineer with 7+ years designing enterprise data products, cloud-native data platforms, and AI-enabled analytics across life sciences, manufacturing, retail, financial services, and supply chain. Builds modern data ecosystems on AWS, dbt, Snowflake, and Databricks, and integrates LLMs and knowledge graphs where they earn their place. Author of **knowledge-worker**, a published PyPI package giving AI assistants durable, provenance-backed memory: a local-first knowledge graph with graph analytics, LLM-backed ingest, and a hard provenance invariant. Generalist by nature \u2014 comfortable owning a problem from ingestion through modeling and tooling to the report on a stakeholder's desk \u2014 and experienced mentoring engineering teams and setting technical standards.",
+      "id": "goal:provenance-invariant",
+      "label": "Enforce a hard provenance invariant",
+      "type": "goal"
+    },
+    {
+      "body": "Local-first knowledge graph published on PyPI.",
+      "confidence": "high",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "id": "project:knowledge-worker",
+      "label": "knowledge-worker",
+      "type": "project"
+    },
+    {
+      "body": "Graph-database traceability product accelerating batch release by 8%.",
+      "confidence": "high",
+      "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems \u2014 **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.",
+      "id": "project:batch-traceability",
+      "label": "Batch traceability data product",
+      "type": "project"
+    },
+    {
+      "body": "End-to-end data product behind the 74% to 92% success-rate improvement.",
+      "confidence": "high",
+      "excerpt": "Delivered an end-to-end data product, from requirements gathering through implementation, covering **800+ quality and manufacturing data points** for commercial **CAR-T** operations, contributing to an improvement in manufacturing success rates from **74% to 92%**.",
+      "id": "project:cart-data-product",
+      "label": "CAR-T quality and manufacturing data product",
+      "type": "project"
+    },
+    {
+      "body": "dbt, AWS Glue, Databricks and CI/CD platform serving 50+ engineers.",
+      "confidence": "high",
+      "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.",
+      "id": "project:self-service-platform",
+      "label": "Enterprise self-service analytics platform",
+      "type": "project"
+    },
+    {
+      "body": "Executive reporting standardising enterprise KPIs.",
+      "confidence": "high",
+      "excerpt": "Developed CXO-level KPI dashboards and automated Python reporting that standardized enterprise KPIs and accelerated decision-making across CAR-T (cell therapy) operations.",
+      "id": "project:cxo-dashboards",
+      "label": "CXO-level KPI dashboards",
+      "type": "project"
+    },
+    {
+      "body": "Consolidated 70+ reports into seven standardized reports.",
+      "confidence": "high",
+      "excerpt": "Designed an automated report rationalization process using intelligent string-matching, consolidating **70+ reports into seven standardized reports** to support a Snowflake migration.",
+      "id": "project:report-rationalization",
+      "label": "Report rationalization",
+      "type": "project"
+    },
+    {
+      "body": "Fintech retention model preserving roughly $500K in recurring revenue.",
+      "confidence": "high",
+      "excerpt": "Enhanced an enterprise risk prediction model for a **fintech** client, enabling proactive account retention that preserved approximately **$500K** in recurring revenue.",
+      "id": "project:risk-prediction-model",
+      "label": "Enterprise risk prediction model",
+      "type": "project"
+    },
+    {
+      "body": "Context-management middleware experiments for AI agent frameworks.",
+      "confidence": "high",
+      "excerpt": "Also: **kompress-ultra** \u2014 context-management middleware experiments for AI agent frameworks (live-data TUI dashboards, knowledge-graph visualizations, Pages deploy pipeline). **AG-UI protocol** \u2014 open protocol work for agent/UI interoperability.",
+      "id": "project:kompress-ultra",
+      "label": "kompress-ultra",
+      "type": "project"
+    },
+    {
+      "body": "Open protocol work for agent/UI interoperability.",
+      "confidence": "high",
+      "excerpt": "Also: **kompress-ultra** \u2014 context-management middleware experiments for AI agent frameworks (live-data TUI dashboards, knowledge-graph visualizations, Pages deploy pipeline). **AG-UI protocol** \u2014 open protocol work for agent/UI interoperability.",
+      "id": "project:ag-ui-protocol",
+      "label": "AG-UI protocol",
+      "type": "project"
+    },
+    {
+      "body": "Deterministic validation gates ingestion, so untraceable claims never land.",
+      "confidence": "high",
+      "excerpt": "Designed a **provenance-first knowledge graph architecture** that validates every document before ingestion, enforced by deterministic validation, improving data trust, traceability, and explainability in AI-driven applications.",
+      "id": "decision:provenance-first-architecture",
+      "label": "Validate every document before ingestion",
+      "type": "decision"
+    },
+    {
+      "body": "History is preserved rather than overwritten.",
+      "confidence": "high",
+      "excerpt": "Built append-only graph storage supporting **JSON-LD, RDF, and Turtle** for interoperable knowledge exchange; **zero runtime dependencies** in the core, with optional LLM backends (Anthropic, OpenAI, Ollama).",
+      "id": "decision:append-only-storage",
+      "label": "Use append-only graph storage",
+      "type": "decision"
+    },
+    {
+      "body": "LLM backends and RDF export stay optional extras.",
+      "confidence": "high",
+      "excerpt": "Built append-only graph storage supporting **JSON-LD, RDF, and Turtle** for interoperable knowledge exchange; **zero runtime dependencies** in the core, with optional LLM backends (Anthropic, OpenAI, Ollama).",
+      "id": "decision:zero-runtime-dependencies",
+      "label": "Keep the core dependency-free",
+      "type": "decision"
+    },
+    {
+      "body": "Traceability is a path problem, so it was modelled on a graph database.",
+      "confidence": "high",
+      "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems \u2014 **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.",
+      "id": "decision:graph-db-for-traceability",
+      "label": "Model batch traceability as a graph",
+      "type": "decision"
+    },
+    {
+      "body": "Layered bronze/silver/gold modelling for the self-service platform.",
+      "confidence": "high",
+      "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.",
+      "id": "decision:medallion-architecture",
+      "label": "Adopt a Medallion architecture",
+      "type": "decision"
+    },
+    {
+      "body": "Inspect the graph without a server or build step.",
+      "confidence": "high",
+      "excerpt": "Built the full graph lifecycle: ingestion, query, path-finding, review/merge, context export, semantic inspection, and an offline HTML graph visualizer.",
+      "id": "idea:offline-graph-visualizer",
+      "label": "Offline HTML graph visualizer",
+      "type": "idea"
+    },
+    {
+      "body": "Guards provenance, recall, privacy boundaries and context compactness.",
+      "confidence": "high",
+      "excerpt": "Established a 9-benchmark public test suite guarding provenance, recall, privacy boundaries, and context compactness; GitHub Actions CI across Python 3.10\u20133.13.",
+      "id": "idea:benchmark-suite",
+      "label": "Benchmark provenance and privacy boundaries",
+      "type": "idea"
+    },
+    {
+      "body": "Ship a small snapshot instead of dumping whole notes.",
+      "confidence": "high",
+      "excerpt": "Built the full graph lifecycle: ingestion, query, path-finding, review/merge, context export, semantic inspection, and an offline HTML graph visualizer.",
+      "id": "idea:context-export",
+      "label": "Export compact context for an LLM",
+      "type": "idea"
+    },
+    {
+      "body": "Employer since October 2023.",
+      "confidence": "high",
+      "excerpt": "Bristol Myers Squibb \u00b7 Analytics Engineer, Global Product Development and Supply (GPS)",
+      "id": "reference:bristol-myers-squibb",
+      "label": "Bristol Myers Squibb",
+      "type": "reference"
+    },
+    {
+      "body": "Employer from July 2018 to March 2022.",
+      "confidence": "high",
+      "excerpt": "Mu Sigma Inc. \u00b7 Senior Data Consultant",
+      "id": "reference:mu-sigma",
+      "label": "Mu Sigma Inc.",
+      "type": "reference"
+    },
+    {
+      "body": "M.S. Information Technology & Management.",
+      "confidence": "high",
+      "excerpt": "**M.S., Information Technology & Management** \u2014 The University of Texas at Austin \u00b7 July 2022 \u2013 May 2023",
+      "id": "reference:ut-austin",
+      "label": "The University of Texas at Austin",
+      "type": "reference"
+    },
+    {
+      "body": "B.E. Electronics & Communication Engineering.",
+      "confidence": "high",
+      "excerpt": "**B.E., Electronics & Communication Engineering** \u2014 JSS Science and Technology University, Mysuru, India \u00b7 August 2014 \u2013 May 2018",
+      "id": "reference:jss-university",
+      "label": "JSS Science and Technology University",
+      "type": "reference"
+    },
+    {
+      "body": "knowledge-worker is published to PyPI.",
+      "confidence": "high",
+      "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory \u00b7 [PyPI](https://pypi.org/project/knowledge-worker/) \u00b7 [GitHub](https://github.com/rahulmranga/knowledge-worker) \u00b7 May 2026 \u2013 present",
+      "id": "reference:pypi",
+      "label": "PyPI",
+      "type": "reference"
+    },
+    {
+      "body": "Dover Fueling Solutions, September 2022.",
+      "confidence": "high",
+      "excerpt": "**1st Place, DFS Hackathon** \u2014 Dover Fueling Solutions \u00b7 September 2022",
+      "id": "reference:dfs-hackathon",
+      "label": "1st Place, DFS Hackathon",
+      "type": "reference"
+    },
+    {
+      "body": "Bristol Myers Squibb, April 2026.",
+      "confidence": "high",
+      "excerpt": "**Bravo Award, Batch Genealogy Data Product Release 4** \u2014 Bristol Myers Squibb \u00b7 April 2026",
+      "id": "reference:bravo-batch-genealogy",
+      "label": "Bravo Award, Batch Genealogy",
+      "type": "reference"
+    },
+    {
+      "body": "Bristol Myers Squibb, July 2025.",
+      "confidence": "high",
+      "excerpt": "**Bravo Award, AE AWS Tech Stack Implementation** \u2014 Bristol Myers Squibb \u00b7 July 2025",
+      "id": "reference:bravo-aws-tech-stack",
+      "label": "Bravo Award, AE AWS Tech Stack",
+      "type": "reference"
+    },
+    {
+      "body": "Bristol Myers Squibb, August 2024.",
+      "confidence": "high",
+      "excerpt": "**Bravo Award, Daily Aph vs. Budget Reporting** \u2014 Bristol Myers Squibb \u00b7 August 2024",
+      "id": "reference:bravo-daily-aph",
+      "label": "Bravo Award, Daily Aph vs. Budget Reporting",
+      "type": "reference"
+    },
+    {
+      "body": "Mu Sigma Inc., August 2021.",
+      "confidence": "high",
+      "excerpt": "**Impact Award** \u2014 Mu Sigma Inc. \u00b7 August 2021",
+      "id": "reference:impact-award",
+      "label": "Impact Award",
+      "type": "reference"
+    },
+    {
+      "body": "Snowflake, October 2022.",
+      "confidence": "high",
+      "excerpt": "Hands-on Essentials: Data Warehouse \u2014 Snowflake \u00b7 October 2022",
+      "id": "reference:snowflake-certification",
+      "label": "Snowflake data warehouse certification",
+      "type": "reference"
+    },
+    {
+      "body": "Python, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Programming** \u2014 Python, SQL, JavaScript (React)",
+      "id": "topic:python",
+      "label": "Python",
+      "type": "topic"
+    },
+    {
+      "body": "SQL, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Programming** \u2014 Python, SQL, JavaScript (React)",
+      "id": "topic:sql",
+      "label": "SQL",
+      "type": "topic"
+    },
+    {
+      "body": "dbt, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "id": "topic:dbt",
+      "label": "dbt",
+      "type": "topic"
+    },
+    {
+      "body": "AWS Glue, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "id": "topic:aws-glue",
+      "label": "AWS Glue",
+      "type": "topic"
+    },
+    {
+      "body": "Dagster, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "id": "topic:dagster",
+      "label": "Dagster",
+      "type": "topic"
+    },
+    {
+      "body": "Snowflake, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "id": "topic:snowflake",
+      "label": "Snowflake",
+      "type": "topic"
+    },
+    {
+      "body": "Databricks, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "id": "topic:databricks",
+      "label": "Databricks",
+      "type": "topic"
+    },
+    {
+      "body": "Data modeling, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "id": "topic:data-modeling",
+      "label": "Data modeling",
+      "type": "topic"
+    },
+    {
+      "body": "Data warehousing, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "id": "topic:data-warehousing",
+      "label": "Data warehousing",
+      "type": "topic"
+    },
+    {
+      "body": "Analytics engineering, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "id": "topic:analytics-engineering",
+      "label": "Analytics engineering",
+      "type": "topic"
+    },
+    {
+      "body": "Unified Data Model, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.",
+      "id": "topic:unified-data-model",
+      "label": "Unified Data Model",
+      "type": "topic"
+    },
+    {
+      "body": "Enterprise reporting, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "id": "topic:enterprise-reporting",
+      "label": "Enterprise reporting",
+      "type": "topic"
+    },
+    {
+      "body": "Data product development, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Analytics & Data Engineering** \u2014 dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development",
+      "id": "topic:data-product-development",
+      "label": "Data product development",
+      "type": "topic"
+    },
+    {
+      "body": "Large language models, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**AI & Machine Learning** \u2014 LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing",
+      "id": "topic:llm",
+      "label": "Large language models",
+      "type": "topic"
+    },
+    {
+      "body": "LLM orchestration, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**AI & Machine Learning** \u2014 LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing",
+      "id": "topic:llm-orchestration",
+      "label": "LLM orchestration",
+      "type": "topic"
+    },
+    {
+      "body": "Prompt engineering, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**AI & Machine Learning** \u2014 LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing",
+      "id": "topic:prompt-engineering",
+      "label": "Prompt engineering",
+      "type": "topic"
+    },
+    {
+      "body": "Retrieval-augmented generation, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**AI & Machine Learning** \u2014 LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing",
+      "id": "topic:rag",
+      "label": "Retrieval-augmented generation",
+      "type": "topic"
+    },
+    {
+      "body": "AI context management, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**AI & Machine Learning** \u2014 LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing",
+      "id": "topic:ai-context-management",
+      "label": "AI context management",
+      "type": "topic"
+    },
+    {
+      "body": "Knowledge graphs, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "Python \u00b7 AWS \u00b7 Knowledge Graphs",
+      "id": "topic:knowledge-graphs",
+      "label": "Knowledge graphs",
+      "type": "topic"
+    },
+    {
+      "body": "Graph analytics, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "Analytics and data platform engineer with 7+ years designing enterprise data products, cloud-native data platforms, and AI-enabled analytics across life sciences, manufacturing, retail, financial services, and supply chain. Builds modern data ecosystems on AWS, dbt, Snowflake, and Databricks, and integrates LLMs and knowledge graphs where they earn their place. Author of **knowledge-worker**, a published PyPI package giving AI assistants durable, provenance-backed memory: a local-first knowledge graph with graph analytics, LLM-backed ingest, and a hard provenance invariant. Generalist by nature \u2014 comfortable owning a problem from ingestion through modeling and tooling to the report on a stakeholder's desk \u2014 and experienced mentoring engineering teams and setting technical standards.",
+      "id": "topic:graph-analytics",
+      "label": "Graph analytics",
+      "type": "topic"
+    },
+    {
+      "body": "Machine learning, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**AI & Machine Learning** \u2014 LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing",
+      "id": "topic:machine-learning",
+      "label": "Machine learning",
+      "type": "topic"
+    },
+    {
+      "body": "Hypothesis and A/B testing, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**AI & Machine Learning** \u2014 LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing",
+      "id": "topic:ab-testing",
+      "label": "Hypothesis and A/B testing",
+      "type": "topic"
+    },
+    {
+      "body": "AWS Neptune, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems \u2014 **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.",
+      "id": "topic:aws-neptune",
+      "label": "AWS Neptune",
+      "type": "topic"
+    },
+    {
+      "body": "JSON-LD, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Knowledge & Semantics** \u2014 AWS Neptune, JSON-LD, RDF, Turtle, linked data",
+      "id": "topic:json-ld",
+      "label": "JSON-LD",
+      "type": "topic"
+    },
+    {
+      "body": "RDF, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Knowledge & Semantics** \u2014 AWS Neptune, JSON-LD, RDF, Turtle, linked data",
+      "id": "topic:rdf",
+      "label": "RDF",
+      "type": "topic"
+    },
+    {
+      "body": "Turtle, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Knowledge & Semantics** \u2014 AWS Neptune, JSON-LD, RDF, Turtle, linked data",
+      "id": "topic:turtle",
+      "label": "Turtle",
+      "type": "topic"
+    },
+    {
+      "body": "Linked data, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Knowledge & Semantics** \u2014 AWS Neptune, JSON-LD, RDF, Turtle, linked data",
+      "id": "topic:linked-data",
+      "label": "Linked data",
+      "type": "topic"
+    },
+    {
+      "body": "CI/CD, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Cloud & DevOps** \u2014 AWS (Lambda, Glue, EC2, Neptune, CloudFormation, CodeBuild), Git, GitHub, GitHub Actions, CI/CD",
+      "id": "topic:ci-cd",
+      "label": "CI/CD",
+      "type": "topic"
+    },
+    {
+      "body": "GitHub Actions, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Cloud & DevOps** \u2014 AWS (Lambda, Glue, EC2, Neptune, CloudFormation, CodeBuild), Git, GitHub, GitHub Actions, CI/CD",
+      "id": "topic:github-actions",
+      "label": "GitHub Actions",
+      "type": "topic"
+    },
+    {
+      "body": "Tableau, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Visualization & BI** \u2014 Tableau, Power BI",
+      "id": "topic:tableau",
+      "label": "Tableau",
+      "type": "topic"
+    },
+    {
+      "body": "Power BI, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Visualization & BI** \u2014 Tableau, Power BI",
+      "id": "topic:power-bi",
+      "label": "Power BI",
+      "type": "topic"
+    },
+    {
+      "body": "API development, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Software Engineering** \u2014 API development, software architecture, open source development, technical documentation, benchmark testing, version control",
+      "id": "topic:api-development",
+      "label": "API development",
+      "type": "topic"
+    },
+    {
+      "body": "Software architecture, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Software Engineering** \u2014 API development, software architecture, open source development, technical documentation, benchmark testing, version control",
+      "id": "topic:software-architecture",
+      "label": "Software architecture",
+      "type": "topic"
+    },
+    {
+      "body": "Benchmark testing, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "**Software Engineering** \u2014 API development, software architecture, open source development, technical documentation, benchmark testing, version control",
+      "id": "topic:benchmark-testing",
+      "label": "Benchmark testing",
+      "type": "topic"
+    },
+    {
+      "body": "SAP ERP, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems \u2014 **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.",
+      "id": "topic:sap",
+      "label": "SAP ERP",
+      "type": "topic"
+    },
+    {
+      "body": "CAR-T cell therapy, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "Delivered an end-to-end data product, from requirements gathering through implementation, covering **800+ quality and manufacturing data points** for commercial **CAR-T** operations, contributing to an improvement in manufacturing success rates from **74% to 92%**.",
+      "id": "topic:car-t",
+      "label": "CAR-T cell therapy",
+      "type": "topic"
+    },
+    {
+      "body": "PageRank, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "Implemented advanced graph analytics including **PageRank, betweenness, k-core, community detection**, semantic similarity scoring, and relationship analysis.",
+      "id": "topic:pagerank",
+      "label": "PageRank",
+      "type": "topic"
+    },
+    {
+      "body": "Betweenness centrality, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "Implemented advanced graph analytics including **PageRank, betweenness, k-core, community detection**, semantic similarity scoring, and relationship analysis.",
+      "id": "topic:betweenness",
+      "label": "Betweenness centrality",
+      "type": "topic"
+    },
+    {
+      "body": "k-core, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "Implemented advanced graph analytics including **PageRank, betweenness, k-core, community detection**, semantic similarity scoring, and relationship analysis.",
+      "id": "topic:k-core",
+      "label": "k-core",
+      "type": "topic"
+    },
+    {
+      "body": "Community detection, from the resume skills matrix.",
+      "confidence": "high",
+      "excerpt": "Implemented advanced graph analytics including **PageRank, betweenness, k-core, community detection**, semantic similarity scoring, and relationship analysis.",
+      "id": "topic:community-detection",
+      "label": "Community detection",
+      "type": "topic"
+    }
+  ],
+  "source": {
+    "body": "Canonical resume at src/resume.md. Public content only.",
+    "id": "source:resume",
+    "label": "Rahul Rangarao \u2014 resume"
+  }
+}

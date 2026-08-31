@@ -77,5 +77,4 @@ Also: **kompress-ultra** — context-management middleware experiments for AI ag
 ## Additional
 
 Languages: English · Kannada · Hindi
-Relocation: open across the US (preferably SW/Southern United States) and Europe
 Writing: [medium.com/@rahulmohanrangarao](https://medium.com/@rahulmohanrangarao) · [dev.to/rahulmranga](https://dev.to/rahulmranga)
