@@ -1,30 +1,33 @@
-app = "rahul-rangarao"
-primary_region = "ewr"   # Newark: closest to the NY metro and to most US traffic
+# fly.toml app configuration file generated for rahul-rangarao on 2026-08-31T09:35:45-04:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'rahul-rangarao'
+primary_region = 'ewr'
 
 [build]
-  dockerfile = "Dockerfile"
+  dockerfile = 'Dockerfile'
 
 [http_service]
   internal_port = 8080
   force_https = true
-  # The graph is read-only and baked into the image, so a cold machine has no
-  # state to restore. Scaling to zero keeps this at roughly $0 when idle.
-  auto_stop_machines = "suspend"
+  auto_stop_machines = 'suspend'
   auto_start_machines = true
   min_machines_running = 0
 
   [http_service.concurrency]
-    type = "requests"
+    type = 'requests'
     hard_limit = 200
     soft_limit = 150
 
-[[http_service.checks]]
-  grace_period = "5s"
-  interval = "30s"
-  method = "GET"
-  path = "/app/health"
-  timeout = "3s"
+  [[http_service.checks]]
+    interval = '30s'
+    timeout = '3s'
+    grace_period = '5s'
+    method = 'GET'
+    path = '/app/health'
 
 [[vm]]
-  size = "shared-cpu-1x"
-  memory = "256mb"
+  size = 'shared-cpu-1x'
+  memory = '256mb'
