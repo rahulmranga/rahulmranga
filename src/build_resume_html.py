@@ -19,6 +19,10 @@ REPO = HERE.parent
 RESUME_MD = HERE / "resume.md"
 OUT = REPO / "resume.html"
 
+# Public Turnstile site key for rahulrangarao.dev. Safe to commit: verification
+# happens server-side in the app against TURNSTILE_SECRET, which is a Fly secret.
+TURNSTILE_SITE_KEY = "0x4AAAAAAEi-usRhFYtq3ztw"
+
 LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 BOLD_RE = re.compile(r"\*\*(.+?)\*\*")
 
@@ -157,8 +161,10 @@ def render(doc: dict, style: str) -> str:
     <label>Email<input name="email" type="email" required maxlength="200"></label>
     <label>Message<textarea name="message" rows="5" required maxlength="5000"></textarea></label>
     <div class="hp"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+    <div class="cf-turnstile" data-sitekey="{TURNSTILE_SITE_KEY}"></div>
     <button type="submit">Send</button>
   </form>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </section>
 
 <script type="application/ld+json">
