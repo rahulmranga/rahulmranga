@@ -1,0 +1,18 @@
+app = "rahul-rangarao"
+primary_region = "ams" # Change to your closest region (e.g., ams, lax, cdg)
+
+[build]
+  # Points to the Dockerfile in your project folder
+  dockerfile = "Dockerfile" 
+
+[http_service]
+  internal_port = 8080 # The port your internal auth app / LLM framework runs on
+  force_https = true
+  auto_stop_machines = "suspend" # Freezes CPU and 16GB RAM to $0 cost when idle
+  auto_start_machines = true    # Wakes up in ~300ms when a family member visits
+  min_machines_running = 0
+
+  [http_service.concurrency]
+    type = "connections"
+    hard_limit = 15
+    soft_limit = 10

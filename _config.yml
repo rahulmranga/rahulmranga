@@ -14,3 +14,17 @@ url: https://rahulrangarao.dev
 
 theme: jekyll-theme-primer
 lang: en-US
+
+# Source and deploy files that must not become public URLs. src/resume.md would
+# otherwise be served at /src/resume.md, duplicating resume.html. Jekyll's own
+# defaults are replaced by this key, so node_modules is repeated here.
+exclude:
+  - src
+  - plans
+  - fly.toml
+  - DOCKERFILE
+  - tokens-fly.txt
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - vendor

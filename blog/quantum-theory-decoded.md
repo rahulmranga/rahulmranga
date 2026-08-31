@@ -66,7 +66,7 @@ That is how learning works. The same problem appears again, but the observer has
 
 ## Imaginary Numbers and the Math of Rotation
 
-The math box on the right points to imaginary numbers: the square root of -1, the strange symbol i, and the famous relation where powers of i rotate through values. This matters because complex numbers are not just mathematical decoration in quantum theory. They are part of the machinery.
+The math box on the right points to imaginary numbers represented in vector from: the square root of -1, the strange symbol i, and the famous relation where powers of i rotate through values. This matters because complex numbers are not just mathematical decoration in quantum theory. They are part of the machinery.
 
 Quantum states use complex amplitudes. Those amplitudes encode not just size, but phase. Phase is what lets waves interfere, cancel, reinforce, and rotate through possibility space.
 
