@@ -22,6 +22,8 @@ body {
 .markdown-body a { color: var(--accent); text-underline-offset: 3px; }
 .markdown-body a:hover { color: #1c2766; }
 .markdown-body h1, .markdown-body h2 { border: 0; }
+/* Primer's layout prints site.title as its own h1; the hero below already has one. */
+.markdown-body > h1:first-child { display: none; }
 
 .site-shell { max-width: 880px; margin: 0 auto; padding: 0 24px 64px; }
 .skip-link { position: absolute; left: -9999px; top: 0; z-index: 5; background: var(--accent); color: #fff !important; padding: 12px 20px; border-radius: 0 0 10px 0; font-weight: 600; text-decoration: none !important; }

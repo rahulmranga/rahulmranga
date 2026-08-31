@@ -105,3 +105,51 @@
   update();
 }());
 </script>
+
+<!--
+  Structured data. Every @id and url uses the apex host over https, matching
+  <link rel="canonical"> — the www host 301s away, and JSON-LD matches @id
+  strings exactly, so a www/apex mismatch would break the publisher link.
+  Note: jekyll-seo-tag also emits its own WebSite node into <head>.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://rahulrangarao.dev/#website",
+      "url": "https://rahulrangarao.dev/",
+      "name": "Rahul Rangarao",
+      "publisher": {
+        "@id": "https://rahulrangarao.dev/#rahul"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://rahulrangarao.dev/#rahul",
+      "name": "Rahul Rangarao",
+      "alternateName": ["Rahul M Ranga", "Rahul Mohan Rangarao"],
+      "url": "https://rahulrangarao.dev/",
+      "image": "https://rahulrangarao.dev/assets/swarm-agents-hexagon.png",
+      "description": "Systems builder working on durable agent memory, provenance-safe compression, and agent protocols.",
+      "mainEntityOfPage": {
+        "@id": "https://rahulrangarao.dev/#website"
+      },
+      "knowsAbout": [
+        "analytics engineering",
+        "data engineering",
+        "consulting",
+        "attribution and provenance in knowledge systems/artificial intelligence",
+        "pharmaceutical industry"
+      ],
+      "sameAs": [
+        "https://github.com/rahulmranga",
+        "https://medium.com/@rahulmohanrangarao",
+        "https://dev.to/rahulmranga",
+        "https://www.linkedin.com/in/rahul-mohan/"
+      ]
+    }
+  ]
+}
+</script>

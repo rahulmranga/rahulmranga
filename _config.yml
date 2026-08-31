@@ -1,0 +1,16 @@
+# GitHub Pages otherwise falls back to the repo name and repo description,
+# which is where "rahulmranga | Rahuls website" came from.
+title: Rahul Rangarao
+tagline: Systems builder · agent memory & provenance
+description: >-
+  Rahul Rangarao, an analytics engineer, has extensive experience across the data engineering landscape and has 7 years of professional experience.
+  He also builds data systems for durable agent memory, provenance-safe
+  compression, and agent protocols — including knowledge-worker, a local-first
+  knowledge graph for AI-assistant memory.
+
+# Pinned so og:url and canonical agree on the https apex host, matching CNAME
+# and the @id strings in the JSON-LD below the README body.
+url: https://rahulrangarao.dev
+
+theme: jekyll-theme-primer
+lang: en-US
