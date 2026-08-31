@@ -1,0 +1,10 @@
+{% if q %}
+  {% if results %}
+  <ul class="node-list">
+    {% for n in results %}
+    <li><a href="/app/node/{{ n['id'] }}"><span class="tag t-{{ n['type'] }}">{{ n['type'] }}</span>
+      <strong>{{ n['label'] }}</strong><span class="muted">{{ n['body'] }}</span></a></li>
+    {% endfor %}
+  </ul>
+  {% else %}<p class="muted">Nothing matches “{{ q }}”.</p>{% endif %}
+{% endif %}

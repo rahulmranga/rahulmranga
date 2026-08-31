@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}{{ node_type }} · graph{% endblock %}
+{% block content %}
+<p class="crumb"><a href="/app">← graph</a></p>
+<h1>{{ node_type }} <span class="muted">({{ nodes | length }})</span></h1>
+<ul class="node-list">
+  {% for n in nodes %}
+  <li><a href="/app/node/{{ n['id'] }}"><strong>{{ n['label'] }}</strong><span class="muted">{{ n['body'] }}</span></a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

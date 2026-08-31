@@ -19,9 +19,8 @@ lang: en-US
 # defaults are replaced by this key, so node_modules is repeated here.
 exclude:
   - src
+  - webapp
   - plans
-  - fly.toml
-  - DOCKERFILE
   - tokens-fly.txt
   - node_modules
   - Gemfile

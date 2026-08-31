@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}sql · graph{% endblock %}
+{% block content %}
+<p class="crumb"><a href="/app">← graph</a></p>
+<h1>Query the graph</h1>
+<p class="lede">A read-only SQLite connection over <code>nodes</code> and <code>edges</code>.
+One <code>SELECT</code> at a time, {{ 200 }} rows max, 2-second timeout.</p>
+
+<form hx-post="/app/sql" hx-target="#out" hx-swap="innerHTML">
+  <textarea name="q" rows="7" spellcheck="false"
+            placeholder="SELECT label, type FROM nodes LIMIT 10">{{ q }}</textarea>
+  <button type="submit">Run</button>
+</form>
+
+<div id="out">{% include "_table.html" %}</div>
+
+<h2>Examples</h2>
+<ul class="examples">
+  {% for label, sql in examples %}<li><a href="/app/sql?q={{ sql | urlencode }}">{{ label }}</a></li>{% endfor %}
+</ul>
+
+<h2>Schema</h2>
+<pre class="schema">nodes(id, type, label, body, confidence, created_at)
+edges(src, dst, type, confidence, excerpt, source_id, created_at)</pre>
+{% endblock %}

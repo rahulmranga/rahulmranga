@@ -12,6 +12,10 @@
 - Medium: https://medium.com/@rahulmohanrangarao
 - Dev.to: https://dev.to/rahulmranga
 
+## Live app
+- The resume as a knowledge graph, browsable and queryable over read-only SQL · https://rahulrangarao.dev/app
+- Graph export (JSON-LD, 72 nodes / 164 edges, 100% provenance coverage) · https://rahulrangarao.dev/resume-graph.jsonld
+
 ## Demos
 - cosmic maze (RALPH × LODRI), ohm, geo-maze, brain-graph · https://rahulrangarao.dev/artifacts/games.html
 
@@ -19,3 +23,4 @@
 - GitHub: https://github.com/rahulmranga
 - Profile: https://rahulrangarao.dev
 - Resume: https://rahulrangarao.dev/resume.html
+- Contact: https://rahulrangarao.dev/resume.html#contact

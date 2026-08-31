@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}graph · rahulrangarao.dev{% endblock %}</title>
+<meta name="description" content="Browse and query the knowledge-worker graph built from Rahul Rangarao's resume.">
+<link rel="stylesheet" href="/app/static/style.css">
+<script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="site-nav">
+  <a class="site-name" href="https://rahulrangarao.dev">rahulrangarao.dev</a>
+  <a href="/app">graph</a>
+  <a href="/app/sql">sql</a>
+  <a href="/app/contact">contact</a>
+  <a class="resume-link" href="https://rahulrangarao.dev/resume.html">resume</a>
+</nav>
+<main>{% block content %}{% endblock %}</main>
+<footer>
+  <span>Built with <a href="https://github.com/rahulmranga/knowledge-worker">knowledge-worker</a>.</span>
+  <span>Every node cites the resume line it came from.</span>
+</footer>
+</body>
+</html>

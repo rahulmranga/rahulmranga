@@ -72,6 +72,8 @@
     <section class="content-section" aria-labelledby="showcase-heading">
       <h2 id="showcase-heading">Showcase</h2>
       <div class="showcase-grid">
+        <a href="/app"><strong>graph</strong><span>the resume, queryable · SQL</span></a>
+        <a href="/artifacts/resume-graph.html"><strong>resume-graph</strong><span>72 nodes, every one cited</span></a>
         <a href="/artifacts/ohm.html"><strong>ohm</strong><span>ॐ · 136.1 Hz Earth year tone</span></a>
         <a href="/artifacts/spacetime.html"><strong>spacetime</strong><span>Jupiter, light cones, geodesics</span></a>
         <a href="/artifacts/org.html"><strong>org</strong><span>one knowledge graph, org lens</span></a>
@@ -84,6 +86,7 @@
     <a href="https://github.com/rahulmranga">github.com/rahulmranga</a>
     <a href="https://rahulrangarao.dev/resume.html">resume</a>
     <a href="https://innertrek.me">innertrek.me (dad)</a>
+    <a href="/app">graph</a>
     <a href="https://rahulrangarao.dev/llms.txt">llms.txt</a>
   </footer>
 </div>

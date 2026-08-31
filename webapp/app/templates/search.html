@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Search</h1>
+<input class="search" type="search" name="q" value="{{ q }}" placeholder="Search the graph…"
+       hx-get="/app/search" hx-trigger="keyup changed delay:250ms, search" hx-target="#results">
+<div id="results">{% include "_results.html" %}</div>
+{% endblock %}

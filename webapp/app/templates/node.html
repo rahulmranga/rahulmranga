@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}{{ node['label'] }} · graph{% endblock %}
+{% block content %}
+<p class="crumb"><a href="/app">← graph</a> · <a href="/app/type/{{ node['type'] }}">{{ node['type'] }}</a></p>
+<h1>{{ node['label'] }}</h1>
+<p class="lede">{{ node['body'] }}</p>
+<p class="meta"><code>{{ node['id'] }}</code> · confidence {{ node['confidence'] }}</p>
+
+{% set provenance = nbr['out'] | selectattr('type', 'equalto', 'MENTIONED_IN') | list %}
+{% if provenance %}
+<div class="provenance">
+  <h2>Where this comes from</h2>
+  {% for e in provenance %}<blockquote>{{ e["excerpt"] | md_bold }}</blockquote>{% endfor %}
+</div>
+{% endif %}
+
+{% for direction, rows, heading in [('out', nbr['out'], 'Points to'), ('in', nbr['in'], 'Pointed to by')] %}
+  {% set shown = rows | rejectattr('type', 'equalto', 'MENTIONED_IN') | list %}
+  {% if shown %}
+  <h2>{{ heading }}</h2>
+  <ul class="edge-list">
+    {% for e in shown %}
+    <li><span class="rel">{{ e['type'] }}</span>
+      <a href="/app/node/{{ e['id'] }}"><span class="tag t-{{ e['node_type'] }}">{{ e['node_type'] }}</span>{{ e['label'] }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% if error %}
+  <p class="error">{{ error }}</p>
+{% elif cols %}
+  <p class="muted">{{ rows | length }} row{{ '' if rows|length == 1 else 's' }}{% if truncated %} (capped){% endif %}</p>
+  <div class="table-wrap"><table>
+    <thead><tr>{% for c in cols %}<th>{{ c }}</th>{% endfor %}</tr></thead>
+    <tbody>{% for r in rows %}<tr>{% for cell in r %}<td>{{ cell }}</td>{% endfor %}</tr>{% endfor %}</tbody>
+  </table></div>
+{% elif cols is not none %}
+  <p class="muted">No rows.</p>
+{% endif %}

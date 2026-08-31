@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>The resume, as a graph</h1>
+<p class="lede">{{ summary.nodes }} nodes and {{ summary.edges }} edges, ingested from
+<a href="https://rahulrangarao.dev/resume.html">the resume</a> by
+<a href="https://pypi.org/project/knowledge-worker/">knowledge-worker</a>. Nothing here was typed
+into a database by hand: every node carries the resume line that supports it, and the ingest
+refuses anything it cannot trace back.</p>
+
+<input class="search" type="search" name="q" placeholder="Search the graph…"
+       hx-get="/app/search" hx-trigger="keyup changed delay:250ms, search"
+       hx-target="#results" autocomplete="off">
+<div id="results"></div>
+
+<h2>Browse by type</h2>
+<div class="chips">
+  {% for r in summary.by_type %}
+  <a class="chip" href="/app/type/{{ r['type'] }}">{{ r['type'] }} <b>{{ r['n'] }}</b></a>
+  {% endfor %}
+</div>
+
+<h2>Relationships</h2>
+<div class="chips">
+  {% for r in summary.edge_types %}<span class="chip flat">{{ r['type'] }} <b>{{ r['n'] }}</b></span>{% endfor %}
+</div>
+
+<h2>Ask it something</h2>
+<p class="lede">The graph is a SQLite file. <a href="/app/sql">Query it directly</a> — read-only, one SELECT at a time.</p>
+<ul class="examples">
+  {% for label, sql in examples %}
+  <li><a href="/app/sql?q={{ sql | urlencode }}">{{ label }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}
