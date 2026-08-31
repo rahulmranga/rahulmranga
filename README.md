@@ -76,8 +76,6 @@
         <a href="/artifacts/resume-graph.html"><strong>resume-graph</strong><span>72 nodes, every one cited</span></a>
         <a href="/artifacts/ohm.html"><strong>ohm</strong><span>ॐ · 136.1 Hz Earth year tone</span></a>
         <a href="/artifacts/spacetime.html"><strong>spacetime</strong><span>Jupiter, light cones, geodesics</span></a>
-        <a href="/artifacts/org.html"><strong>org</strong><span>one knowledge graph, org lens</span></a>
-        <a href="/artifacts/brain-dist.html"><strong>brain-dist</strong><span>same graph, brain lens</span></a>
       </div>
     </section>
   </main>
