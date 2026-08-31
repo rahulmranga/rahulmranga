@@ -1,0 +1,9 @@
+name = "rahulrangarao-app-router"
+main = "worker.js"
+compatibility_date = "2026-08-01"
+
+# Both patterns: /app itself and everything under it.
+routes = [
+  { pattern = "rahulrangarao.dev/app", zone_name = "rahulrangarao.dev" },
+  { pattern = "rahulrangarao.dev/app/*", zone_name = "rahulrangarao.dev" },
+]

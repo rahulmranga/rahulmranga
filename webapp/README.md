@@ -64,9 +64,18 @@ fly deploy
 fly scale show                  # expect shared-cpu-1x / 256MB, no volume
 ```
 
-Then add a Cloudflare Worker on the route `rahulrangarao.dev/app/*` forwarding to
-the Fly hostname. Origin Rules could do this without a Worker, but host rewriting
-there is a paid feature; Workers are free to 100k requests/day.
+Then publish the router in `worker/`:
+
+```bash
+cd worker
+npx wrangler login
+npx wrangler deploy
+```
+
+`wrangler.toml` already declares both routes (`/app` and `/app/*`) on the
+rahulrangarao.dev zone. Origin Rules could do this without a Worker, but
+rewriting the origin host there is a paid feature; Workers are free to 100k
+requests/day.
 
 Without `RESEND_API_KEY` the contact form validates and rejects politely rather
 than pretending to send. Without `TURNSTILE_SITE_KEY` the widget is omitted and
