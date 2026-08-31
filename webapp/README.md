@@ -59,7 +59,12 @@ uvicorn app.main:app --reload --port 8099
 
 ```bash
 fly launch --no-deploy          # first time only
-fly secrets set RESEND_API_KEY=... TURNSTILE_SECRET=... TURNSTILE_SITE_KEY=...
+fly secrets set TURNSTILE_SECRET=0x4... TURNSTILE_SITE_KEY=0x4...
+
+# mail: either a Gmail App Password (no new vendor) ...
+fly secrets set SMTP_USER=rahulmranga@gmail.com SMTP_PASS='<16-char app password>'
+# ... or Resend
+fly secrets set RESEND_API_KEY=re_...
 fly deploy
 fly scale show                  # expect shared-cpu-1x / 256MB, no volume
 ```
@@ -77,6 +82,9 @@ rahulrangarao.dev zone. Origin Rules could do this without a Worker, but
 rewriting the origin host there is a paid feature; Workers are free to 100k
 requests/day.
 
-Without `RESEND_API_KEY` the contact form validates and rejects politely rather
-than pretending to send. Without `TURNSTILE_SITE_KEY` the widget is omitted and
+Mail has two paths and picks whichever is configured, SMTP first: `SMTP_USER` +
+`SMTP_PASS` (Gmail App Password, STARTTLS on 587, which Fly allows outbound), or
+`RESEND_API_KEY`. With neither, the form validates and rejects politely rather
+than pretending to send. Gmail rewrites a `From` that is not the authenticated
+mailbox, so the visitor's address is set as `Reply-To` instead. Without `TURNSTILE_SITE_KEY` the widget is omitted and
 the honeypot plus rate limit still apply — fine locally, not for production.

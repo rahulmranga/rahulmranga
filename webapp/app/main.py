@@ -6,7 +6,9 @@ from __future__ import annotations
 
 import os
 import re
+import smtplib
 import time
+from email.message import EmailMessage
 from collections import defaultdict, deque
 from pathlib import Path
 
@@ -14,6 +16,7 @@ import httpx
 from fastapi import FastAPI, Form, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
+from starlette.concurrency import run_in_threadpool
 from fastapi.templating import Jinja2Templates
 from markupsafe import Markup, escape
 
@@ -39,6 +42,12 @@ def _md_bold(text: str) -> Markup:
 templates.env.filters["md_bold"] = _md_bold
 
 RESEND_API_KEY = os.environ.get("RESEND_API_KEY", "")
+# SMTP is the no-new-vendor path: a Gmail App Password sends to the same inbox
+# the mail is destined for. Whichever of the two is configured wins, SMTP first.
+SMTP_HOST = os.environ.get("SMTP_HOST", "smtp.gmail.com")
+SMTP_PORT = int(os.environ.get("SMTP_PORT", "587"))
+SMTP_USER = os.environ.get("SMTP_USER", "")
+SMTP_PASS = os.environ.get("SMTP_PASS", "")
 TURNSTILE_SECRET = os.environ.get("TURNSTILE_SECRET", "")
 TURNSTILE_SITE_KEY = os.environ.get("TURNSTILE_SITE_KEY", "")
 CONTACT_TO = os.environ.get("CONTACT_TO", "rahulmranga@gmail.com")
@@ -133,6 +142,22 @@ def contact_form(request: Request):
     return templates.TemplateResponse(request, "contact.html", {"site_key": TURNSTILE_SITE_KEY, "sent": False, "error": None})
 
 
+def _send_smtp(subject: str, body: str, reply_to: str) -> None:
+    """Blocking send; call via run_in_threadpool. STARTTLS on 587."""
+    msg = EmailMessage()
+    msg["Subject"] = subject
+    # From must be the authenticated mailbox or Gmail rewrites/rejects it;
+    # the visitor's address goes in Reply-To so a reply reaches them.
+    msg["From"] = SMTP_USER
+    msg["To"] = CONTACT_TO
+    msg["Reply-To"] = reply_to
+    msg.set_content(body)
+    with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=15) as smtp:
+        smtp.starttls()
+        smtp.login(SMTP_USER, SMTP_PASS)
+        smtp.send_message(msg)
+
+
 async def _turnstile_ok(token: str, ip: str) -> bool:
     if not TURNSTILE_SECRET:
         return True  # unconfigured in local dev; honeypot still applies
@@ -166,6 +191,16 @@ async def contact_send(
         return render(False, "That message is longer than this form accepts.")
     if not await _turnstile_ok(cf_turnstile_response, _client_ip(request)):
         return render(False, "The anti-spam check did not pass. Please try again.")
+    subject = f"rahulrangarao.dev — message from {name}"
+    body = f"From: {name} <{email}>\n\n{message}"
+
+    if SMTP_USER and SMTP_PASS:
+        try:
+            await run_in_threadpool(_send_smtp, subject, body, email)
+        except Exception:
+            return render(False, "Sending failed. Please try again shortly.")
+        return render(True, None)
+
     if not RESEND_API_KEY:
         return render(False, "Mail is not configured on this deployment yet.")
 
@@ -174,10 +209,9 @@ async def contact_send(
             "https://api.resend.com/emails",
             headers={"Authorization": f"Bearer {RESEND_API_KEY}"},
             json={"from": CONTACT_FROM, "to": [CONTACT_TO], "reply_to": email,
-                  "subject": f"rahulrangarao.dev — message from {name}",
-                  "text": f"From: {name} <{email}>\n\n{message}"})
+                  "subject": subject, "text": body})
     if r.status_code >= 300:
-        return render(False, "Sending failed. Email is on the resume page as a fallback.")
+        return render(False, "Sending failed. Please try again shortly.")
     return render(True, None)
 
 
