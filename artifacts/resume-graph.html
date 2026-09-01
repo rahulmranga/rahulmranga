@@ -3,80 +3,85 @@
 <title>mygraph — visualizer</title>
 <style>
   :root {
-    --bg: #0f1115;
+    --bg: #0a0b0e;
+    --bg-2: #12141a;
     --fg: #e6e8ea;
     --muted: #8a9099;
-    --panel: #181b21;
+    --panel: #14161c;
     --accent: #d2b48c;
+    --border: #232730;
   }
   html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg);
                font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
                overflow: hidden; }
-  #header { padding: 8px 14px; border-bottom: 1px solid #222;
-            display: flex; align-items: center; gap: 14px; font-size: 12px; }
-  #header strong { color: var(--accent); letter-spacing: 0; }
+  #header { position: relative; z-index: 2; padding: 8px 14px; border-bottom: 1px solid var(--border);
+            display: flex; align-items: center; gap: 14px; font-size: 12px;
+            background: rgba(10, 11, 14, 0.7); backdrop-filter: blur(6px); }
+  #header strong { color: var(--accent); letter-spacing: 0.02em; }
   #header .legend { display: flex; gap: 10px; flex-wrap: wrap; }
-  #header .legend span { display: inline-flex; align-items: center; gap: 4px; }
-  #header .legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
-  #stage { width: 100vw; height: calc(100vh - 38px); }
-  svg { width: 100%; height: 100%; cursor: grab; }
-  .link { stroke: #3a3f47; stroke-opacity: 0.55; }
-  .link.high { stroke-opacity: 0.9; }
-  .link.medium { stroke-opacity: 0.6; }
-  .link.low   { stroke-opacity: 0.3; stroke-dasharray: 3 3; }
-  .node circle { stroke: #0f1115; stroke-width: 1.5; cursor: pointer; }
-  .node text { fill: var(--fg); font-size: 10px; pointer-events: none;
-               text-shadow: 0 0 3px #0f1115, 0 0 3px #0f1115, 0 0 3px #0f1115; }
-  .edge-label { fill: var(--muted); font-size: 9px; pointer-events: none; }
+  #header .legend span { display: inline-flex; align-items: center; gap: 4px; opacity: 0.85; }
+  #header .legend i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  #stage { position: relative; width: 100vw; height: calc(100vh - 38px); }
+  #stage canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+  #gfx { cursor: grab; }
+  #gfx.grabbing { cursor: grabbing; }
+  #gfx.hovering { cursor: pointer; }
   #sitrep { position: fixed; top: 50px; left: 12px; width: min(312px, calc(100vw - 24px));
-            max-height: calc(100vh - 64px); overflow: auto; background: rgba(24, 27, 33, 0.88);
-            border: 1px solid #2a2f37; border-radius: 6px; font-size: 12px;
-            box-shadow: 0 12px 44px rgba(0,0,0,.24); }
+            max-height: calc(100vh - 64px); overflow: auto; background: rgba(20, 22, 28, 0.82);
+            border: 1px solid var(--border); border-radius: 8px; font-size: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,.4); backdrop-filter: blur(10px);
+            opacity: 0; transform: translateX(-8px); transition: opacity .5s ease, transform .5s ease; }
+  #sitrep.in { opacity: 1; transform: translateX(0); }
   #sitrep .head { display: flex; align-items: center; justify-content: space-between;
-                  gap: 10px; padding: 10px 12px; border-bottom: 1px solid #2a2f37; }
-  #sitrep .title { color: var(--accent); font-weight: 700; text-transform: uppercase; }
+                  gap: 10px; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  #sitrep .title { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
   #sitrep .state { color: var(--muted); font-size: 10px; text-transform: uppercase; }
   #sitrep .metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-                     border-bottom: 1px solid #2a2f37; }
-  #sitrep .metric { min-height: 56px; padding: 10px 12px; border-right: 1px solid #2a2f37;
-                    border-bottom: 1px solid #2a2f37; }
+                     border-bottom: 1px solid var(--border); }
+  #sitrep .metric { min-height: 56px; padding: 10px 12px; border-right: 1px solid var(--border);
+                    border-bottom: 1px solid var(--border); }
   #sitrep .metric:nth-child(even) { border-right: 0; }
   #sitrep .metric:nth-last-child(-n+2) { border-bottom: 0; }
   #sitrep .value { color: var(--accent); font-size: 20px; line-height: 1; }
   #sitrep .label { margin-top: 6px; color: var(--muted); font-size: 10px; text-transform: uppercase; }
-  #sitrep .block { padding: 11px 12px; border-top: 1px solid #2a2f37; }
+  #sitrep .block { padding: 11px 12px; border-top: 1px solid var(--border); }
   #sitrep .block:first-of-type { border-top: 0; }
   #sitrep .block-title { margin-bottom: 8px; color: var(--muted); font-size: 10px; text-transform: uppercase; }
   #sitrep .row { display: grid; grid-template-columns: 1fr auto; gap: 10px; padding: 7px 0;
-                 border-top: 1px solid rgba(138, 144, 153, 0.16); color: var(--fg); }
+                 border-top: 1px solid rgba(138, 144, 153, 0.14); color: var(--fg);
+                 transition: color .15s ease, padding-left .15s ease; }
   #sitrep .row:first-child { border-top: 0; }
   #sitrep button.row { width: 100%; border-right: 0; border-left: 0; border-bottom: 0;
                        background: transparent; text-align: left; cursor: pointer; font: inherit; }
-  #sitrep button.row:hover { color: #fff; }
+  #sitrep button.row:hover { color: #fff; padding-left: 4px; }
   #sitrep .row-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   #sitrep .row-meta { color: var(--muted); font-size: 10px; text-transform: uppercase; }
   #sitrep .type-bars { display: grid; gap: 7px; }
   #sitrep .type-bar { display: grid; grid-template-columns: 72px 1fr 24px; gap: 8px; align-items: center; }
   #sitrep .type-name, #sitrep .type-count { color: var(--muted); font-size: 10px; text-transform: uppercase; }
-  #sitrep .bar-track { height: 6px; background: rgba(138, 144, 153, 0.18); border-radius: 999px; overflow: hidden; }
-  #sitrep .bar-fill { height: 100%; background: var(--accent); }
+  #sitrep .bar-track { height: 6px; background: rgba(138, 144, 153, 0.14); border-radius: 999px; overflow: hidden; }
+  #sitrep .bar-fill { height: 100%; background: var(--accent); border-radius: 999px;
+                      transition: width .6s cubic-bezier(.16,1,.3,1); }
   #panel { position: fixed; top: 50px; right: 12px; width: 360px; max-height: 80vh;
-           overflow: auto; background: var(--panel); border: 1px solid #2a2f37;
-           border-radius: 6px; padding: 12px 14px; font-size: 12px; line-height: 1.45;
-           display: none; }
-  #panel.open { display: block; }
+           overflow: auto; background: var(--panel); border: 1px solid var(--border);
+           border-radius: 8px; padding: 12px 14px; font-size: 12px; line-height: 1.5;
+           box-shadow: 0 20px 60px rgba(0,0,0,.45);
+           opacity: 0; transform: translateY(-6px) scale(.98); pointer-events: none;
+           transition: opacity .25s cubic-bezier(.16,1,.3,1), transform .25s cubic-bezier(.16,1,.3,1); }
+  #panel.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
   #panel h3 { margin: 0 0 4px 0; color: var(--accent); font-size: 13px; }
   #panel .meta { color: var(--muted); font-size: 11px; }
   #panel .body { margin: 8px 0; }
   #panel .section { margin-top: 10px; }
   #panel .section-title { color: var(--muted); text-transform: uppercase;
-                          letter-spacing: 0; font-size: 10px; margin-bottom: 4px; }
+                          letter-spacing: 0.04em; font-size: 10px; margin-bottom: 4px; }
   #panel ul { margin: 0; padding-left: 16px; }
   #panel a { color: #87b7e0; text-decoration: none; cursor: pointer; }
   #panel a:hover { text-decoration: underline; }
   .pill { display: inline-block; padding: 0 6px; border-radius: 3px;
-          background: #2a2f37; color: var(--muted); font-size: 10px; margin-left: 4px; }
+          background: #232730; color: var(--muted); font-size: 10px; margin-left: 4px; }
   #close { float: right; cursor: pointer; color: var(--muted); }
+  #close:hover { color: #fff; }
   @media (max-width: 860px) {
     #sitrep { display: none; }
     #panel { left: 12px; right: 12px; width: auto; }
@@ -89,7 +94,7 @@
   <span class="legend" id="legend"></span>
   <span style="margin-left:auto; color: var(--muted)">click a node · drag to pan · scroll to zoom</span>
 </div>
-<div id="stage"><svg aria-label="knowledge graph"></svg></div>
+<div id="stage"><canvas id="gfx"></canvas></div>
 <aside id="sitrep" aria-label="graph sitrep"></aside>
 <div id="panel"></div>
 
@@ -97,18 +102,18 @@
 <script>
 const GRAPH_DATA = {"nodes": {"decision:append-only-storage": {"id": "decision:append-only-storage", "type": "decision", "label": "Use append-only graph storage", "body": "History is preserved rather than overwritten.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135531+00:00"}, "decision:graph-db-for-traceability": {"id": "decision:graph-db-for-traceability", "type": "decision", "label": "Model batch traceability as a graph", "body": "Traceability is a path problem, so it was modelled on a graph database.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135533+00:00"}, "decision:medallion-architecture": {"id": "decision:medallion-architecture", "type": "decision", "label": "Adopt a Medallion architecture", "body": "Layered bronze/silver/gold modelling for the self-service platform.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135534+00:00"}, "decision:provenance-first-architecture": {"id": "decision:provenance-first-architecture", "type": "decision", "label": "Validate every document before ingestion", "body": "Deterministic validation gates ingestion, so untraceable claims never land.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135529+00:00"}, "decision:zero-runtime-dependencies": {"id": "decision:zero-runtime-dependencies", "type": "decision", "label": "Keep the core dependency-free", "body": "LLM backends and RDF export stay optional extras.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135532+00:00"}, "goal:durable-agent-memory": {"id": "goal:durable-agent-memory", "type": "goal", "label": "Durable, provenance-backed AI memory", "body": "Give AI assistants memory that survives across sessions.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135515+00:00"}, "goal:provenance-invariant": {"id": "goal:provenance-invariant", "type": "goal", "label": "Enforce a hard provenance invariant", "body": "Every claim in the graph must cite the source it came from.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135517+00:00"}, "idea:benchmark-suite": {"id": "idea:benchmark-suite", "type": "idea", "label": "Benchmark provenance and privacy boundaries", "body": "Guards provenance, recall, privacy boundaries and context compactness.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135537+00:00"}, "idea:context-export": {"id": "idea:context-export", "type": "idea", "label": "Export compact context for an LLM", "body": "Ship a small snapshot instead of dumping whole notes.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135538+00:00"}, "idea:offline-graph-visualizer": {"id": "idea:offline-graph-visualizer", "type": "idea", "label": "Offline HTML graph visualizer", "body": "Inspect the graph without a server or build step.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135535+00:00"}, "person:rahul-rangarao": {"id": "person:rahul-rangarao", "type": "person", "label": "Rahul Rangarao", "body": "Analytics engineer, data engineer, and data platform engineer.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135511+00:00"}, "project:ag-ui-protocol": {"id": "project:ag-ui-protocol", "type": "project", "label": "AG-UI protocol", "body": "Open protocol work for agent/UI interoperability.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135528+00:00"}, "project:batch-traceability": {"id": "project:batch-traceability", "type": "project", "label": "Batch traceability data product", "body": "Graph-database traceability product accelerating batch release by 8%.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135519+00:00"}, "project:cart-data-product": {"id": "project:cart-data-product", "type": "project", "label": "CAR-T quality and manufacturing data product", "body": "End-to-end data product behind the 74% to 92% success-rate improvement.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135521+00:00"}, "project:cxo-dashboards": {"id": "project:cxo-dashboards", "type": "project", "label": "CXO-level KPI dashboards", "body": "Executive reporting standardising enterprise KPIs.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135524+00:00"}, "project:knowledge-worker": {"id": "project:knowledge-worker", "type": "project", "label": "knowledge-worker", "body": "Local-first knowledge graph published on PyPI.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135518+00:00"}, "project:kompress-ultra": {"id": "project:kompress-ultra", "type": "project", "label": "kompress-ultra", "body": "Context-management middleware experiments for AI agent frameworks.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135527+00:00"}, "project:report-rationalization": {"id": "project:report-rationalization", "type": "project", "label": "Report rationalization", "body": "Consolidated 70+ reports into seven standardized reports.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135525+00:00"}, "project:risk-prediction-model": {"id": "project:risk-prediction-model", "type": "project", "label": "Enterprise risk prediction model", "body": "Fintech retention model preserving roughly $500K in recurring revenue.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135526+00:00"}, "project:self-service-platform": {"id": "project:self-service-platform", "type": "project", "label": "Enterprise self-service analytics platform", "body": "dbt, AWS Glue, Databricks and CI/CD platform serving 50+ engineers.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135522+00:00"}, "reference:bravo-aws-tech-stack": {"id": "reference:bravo-aws-tech-stack", "type": "reference", "label": "Bravo Award, AE AWS Tech Stack", "body": "Bristol Myers Squibb, July 2025.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135547+00:00"}, "reference:bravo-batch-genealogy": {"id": "reference:bravo-batch-genealogy", "type": "reference", "label": "Bravo Award, Batch Genealogy", "body": "Bristol Myers Squibb, April 2026.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135546+00:00"}, "reference:bravo-daily-aph": {"id": "reference:bravo-daily-aph", "type": "reference", "label": "Bravo Award, Daily Aph vs. Budget Reporting", "body": "Bristol Myers Squibb, August 2024.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135548+00:00"}, "reference:bristol-myers-squibb": {"id": "reference:bristol-myers-squibb", "type": "reference", "label": "Bristol Myers Squibb", "body": "Employer since October 2023.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135539+00:00"}, "reference:dfs-hackathon": {"id": "reference:dfs-hackathon", "type": "reference", "label": "1st Place, DFS Hackathon", "body": "Dover Fueling Solutions, September 2022.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135545+00:00"}, "reference:impact-award": {"id": "reference:impact-award", "type": "reference", "label": "Impact Award", "body": "Mu Sigma Inc., August 2021.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135550+00:00"}, "reference:jss-university": {"id": "reference:jss-university", "type": "reference", "label": "JSS Science and Technology University", "body": "B.E. Electronics & Communication Engineering.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135543+00:00"}, "reference:mu-sigma": {"id": "reference:mu-sigma", "type": "reference", "label": "Mu Sigma Inc.", "body": "Employer from July 2018 to March 2022.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135540+00:00"}, "reference:pypi": {"id": "reference:pypi", "type": "reference", "label": "PyPI", "body": "knowledge-worker is published to PyPI.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135544+00:00"}, "reference:snowflake-certification": {"id": "reference:snowflake-certification", "type": "reference", "label": "Snowflake data warehouse certification", "body": "Snowflake, October 2022.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135551+00:00"}, "reference:ut-austin": {"id": "reference:ut-austin", "type": "reference", "label": "The University of Texas at Austin", "body": "M.S. Information Technology & Management.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135541+00:00"}, "source:resume": {"id": "source:resume", "type": "source", "label": "Rahul Rangarao — resume", "body": "Canonical resume at src/resume.md. Public content only.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135507+00:00"}, "topic:ab-testing": {"id": "topic:ab-testing", "type": "topic", "label": "Hypothesis and A/B testing", "body": "Hypothesis and A/B testing, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135576+00:00"}, "topic:ai-context-management": {"id": "topic:ai-context-management", "type": "topic", "label": "AI context management", "body": "AI context management, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135571+00:00"}, "topic:analytics-engineering": {"id": "topic:analytics-engineering", "type": "topic", "label": "Analytics engineering", "body": "Analytics engineering, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135562+00:00"}, "topic:api-development": {"id": "topic:api-development", "type": "topic", "label": "API development", "body": "API development, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135587+00:00"}, "topic:aws-glue": {"id": "topic:aws-glue", "type": "topic", "label": "AWS Glue", "body": "AWS Glue, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135555+00:00"}, "topic:aws-neptune": {"id": "topic:aws-neptune", "type": "topic", "label": "AWS Neptune", "body": "AWS Neptune, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135577+00:00"}, "topic:benchmark-testing": {"id": "topic:benchmark-testing", "type": "topic", "label": "Benchmark testing", "body": "Benchmark testing, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135590+00:00"}, "topic:betweenness": {"id": "topic:betweenness", "type": "topic", "label": "Betweenness centrality", "body": "Betweenness centrality, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135594+00:00"}, "topic:car-t": {"id": "topic:car-t", "type": "topic", "label": "CAR-T cell therapy", "body": "CAR-T cell therapy, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135592+00:00"}, "topic:ci-cd": {"id": "topic:ci-cd", "type": "topic", "label": "CI/CD", "body": "CI/CD, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135583+00:00"}, "topic:community-detection": {"id": "topic:community-detection", "type": "topic", "label": "Community detection", "body": "Community detection, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135596+00:00"}, "topic:dagster": {"id": "topic:dagster", "type": "topic", "label": "Dagster", "body": "Dagster, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135556+00:00"}, "topic:data-modeling": {"id": "topic:data-modeling", "type": "topic", "label": "Data modeling", "body": "Data modeling, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135560+00:00"}, "topic:data-product-development": {"id": "topic:data-product-development", "type": "topic", "label": "Data product development", "body": "Data product development, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135566+00:00"}, "topic:data-warehousing": {"id": "topic:data-warehousing", "type": "topic", "label": "Data warehousing", "body": "Data warehousing, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135561+00:00"}, "topic:databricks": {"id": "topic:databricks", "type": "topic", "label": "Databricks", "body": "Databricks, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135558+00:00"}, "topic:dbt": {"id": "topic:dbt", "type": "topic", "label": "dbt", "body": "dbt, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135554+00:00"}, "topic:enterprise-reporting": {"id": "topic:enterprise-reporting", "type": "topic", "label": "Enterprise reporting", "body": "Enterprise reporting, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135564+00:00"}, "topic:github-actions": {"id": "topic:github-actions", "type": "topic", "label": "GitHub Actions", "body": "GitHub Actions, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135584+00:00"}, "topic:graph-analytics": {"id": "topic:graph-analytics", "type": "topic", "label": "Graph analytics", "body": "Graph analytics, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135574+00:00"}, "topic:json-ld": {"id": "topic:json-ld", "type": "topic", "label": "JSON-LD", "body": "JSON-LD, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135578+00:00"}, "topic:k-core": {"id": "topic:k-core", "type": "topic", "label": "k-core", "body": "k-core, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135595+00:00"}, "topic:knowledge-graphs": {"id": "topic:knowledge-graphs", "type": "topic", "label": "Knowledge graphs", "body": "Knowledge graphs, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135573+00:00"}, "topic:linked-data": {"id": "topic:linked-data", "type": "topic", "label": "Linked data", "body": "Linked data, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135582+00:00"}, "topic:llm": {"id": "topic:llm", "type": "topic", "label": "Large language models", "body": "Large language models, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135567+00:00"}, "topic:llm-orchestration": {"id": "topic:llm-orchestration", "type": "topic", "label": "LLM orchestration", "body": "LLM orchestration, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135568+00:00"}, "topic:machine-learning": {"id": "topic:machine-learning", "type": "topic", "label": "Machine learning", "body": "Machine learning, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135575+00:00"}, "topic:pagerank": {"id": "topic:pagerank", "type": "topic", "label": "PageRank", "body": "PageRank, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135593+00:00"}, "topic:power-bi": {"id": "topic:power-bi", "type": "topic", "label": "Power BI", "body": "Power BI, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135586+00:00"}, "topic:prompt-engineering": {"id": "topic:prompt-engineering", "type": "topic", "label": "Prompt engineering", "body": "Prompt engineering, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135569+00:00"}, "topic:python": {"id": "topic:python", "type": "topic", "label": "Python", "body": "Python, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135552+00:00"}, "topic:rag": {"id": "topic:rag", "type": "topic", "label": "Retrieval-augmented generation", "body": "Retrieval-augmented generation, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135570+00:00"}, "topic:rdf": {"id": "topic:rdf", "type": "topic", "label": "RDF", "body": "RDF, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135579+00:00"}, "topic:sap": {"id": "topic:sap", "type": "topic", "label": "SAP ERP", "body": "SAP ERP, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135591+00:00"}, "topic:snowflake": {"id": "topic:snowflake", "type": "topic", "label": "Snowflake", "body": "Snowflake, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135557+00:00"}, "topic:software-architecture": {"id": "topic:software-architecture", "type": "topic", "label": "Software architecture", "body": "Software architecture, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135588+00:00"}, "topic:sql": {"id": "topic:sql", "type": "topic", "label": "SQL", "body": "SQL, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135553+00:00"}, "topic:tableau": {"id": "topic:tableau", "type": "topic", "label": "Tableau", "body": "Tableau, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135585+00:00"}, "topic:turtle": {"id": "topic:turtle", "type": "topic", "label": "Turtle", "body": "Turtle, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135580+00:00"}, "topic:unified-data-model": {"id": "topic:unified-data-model", "type": "topic", "label": "Unified Data Model", "body": "Unified Data Model, from the resume skills matrix.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135563+00:00"}}, "edges": [{"src": "person:rahul-rangarao", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.135600+00:00", "last_seen": "2026-08-31T13:20:29.135601+00:00"}, {"src": "goal:durable-agent-memory", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.135604+00:00", "last_seen": "2026-08-31T13:20:29.135605+00:00"}, {"src": "goal:provenance-invariant", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Analytics and data platform engineer with 7+ years designing enterprise data products, cloud-native data platforms, and AI-enabled analytics across life sciences, manufacturing, retail, financial services, and supply chain. Builds modern data ecosystems on AWS, dbt, Snowflake, and Databricks, and integrates LLMs and knowledge graphs where they earn their place. Author of **knowledge-worker**, a published PyPI package giving AI assistants durable, provenance-backed memory: a local-first knowledge graph with graph analytics, LLM-backed ingest, and a hard provenance invariant. Generalist by nature — comfortable owning a problem from ingestion through modeling and tooling to the report on a stakeholder's desk — and experienced mentoring engineering teams and setting technical standards.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135608+00:00", "last_seen": "2026-08-31T13:20:29.135609+00:00"}, {"src": "project:knowledge-worker", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.135611+00:00", "last_seen": "2026-08-31T13:20:29.135612+00:00"}, {"src": "project:batch-traceability", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems — **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135613+00:00", "last_seen": "2026-08-31T13:20:29.135614+00:00"}, {"src": "project:cart-data-product", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Delivered an end-to-end data product, from requirements gathering through implementation, covering **800+ quality and manufacturing data points** for commercial **CAR-T** operations, contributing to an improvement in manufacturing success rates from **74% to 92%**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135616+00:00", "last_seen": "2026-08-31T13:20:29.135616+00:00"}, {"src": "project:self-service-platform", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135618+00:00", "last_seen": "2026-08-31T13:20:29.135619+00:00"}, {"src": "project:cxo-dashboards", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Developed CXO-level KPI dashboards and automated Python reporting that standardized enterprise KPIs and accelerated decision-making across CAR-T (cell therapy) operations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135620+00:00", "last_seen": "2026-08-31T13:20:29.135621+00:00"}, {"src": "project:report-rationalization", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Designed an automated report rationalization process using intelligent string-matching, consolidating **70+ reports into seven standardized reports** to support a Snowflake migration.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135623+00:00", "last_seen": "2026-08-31T13:20:29.135623+00:00"}, {"src": "project:risk-prediction-model", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Enhanced an enterprise risk prediction model for a **fintech** client, enabling proactive account retention that preserved approximately **$500K** in recurring revenue.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135625+00:00", "last_seen": "2026-08-31T13:20:29.135626+00:00"}, {"src": "project:kompress-ultra", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Also: **kompress-ultra** — context-management middleware experiments for AI agent frameworks (live-data TUI dashboards, knowledge-graph visualizations, Pages deploy pipeline). **AG-UI protocol** — open protocol work for agent/UI interoperability.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135627+00:00", "last_seen": "2026-08-31T13:20:29.135628+00:00"}, {"src": "project:ag-ui-protocol", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Also: **kompress-ultra** — context-management middleware experiments for AI agent frameworks (live-data TUI dashboards, knowledge-graph visualizations, Pages deploy pipeline). **AG-UI protocol** — open protocol work for agent/UI interoperability.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135630+00:00", "last_seen": "2026-08-31T13:20:29.135631+00:00"}, {"src": "decision:provenance-first-architecture", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Designed a **provenance-first knowledge graph architecture** that validates every document before ingestion, enforced by deterministic validation, improving data trust, traceability, and explainability in AI-driven applications.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135632+00:00", "last_seen": "2026-08-31T13:20:29.135633+00:00"}, {"src": "decision:append-only-storage", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Built append-only graph storage supporting **JSON-LD, RDF, and Turtle** for interoperable knowledge exchange; **zero runtime dependencies** in the core, with optional LLM backends (Anthropic, OpenAI, Ollama).", "confidence": "high", "created_at": "2026-08-31T13:20:29.135635+00:00", "last_seen": "2026-08-31T13:20:29.135636+00:00"}, {"src": "decision:zero-runtime-dependencies", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Built append-only graph storage supporting **JSON-LD, RDF, and Turtle** for interoperable knowledge exchange; **zero runtime dependencies** in the core, with optional LLM backends (Anthropic, OpenAI, Ollama).", "confidence": "high", "created_at": "2026-08-31T13:20:29.135637+00:00", "last_seen": "2026-08-31T13:20:29.135638+00:00"}, {"src": "decision:graph-db-for-traceability", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems — **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135640+00:00", "last_seen": "2026-08-31T13:20:29.135641+00:00"}, {"src": "decision:medallion-architecture", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135643+00:00", "last_seen": "2026-08-31T13:20:29.135645+00:00"}, {"src": "idea:offline-graph-visualizer", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Built the full graph lifecycle: ingestion, query, path-finding, review/merge, context export, semantic inspection, and an offline HTML graph visualizer.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135648+00:00", "last_seen": "2026-08-31T13:20:29.135648+00:00"}, {"src": "idea:benchmark-suite", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Established a 9-benchmark public test suite guarding provenance, recall, privacy boundaries, and context compactness; GitHub Actions CI across Python 3.10–3.13.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135651+00:00", "last_seen": "2026-08-31T13:20:29.135651+00:00"}, {"src": "idea:context-export", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Built the full graph lifecycle: ingestion, query, path-finding, review/merge, context export, semantic inspection, and an offline HTML graph visualizer.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135653+00:00", "last_seen": "2026-08-31T13:20:29.135654+00:00"}, {"src": "reference:bristol-myers-squibb", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Bristol Myers Squibb · Analytics Engineer, Global Product Development and Supply (GPS)", "confidence": "high", "created_at": "2026-08-31T13:20:29.135656+00:00", "last_seen": "2026-08-31T13:20:29.135657+00:00"}, {"src": "reference:mu-sigma", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Mu Sigma Inc. · Senior Data Consultant", "confidence": "high", "created_at": "2026-08-31T13:20:29.135659+00:00", "last_seen": "2026-08-31T13:20:29.135660+00:00"}, {"src": "reference:ut-austin", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**M.S., Information Technology & Management** — The University of Texas at Austin · July 2022 – May 2023", "confidence": "high", "created_at": "2026-08-31T13:20:29.135662+00:00", "last_seen": "2026-08-31T13:20:29.135663+00:00"}, {"src": "reference:jss-university", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**B.E., Electronics & Communication Engineering** — JSS Science and Technology University, Mysuru, India · August 2014 – May 2018", "confidence": "high", "created_at": "2026-08-31T13:20:29.135665+00:00", "last_seen": "2026-08-31T13:20:29.135666+00:00"}, {"src": "reference:pypi", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.135668+00:00", "last_seen": "2026-08-31T13:20:29.135669+00:00"}, {"src": "reference:dfs-hackathon", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**1st Place, DFS Hackathon** — Dover Fueling Solutions · September 2022", "confidence": "high", "created_at": "2026-08-31T13:20:29.135671+00:00", "last_seen": "2026-08-31T13:20:29.135672+00:00"}, {"src": "reference:bravo-batch-genealogy", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Bravo Award, Batch Genealogy Data Product Release 4** — Bristol Myers Squibb · April 2026", "confidence": "high", "created_at": "2026-08-31T13:20:29.135675+00:00", "last_seen": "2026-08-31T13:20:29.135675+00:00"}, {"src": "reference:bravo-aws-tech-stack", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Bravo Award, AE AWS Tech Stack Implementation** — Bristol Myers Squibb · July 2025", "confidence": "high", "created_at": "2026-08-31T13:20:29.135678+00:00", "last_seen": "2026-08-31T13:20:29.135678+00:00"}, {"src": "reference:bravo-daily-aph", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Bravo Award, Daily Aph vs. Budget Reporting** — Bristol Myers Squibb · August 2024", "confidence": "high", "created_at": "2026-08-31T13:20:29.135681+00:00", "last_seen": "2026-08-31T13:20:29.135682+00:00"}, {"src": "reference:impact-award", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Impact Award** — Mu Sigma Inc. · August 2021", "confidence": "high", "created_at": "2026-08-31T13:20:29.135684+00:00", "last_seen": "2026-08-31T13:20:29.135685+00:00"}, {"src": "reference:snowflake-certification", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Hands-on Essentials: Data Warehouse — Snowflake · October 2022", "confidence": "high", "created_at": "2026-08-31T13:20:29.135688+00:00", "last_seen": "2026-08-31T13:20:29.135688+00:00"}, {"src": "topic:python", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Programming** — Python, SQL, JavaScript (React)", "confidence": "high", "created_at": "2026-08-31T13:20:29.135691+00:00", "last_seen": "2026-08-31T13:20:29.135692+00:00"}, {"src": "topic:sql", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Programming** — Python, SQL, JavaScript (React)", "confidence": "high", "created_at": "2026-08-31T13:20:29.135694+00:00", "last_seen": "2026-08-31T13:20:29.135695+00:00"}, {"src": "topic:dbt", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Analytics & Data Engineering** — dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development", "confidence": "high", "created_at": "2026-08-31T13:20:29.135698+00:00", "last_seen": "2026-08-31T13:20:29.135699+00:00"}, {"src": "topic:aws-glue", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Analytics & Data Engineering** — dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development", "confidence": "high", "created_at": "2026-08-31T13:20:29.135701+00:00", "last_seen": "2026-08-31T13:20:29.135702+00:00"}, {"src": "topic:dagster", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Analytics & Data Engineering** — dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development", "confidence": "high", "created_at": "2026-08-31T13:20:29.135706+00:00", "last_seen": "2026-08-31T13:20:29.135707+00:00"}, {"src": "topic:snowflake", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Analytics & Data Engineering** — dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development", "confidence": "high", "created_at": "2026-08-31T13:20:29.135710+00:00", "last_seen": "2026-08-31T13:20:29.135711+00:00"}, {"src": "topic:databricks", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Analytics & Data Engineering** — dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development", "confidence": "high", "created_at": "2026-08-31T13:20:29.135714+00:00", "last_seen": "2026-08-31T13:20:29.135715+00:00"}, {"src": "topic:data-modeling", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Analytics & Data Engineering** — dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development", "confidence": "high", "created_at": "2026-08-31T13:20:29.135718+00:00", "last_seen": "2026-08-31T13:20:29.135718+00:00"}, {"src": "topic:data-warehousing", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Analytics & Data Engineering** — dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development", "confidence": "high", "created_at": "2026-08-31T13:20:29.135721+00:00", "last_seen": "2026-08-31T13:20:29.135722+00:00"}, {"src": "topic:analytics-engineering", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Analytics & Data Engineering** — dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development", "confidence": "high", "created_at": "2026-08-31T13:20:29.135725+00:00", "last_seen": "2026-08-31T13:20:29.135726+00:00"}, {"src": "topic:unified-data-model", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135729+00:00", "last_seen": "2026-08-31T13:20:29.135730+00:00"}, {"src": "topic:enterprise-reporting", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Analytics & Data Engineering** — dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development", "confidence": "high", "created_at": "2026-08-31T13:20:29.135733+00:00", "last_seen": "2026-08-31T13:20:29.135734+00:00"}, {"src": "topic:data-product-development", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Analytics & Data Engineering** — dbt, AWS Glue, Dagster, Snowflake, Databricks, ETL/ELT, data modeling, data warehousing, Medallion architecture, Unified Data Model, analytics engineering, enterprise reporting, data product development", "confidence": "high", "created_at": "2026-08-31T13:20:29.135737+00:00", "last_seen": "2026-08-31T13:20:29.135737+00:00"}, {"src": "topic:llm", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**AI & Machine Learning** — LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing", "confidence": "high", "created_at": "2026-08-31T13:20:29.135741+00:00", "last_seen": "2026-08-31T13:20:29.135741+00:00"}, {"src": "topic:llm-orchestration", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**AI & Machine Learning** — LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing", "confidence": "high", "created_at": "2026-08-31T13:20:29.135745+00:00", "last_seen": "2026-08-31T13:20:29.135745+00:00"}, {"src": "topic:prompt-engineering", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**AI & Machine Learning** — LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing", "confidence": "high", "created_at": "2026-08-31T13:20:29.135749+00:00", "last_seen": "2026-08-31T13:20:29.135749+00:00"}, {"src": "topic:rag", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**AI & Machine Learning** — LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing", "confidence": "high", "created_at": "2026-08-31T13:20:29.135753+00:00", "last_seen": "2026-08-31T13:20:29.135753+00:00"}, {"src": "topic:ai-context-management", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**AI & Machine Learning** — LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing", "confidence": "high", "created_at": "2026-08-31T13:20:29.135757+00:00", "last_seen": "2026-08-31T13:20:29.135758+00:00"}, {"src": "topic:knowledge-graphs", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Python · AWS · Knowledge Graphs", "confidence": "high", "created_at": "2026-08-31T13:20:29.135761+00:00", "last_seen": "2026-08-31T13:20:29.135762+00:00"}, {"src": "topic:graph-analytics", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Analytics and data platform engineer with 7+ years designing enterprise data products, cloud-native data platforms, and AI-enabled analytics across life sciences, manufacturing, retail, financial services, and supply chain. Builds modern data ecosystems on AWS, dbt, Snowflake, and Databricks, and integrates LLMs and knowledge graphs where they earn their place. Author of **knowledge-worker**, a published PyPI package giving AI assistants durable, provenance-backed memory: a local-first knowledge graph with graph analytics, LLM-backed ingest, and a hard provenance invariant. Generalist by nature — comfortable owning a problem from ingestion through modeling and tooling to the report on a stakeholder's desk — and experienced mentoring engineering teams and setting technical standards.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135765+00:00", "last_seen": "2026-08-31T13:20:29.135766+00:00"}, {"src": "topic:machine-learning", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**AI & Machine Learning** — LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing", "confidence": "high", "created_at": "2026-08-31T13:20:29.135770+00:00", "last_seen": "2026-08-31T13:20:29.135770+00:00"}, {"src": "topic:ab-testing", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**AI & Machine Learning** — LLMs, LLM orchestration, prompt engineering, retrieval-augmented generation (RAG), AI context management, knowledge graphs, graph analytics, machine learning, hypothesis & A/B testing", "confidence": "high", "created_at": "2026-08-31T13:20:29.135774+00:00", "last_seen": "2026-08-31T13:20:29.135775+00:00"}, {"src": "topic:aws-neptune", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems — **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135778+00:00", "last_seen": "2026-08-31T13:20:29.135779+00:00"}, {"src": "topic:json-ld", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Knowledge & Semantics** — AWS Neptune, JSON-LD, RDF, Turtle, linked data", "confidence": "high", "created_at": "2026-08-31T13:20:29.135783+00:00", "last_seen": "2026-08-31T13:20:29.135784+00:00"}, {"src": "topic:rdf", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Knowledge & Semantics** — AWS Neptune, JSON-LD, RDF, Turtle, linked data", "confidence": "high", "created_at": "2026-08-31T13:20:29.135787+00:00", "last_seen": "2026-08-31T13:20:29.135788+00:00"}, {"src": "topic:turtle", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Knowledge & Semantics** — AWS Neptune, JSON-LD, RDF, Turtle, linked data", "confidence": "high", "created_at": "2026-08-31T13:20:29.135792+00:00", "last_seen": "2026-08-31T13:20:29.135793+00:00"}, {"src": "topic:linked-data", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Knowledge & Semantics** — AWS Neptune, JSON-LD, RDF, Turtle, linked data", "confidence": "high", "created_at": "2026-08-31T13:20:29.135797+00:00", "last_seen": "2026-08-31T13:20:29.135798+00:00"}, {"src": "topic:ci-cd", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Cloud & DevOps** — AWS (Lambda, Glue, EC2, Neptune, CloudFormation, CodeBuild), Git, GitHub, GitHub Actions, CI/CD", "confidence": "high", "created_at": "2026-08-31T13:20:29.135801+00:00", "last_seen": "2026-08-31T13:20:29.135802+00:00"}, {"src": "topic:github-actions", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Cloud & DevOps** — AWS (Lambda, Glue, EC2, Neptune, CloudFormation, CodeBuild), Git, GitHub, GitHub Actions, CI/CD", "confidence": "high", "created_at": "2026-08-31T13:20:29.135806+00:00", "last_seen": "2026-08-31T13:20:29.135807+00:00"}, {"src": "topic:tableau", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Visualization & BI** — Tableau, Power BI", "confidence": "high", "created_at": "2026-08-31T13:20:29.135811+00:00", "last_seen": "2026-08-31T13:20:29.135812+00:00"}, {"src": "topic:power-bi", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Visualization & BI** — Tableau, Power BI", "confidence": "high", "created_at": "2026-08-31T13:20:29.135816+00:00", "last_seen": "2026-08-31T13:20:29.135816+00:00"}, {"src": "topic:api-development", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Software Engineering** — API development, software architecture, open source development, technical documentation, benchmark testing, version control", "confidence": "high", "created_at": "2026-08-31T13:20:29.135820+00:00", "last_seen": "2026-08-31T13:20:29.135821+00:00"}, {"src": "topic:software-architecture", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Software Engineering** — API development, software architecture, open source development, technical documentation, benchmark testing, version control", "confidence": "high", "created_at": "2026-08-31T13:20:29.135825+00:00", "last_seen": "2026-08-31T13:20:29.135826+00:00"}, {"src": "topic:benchmark-testing", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "**Software Engineering** — API development, software architecture, open source development, technical documentation, benchmark testing, version control", "confidence": "high", "created_at": "2026-08-31T13:20:29.135830+00:00", "last_seen": "2026-08-31T13:20:29.135831+00:00"}, {"src": "topic:sap", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems — **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135835+00:00", "last_seen": "2026-08-31T13:20:29.135836+00:00"}, {"src": "topic:car-t", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Delivered an end-to-end data product, from requirements gathering through implementation, covering **800+ quality and manufacturing data points** for commercial **CAR-T** operations, contributing to an improvement in manufacturing success rates from **74% to 92%**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135840+00:00", "last_seen": "2026-08-31T13:20:29.135841+00:00"}, {"src": "topic:pagerank", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Implemented advanced graph analytics including **PageRank, betweenness, k-core, community detection**, semantic similarity scoring, and relationship analysis.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135845+00:00", "last_seen": "2026-08-31T13:20:29.135846+00:00"}, {"src": "topic:betweenness", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Implemented advanced graph analytics including **PageRank, betweenness, k-core, community detection**, semantic similarity scoring, and relationship analysis.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135850+00:00", "last_seen": "2026-08-31T13:20:29.135851+00:00"}, {"src": "topic:k-core", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Implemented advanced graph analytics including **PageRank, betweenness, k-core, community detection**, semantic similarity scoring, and relationship analysis.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135855+00:00", "last_seen": "2026-08-31T13:20:29.135856+00:00"}, {"src": "topic:community-detection", "dst": "source:resume", "type": "MENTIONED_IN", "source_id": "source:resume", "excerpt": "Implemented advanced graph analytics including **PageRank, betweenness, k-core, community detection**, semantic similarity scoring, and relationship analysis.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135861+00:00", "last_seen": "2026-08-31T13:20:29.135862+00:00"}, {"src": "person:rahul-rangarao", "dst": "project:knowledge-worker", "type": "INVOLVES", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.135866+00:00", "last_seen": "2026-08-31T13:20:29.135867+00:00"}, {"src": "person:rahul-rangarao", "dst": "project:batch-traceability", "type": "INVOLVES", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.135871+00:00", "last_seen": "2026-08-31T13:20:29.135872+00:00"}, {"src": "person:rahul-rangarao", "dst": "project:cart-data-product", "type": "INVOLVES", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.135877+00:00", "last_seen": "2026-08-31T13:20:29.135877+00:00"}, {"src": "person:rahul-rangarao", "dst": "project:self-service-platform", "type": "INVOLVES", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.135882+00:00", "last_seen": "2026-08-31T13:20:29.135883+00:00"}, {"src": "person:rahul-rangarao", "dst": "project:cxo-dashboards", "type": "INVOLVES", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.135887+00:00", "last_seen": "2026-08-31T13:20:29.135888+00:00"}, {"src": "person:rahul-rangarao", "dst": "project:report-rationalization", "type": "INVOLVES", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.135893+00:00", "last_seen": "2026-08-31T13:20:29.135893+00:00"}, {"src": "person:rahul-rangarao", "dst": "project:risk-prediction-model", "type": "INVOLVES", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.135899+00:00", "last_seen": "2026-08-31T13:20:29.135899+00:00"}, {"src": "person:rahul-rangarao", "dst": "project:kompress-ultra", "type": "INVOLVES", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.135904+00:00", "last_seen": "2026-08-31T13:20:29.135905+00:00"}, {"src": "person:rahul-rangarao", "dst": "project:ag-ui-protocol", "type": "INVOLVES", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.135910+00:00", "last_seen": "2026-08-31T13:20:29.135910+00:00"}, {"src": "person:rahul-rangarao", "dst": "reference:bristol-myers-squibb", "type": "RELATES_TO", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.135916+00:00", "last_seen": "2026-08-31T13:20:29.135916+00:00"}, {"src": "person:rahul-rangarao", "dst": "reference:mu-sigma", "type": "RELATES_TO", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.135921+00:00", "last_seen": "2026-08-31T13:20:29.135922+00:00"}, {"src": "person:rahul-rangarao", "dst": "reference:ut-austin", "type": "RELATES_TO", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.135927+00:00", "last_seen": "2026-08-31T13:20:29.135928+00:00"}, {"src": "person:rahul-rangarao", "dst": "reference:jss-university", "type": "RELATES_TO", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.135933+00:00", "last_seen": "2026-08-31T13:20:29.135934+00:00"}, {"src": "project:batch-traceability", "dst": "reference:bristol-myers-squibb", "type": "MADE_AT", "source_id": "source:resume", "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems — **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135939+00:00", "last_seen": "2026-08-31T13:20:29.135940+00:00"}, {"src": "project:cart-data-product", "dst": "reference:bristol-myers-squibb", "type": "MADE_AT", "source_id": "source:resume", "excerpt": "Delivered an end-to-end data product, from requirements gathering through implementation, covering **800+ quality and manufacturing data points** for commercial **CAR-T** operations, contributing to an improvement in manufacturing success rates from **74% to 92%**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135945+00:00", "last_seen": "2026-08-31T13:20:29.135946+00:00"}, {"src": "project:self-service-platform", "dst": "reference:bristol-myers-squibb", "type": "MADE_AT", "source_id": "source:resume", "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135951+00:00", "last_seen": "2026-08-31T13:20:29.135952+00:00"}, {"src": "project:cxo-dashboards", "dst": "reference:bristol-myers-squibb", "type": "MADE_AT", "source_id": "source:resume", "excerpt": "Developed CXO-level KPI dashboards and automated Python reporting that standardized enterprise KPIs and accelerated decision-making across CAR-T (cell therapy) operations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135957+00:00", "last_seen": "2026-08-31T13:20:29.135957+00:00"}, {"src": "project:report-rationalization", "dst": "reference:mu-sigma", "type": "MADE_AT", "source_id": "source:resume", "excerpt": "Designed an automated report rationalization process using intelligent string-matching, consolidating **70+ reports into seven standardized reports** to support a Snowflake migration.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135963+00:00", "last_seen": "2026-08-31T13:20:29.135963+00:00"}, {"src": "project:risk-prediction-model", "dst": "reference:mu-sigma", "type": "MADE_AT", "source_id": "source:resume", "excerpt": "Enhanced an enterprise risk prediction model for a **fintech** client, enabling proactive account retention that preserved approximately **$500K** in recurring revenue.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135969+00:00", "last_seen": "2026-08-31T13:20:29.135969+00:00"}, {"src": "project:knowledge-worker", "dst": "goal:durable-agent-memory", "type": "SERVES", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.135975+00:00", "last_seen": "2026-08-31T13:20:29.135975+00:00"}, {"src": "project:knowledge-worker", "dst": "goal:provenance-invariant", "type": "SERVES", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.135981+00:00", "last_seen": "2026-08-31T13:20:29.135982+00:00"}, {"src": "project:kompress-ultra", "dst": "goal:durable-agent-memory", "type": "SERVES", "source_id": "source:resume", "excerpt": "Also: **kompress-ultra** — context-management middleware experiments for AI agent frameworks (live-data TUI dashboards, knowledge-graph visualizations, Pages deploy pipeline). **AG-UI protocol** — open protocol work for agent/UI interoperability.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135987+00:00", "last_seen": "2026-08-31T13:20:29.135988+00:00"}, {"src": "decision:provenance-first-architecture", "dst": "goal:provenance-invariant", "type": "SERVES", "source_id": "source:resume", "excerpt": "Designed a **provenance-first knowledge graph architecture** that validates every document before ingestion, enforced by deterministic validation, improving data trust, traceability, and explainability in AI-driven applications.", "confidence": "high", "created_at": "2026-08-31T13:20:29.135993+00:00", "last_seen": "2026-08-31T13:20:29.135994+00:00"}, {"src": "person:rahul-rangarao", "dst": "idea:offline-graph-visualizer", "type": "HAS_IDEA", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.136000+00:00", "last_seen": "2026-08-31T13:20:29.136000+00:00"}, {"src": "person:rahul-rangarao", "dst": "idea:benchmark-suite", "type": "HAS_IDEA", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.136006+00:00", "last_seen": "2026-08-31T13:20:29.136007+00:00"}, {"src": "person:rahul-rangarao", "dst": "idea:context-export", "type": "HAS_IDEA", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.136013+00:00", "last_seen": "2026-08-31T13:20:29.136013+00:00"}, {"src": "idea:offline-graph-visualizer", "dst": "project:knowledge-worker", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Built the full graph lifecycle: ingestion, query, path-finding, review/merge, context export, semantic inspection, and an offline HTML graph visualizer.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136019+00:00", "last_seen": "2026-08-31T13:20:29.136020+00:00"}, {"src": "idea:benchmark-suite", "dst": "project:knowledge-worker", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Established a 9-benchmark public test suite guarding provenance, recall, privacy boundaries, and context compactness; GitHub Actions CI across Python 3.10–3.13.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136026+00:00", "last_seen": "2026-08-31T13:20:29.136026+00:00"}, {"src": "idea:context-export", "dst": "project:knowledge-worker", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Built the full graph lifecycle: ingestion, query, path-finding, review/merge, context export, semantic inspection, and an offline HTML graph visualizer.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136032+00:00", "last_seen": "2026-08-31T13:20:29.136033+00:00"}, {"src": "decision:provenance-first-architecture", "dst": "project:knowledge-worker", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Designed a **provenance-first knowledge graph architecture** that validates every document before ingestion, enforced by deterministic validation, improving data trust, traceability, and explainability in AI-driven applications.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136039+00:00", "last_seen": "2026-08-31T13:20:29.136039+00:00"}, {"src": "decision:append-only-storage", "dst": "project:knowledge-worker", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Built append-only graph storage supporting **JSON-LD, RDF, and Turtle** for interoperable knowledge exchange; **zero runtime dependencies** in the core, with optional LLM backends (Anthropic, OpenAI, Ollama).", "confidence": "high", "created_at": "2026-08-31T13:20:29.136045+00:00", "last_seen": "2026-08-31T13:20:29.136046+00:00"}, {"src": "decision:zero-runtime-dependencies", "dst": "project:knowledge-worker", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Built append-only graph storage supporting **JSON-LD, RDF, and Turtle** for interoperable knowledge exchange; **zero runtime dependencies** in the core, with optional LLM backends (Anthropic, OpenAI, Ollama).", "confidence": "high", "created_at": "2026-08-31T13:20:29.136052+00:00", "last_seen": "2026-08-31T13:20:29.136052+00:00"}, {"src": "decision:graph-db-for-traceability", "dst": "project:batch-traceability", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems — **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136058+00:00", "last_seen": "2026-08-31T13:20:29.136059+00:00"}, {"src": "decision:medallion-architecture", "dst": "project:self-service-platform", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136065+00:00", "last_seen": "2026-08-31T13:20:29.136065+00:00"}, {"src": "decision:provenance-first-architecture", "dst": "reference:bristol-myers-squibb", "type": "CHALLENGES", "source_id": "source:resume", "excerpt": "Designed a **provenance-first knowledge graph architecture** that validates every document before ingestion, enforced by deterministic validation, improving data trust, traceability, and explainability in AI-driven applications.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136071+00:00", "last_seen": "2026-08-31T13:20:29.136072+00:00"}, {"src": "project:batch-traceability", "dst": "reference:bravo-batch-genealogy", "type": "SUPPORTED_BY", "source_id": "source:resume", "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems — **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136078+00:00", "last_seen": "2026-08-31T13:20:29.136079+00:00"}, {"src": "project:self-service-platform", "dst": "reference:bravo-aws-tech-stack", "type": "SUPPORTED_BY", "source_id": "source:resume", "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136085+00:00", "last_seen": "2026-08-31T13:20:29.136086+00:00"}, {"src": "project:cxo-dashboards", "dst": "reference:bravo-daily-aph", "type": "SUPPORTED_BY", "source_id": "source:resume", "excerpt": "Developed CXO-level KPI dashboards and automated Python reporting that standardized enterprise KPIs and accelerated decision-making across CAR-T (cell therapy) operations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136092+00:00", "last_seen": "2026-08-31T13:20:29.136093+00:00"}, {"src": "project:report-rationalization", "dst": "reference:impact-award", "type": "SUPPORTED_BY", "source_id": "source:resume", "excerpt": "Designed an automated report rationalization process using intelligent string-matching, consolidating **70+ reports into seven standardized reports** to support a Snowflake migration.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136099+00:00", "last_seen": "2026-08-31T13:20:29.136100+00:00"}, {"src": "project:knowledge-worker", "dst": "reference:pypi", "type": "SUPPORTED_BY", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136106+00:00", "last_seen": "2026-08-31T13:20:29.136107+00:00"}, {"src": "reference:snowflake-certification", "dst": "topic:snowflake", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Hands-on Essentials: Data Warehouse — Snowflake · October 2022", "confidence": "high", "created_at": "2026-08-31T13:20:29.136113+00:00", "last_seen": "2026-08-31T13:20:29.136114+00:00"}, {"src": "person:rahul-rangarao", "dst": "reference:dfs-hackathon", "type": "SUPPORTED_BY", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.136120+00:00", "last_seen": "2026-08-31T13:20:29.136121+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:python", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136127+00:00", "last_seen": "2026-08-31T13:20:29.136128+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:knowledge-graphs", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136134+00:00", "last_seen": "2026-08-31T13:20:29.136135+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:graph-analytics", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136142+00:00", "last_seen": "2026-08-31T13:20:29.136142+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:json-ld", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136149+00:00", "last_seen": "2026-08-31T13:20:29.136149+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:rdf", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136156+00:00", "last_seen": "2026-08-31T13:20:29.136157+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:turtle", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136163+00:00", "last_seen": "2026-08-31T13:20:29.136165+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:linked-data", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136172+00:00", "last_seen": "2026-08-31T13:20:29.136173+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:llm", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136180+00:00", "last_seen": "2026-08-31T13:20:29.136181+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:pagerank", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136188+00:00", "last_seen": "2026-08-31T13:20:29.136188+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:betweenness", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136195+00:00", "last_seen": "2026-08-31T13:20:29.136196+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:k-core", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136203+00:00", "last_seen": "2026-08-31T13:20:29.136204+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:community-detection", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136211+00:00", "last_seen": "2026-08-31T13:20:29.136211+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:github-actions", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136218+00:00", "last_seen": "2026-08-31T13:20:29.136219+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:ci-cd", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136226+00:00", "last_seen": "2026-08-31T13:20:29.136227+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:benchmark-testing", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136234+00:00", "last_seen": "2026-08-31T13:20:29.136235+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:api-development", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136242+00:00", "last_seen": "2026-08-31T13:20:29.136243+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:software-architecture", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136250+00:00", "last_seen": "2026-08-31T13:20:29.136251+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:ai-context-management", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Local-first knowledge graph for durable, provenance-backed AI memory · [PyPI](https://pypi.org/project/knowledge-worker/) · [GitHub](https://github.com/rahulmranga/knowledge-worker) · May 2026 – present", "confidence": "high", "created_at": "2026-08-31T13:20:29.136258+00:00", "last_seen": "2026-08-31T13:20:29.136259+00:00"}, {"src": "project:batch-traceability", "dst": "topic:aws-neptune", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems — **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136266+00:00", "last_seen": "2026-08-31T13:20:29.136267+00:00"}, {"src": "project:batch-traceability", "dst": "topic:sap", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems — **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136274+00:00", "last_seen": "2026-08-31T13:20:29.136275+00:00"}, {"src": "project:batch-traceability", "dst": "topic:llm", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems — **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136282+00:00", "last_seen": "2026-08-31T13:20:29.136283+00:00"}, {"src": "project:batch-traceability", "dst": "topic:knowledge-graphs", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems — **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136290+00:00", "last_seen": "2026-08-31T13:20:29.136291+00:00"}, {"src": "project:batch-traceability", "dst": "topic:car-t", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Designed a batch traceability data product on a **graph database (AWS Neptune)**, integrating LLM-extracted supplier data, **ERP (SAP)** data, and other enterprise systems — **accelerating batch release by 8%** while strengthening raw-material traceability for manufacturing investigations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136299+00:00", "last_seen": "2026-08-31T13:20:29.136299+00:00"}, {"src": "project:cart-data-product", "dst": "topic:car-t", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Delivered an end-to-end data product, from requirements gathering through implementation, covering **800+ quality and manufacturing data points** for commercial **CAR-T** operations, contributing to an improvement in manufacturing success rates from **74% to 92%**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136307+00:00", "last_seen": "2026-08-31T13:20:29.136308+00:00"}, {"src": "project:cart-data-product", "dst": "topic:data-product-development", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Delivered an end-to-end data product, from requirements gathering through implementation, covering **800+ quality and manufacturing data points** for commercial **CAR-T** operations, contributing to an improvement in manufacturing success rates from **74% to 92%**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136315+00:00", "last_seen": "2026-08-31T13:20:29.136316+00:00"}, {"src": "project:self-service-platform", "dst": "topic:dbt", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136323+00:00", "last_seen": "2026-08-31T13:20:29.136324+00:00"}, {"src": "project:self-service-platform", "dst": "topic:aws-glue", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136332+00:00", "last_seen": "2026-08-31T13:20:29.136332+00:00"}, {"src": "project:self-service-platform", "dst": "topic:databricks", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136340+00:00", "last_seen": "2026-08-31T13:20:29.136341+00:00"}, {"src": "project:self-service-platform", "dst": "topic:ci-cd", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136348+00:00", "last_seen": "2026-08-31T13:20:29.136349+00:00"}, {"src": "project:self-service-platform", "dst": "topic:unified-data-model", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136357+00:00", "last_seen": "2026-08-31T13:20:29.136358+00:00"}, {"src": "project:self-service-platform", "dst": "topic:analytics-engineering", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136365+00:00", "last_seen": "2026-08-31T13:20:29.136366+00:00"}, {"src": "project:self-service-platform", "dst": "topic:data-modeling", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136374+00:00", "last_seen": "2026-08-31T13:20:29.136375+00:00"}, {"src": "project:self-service-platform", "dst": "topic:data-warehousing", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Architected and deployed an enterprise **self-service analytics platform** using **dbt, AWS Glue, Databricks, and CI/CD**, enabling the organization's **Unified Data Model (UDM)** initiative and empowering **50+ engineers** to deliver **400+** production-grade data products on a **Medallion architecture**.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136382+00:00", "last_seen": "2026-08-31T13:20:29.136383+00:00"}, {"src": "project:cxo-dashboards", "dst": "topic:python", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Developed CXO-level KPI dashboards and automated Python reporting that standardized enterprise KPIs and accelerated decision-making across CAR-T (cell therapy) operations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136391+00:00", "last_seen": "2026-08-31T13:20:29.136392+00:00"}, {"src": "project:cxo-dashboards", "dst": "topic:enterprise-reporting", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Developed CXO-level KPI dashboards and automated Python reporting that standardized enterprise KPIs and accelerated decision-making across CAR-T (cell therapy) operations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136400+00:00", "last_seen": "2026-08-31T13:20:29.136400+00:00"}, {"src": "project:cxo-dashboards", "dst": "topic:tableau", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Developed CXO-level KPI dashboards and automated Python reporting that standardized enterprise KPIs and accelerated decision-making across CAR-T (cell therapy) operations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136410+00:00", "last_seen": "2026-08-31T13:20:29.136410+00:00"}, {"src": "project:cxo-dashboards", "dst": "topic:power-bi", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Developed CXO-level KPI dashboards and automated Python reporting that standardized enterprise KPIs and accelerated decision-making across CAR-T (cell therapy) operations.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136419+00:00", "last_seen": "2026-08-31T13:20:29.136420+00:00"}, {"src": "project:report-rationalization", "dst": "topic:snowflake", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Designed an automated report rationalization process using intelligent string-matching, consolidating **70+ reports into seven standardized reports** to support a Snowflake migration.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136428+00:00", "last_seen": "2026-08-31T13:20:29.136429+00:00"}, {"src": "project:report-rationalization", "dst": "topic:enterprise-reporting", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Designed an automated report rationalization process using intelligent string-matching, consolidating **70+ reports into seven standardized reports** to support a Snowflake migration.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136437+00:00", "last_seen": "2026-08-31T13:20:29.136437+00:00"}, {"src": "project:risk-prediction-model", "dst": "topic:machine-learning", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Enhanced an enterprise risk prediction model for a **fintech** client, enabling proactive account retention that preserved approximately **$500K** in recurring revenue.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136446+00:00", "last_seen": "2026-08-31T13:20:29.136446+00:00"}, {"src": "project:risk-prediction-model", "dst": "topic:ab-testing", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Enhanced an enterprise risk prediction model for a **fintech** client, enabling proactive account retention that preserved approximately **$500K** in recurring revenue.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136455+00:00", "last_seen": "2026-08-31T13:20:29.136455+00:00"}, {"src": "project:kompress-ultra", "dst": "topic:ai-context-management", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Also: **kompress-ultra** — context-management middleware experiments for AI agent frameworks (live-data TUI dashboards, knowledge-graph visualizations, Pages deploy pipeline). **AG-UI protocol** — open protocol work for agent/UI interoperability.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136464+00:00", "last_seen": "2026-08-31T13:20:29.136464+00:00"}, {"src": "project:kompress-ultra", "dst": "topic:knowledge-graphs", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Also: **kompress-ultra** — context-management middleware experiments for AI agent frameworks (live-data TUI dashboards, knowledge-graph visualizations, Pages deploy pipeline). **AG-UI protocol** — open protocol work for agent/UI interoperability.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136473+00:00", "last_seen": "2026-08-31T13:20:29.136474+00:00"}, {"src": "project:ag-ui-protocol", "dst": "topic:api-development", "type": "ABOUT", "source_id": "source:resume", "excerpt": "Also: **kompress-ultra** — context-management middleware experiments for AI agent frameworks (live-data TUI dashboards, knowledge-graph visualizations, Pages deploy pipeline). **AG-UI protocol** — open protocol work for agent/UI interoperability.", "confidence": "high", "created_at": "2026-08-31T13:20:29.136482+00:00", "last_seen": "2026-08-31T13:20:29.136483+00:00"}, {"src": "person:rahul-rangarao", "dst": "topic:python", "type": "RELATES_TO", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.136491+00:00", "last_seen": "2026-08-31T13:20:29.136492+00:00"}, {"src": "person:rahul-rangarao", "dst": "topic:sql", "type": "RELATES_TO", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.136500+00:00", "last_seen": "2026-08-31T13:20:29.136501+00:00"}, {"src": "person:rahul-rangarao", "dst": "topic:analytics-engineering", "type": "RELATES_TO", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.136510+00:00", "last_seen": "2026-08-31T13:20:29.136510+00:00"}, {"src": "person:rahul-rangarao", "dst": "topic:graph-analytics", "type": "RELATES_TO", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.136519+00:00", "last_seen": "2026-08-31T13:20:29.136520+00:00"}, {"src": "person:rahul-rangarao", "dst": "topic:prompt-engineering", "type": "RELATES_TO", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.136528+00:00", "last_seen": "2026-08-31T13:20:29.136529+00:00"}, {"src": "person:rahul-rangarao", "dst": "topic:rag", "type": "RELATES_TO", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.136538+00:00", "last_seen": "2026-08-31T13:20:29.136539+00:00"}, {"src": "person:rahul-rangarao", "dst": "topic:llm-orchestration", "type": "RELATES_TO", "source_id": "source:resume", "excerpt": "Rahul Rangarao", "confidence": "high", "created_at": "2026-08-31T13:20:29.136547+00:00", "last_seen": "2026-08-31T13:20:29.136548+00:00"}]};
 const TYPE_COLORS = {
-  person:    "#e07b7b",
-  topic:     "#7bb0e0",
+  person:    "#e88a8a",
+  topic:     "#82bdf0",
   idea:      "#d2b48c",
-  project:   "#7be0a8",
-  goal:      "#b07be0",
-  question:  "#e0c87b",
-  decision:  "#7be0c8",
-  reference: "#e07bb0",
+  project:   "#84e8ae",
+  goal:      "#b98ae8",
+  question:  "#e8d18a",
+  decision:  "#84e0d1",
+  reference: "#e88ac0",
   source:    "#8a9099",
 };
-const TYPE_RADIUS = { source: 5, topic: 6, person: 8, project: 9, goal: 9,
-                      idea: 8, question: 7, decision: 7, reference: 7 };
+const TYPE_RADIUS = { source: 4, topic: 5, person: 7, project: 7, goal: 7,
+                      idea: 6, question: 6, decision: 6, reference: 6 };
 
 function escapeHtml(value) {
   return String(value || "").replace(/[&<>"]/g, c => ({
@@ -130,78 +135,322 @@ function escapeHtml(value) {
     span.innerHTML = `<i style="background:${TYPE_COLORS[type]}"></i>${escapeHtml(type)}`;
     legend.appendChild(span);
   });
+
+  // ---- degree (used for sizing, label priority, and the sitrep) ----
+  const degree = new Map(nodes.map(n => [n.id, { in: 0, out: 0, total: 0 }]));
+  originalEdges.forEach(edge => {
+    if (degree.has(edge.src)) { degree.get(edge.src).out += 1; degree.get(edge.src).total += 1; }
+    if (degree.has(edge.dst)) { degree.get(edge.dst).in += 1; degree.get(edge.dst).total += 1; }
+  });
+  const maxDegree = Math.max(1, ...Array.from(degree.values(), d => d.total));
+  const topDegreeIds = new Set(
+    nodes.slice().sort((a, b) => (degree.get(b.id).total - degree.get(a.id).total))
+      .slice(0, Math.min(14, nodes.length)).map(n => n.id)
+  );
+
+  function nodeRadius(n) {
+    const base = TYPE_RADIUS[n.type] || 6;
+    const d = degree.get(n.id) ? degree.get(n.id).total : 0;
+    return base + Math.sqrt(d) * 1.9;
+  }
+
   renderSitrep();
+  requestAnimationFrame(() => document.getElementById("sitrep").classList.add("in"));
 
   if (typeof d3 === "undefined") {
     document.getElementById("counts").textContent = "failed to load D3.js";
     return;
   }
 
-  const svg = d3.select("svg");
-  const viewport = svg.append("g");
-  svg.call(d3.zoom()
-    .scaleExtent([0.2, 4])
-    .on("zoom", ev => viewport.attr("transform", ev.transform)));
+  // ---- canvas setup ----
+  const stage = document.getElementById("stage");
+  const canvas = document.getElementById("gfx");
+  const ctx = canvas.getContext("2d");
+  // Fall back to the window size if the container hasn't been laid out yet —
+  // an empty width/height here would seed the simulation's centering forces
+  // at (0,0), and the graph would keep drifting toward the real center later.
+  let width = stage.clientWidth || window.innerWidth || 1280;
+  let height = stage.clientHeight || window.innerHeight || 720;
+  let dpr = Math.max(1, window.devicePixelRatio || 1);
 
-  const sim = d3.forceSimulation(nodes)
-    .force("link", d3.forceLink(edges).id(d => d.id).distance(80).strength(0.5))
-    .force("charge", d3.forceManyBody().strength(-160))
-    .force("center", d3.forceCenter(window.innerWidth / 2, (window.innerHeight - 38) / 2))
-    .force("collide", d3.forceCollide().radius(d => (TYPE_RADIUS[d.type] || 7) + 4));
-
-  const link = viewport.append("g").attr("class", "links").selectAll("line")
-    .data(edges).join("line")
-    .attr("class", d => `link ${d.confidence || "medium"}`);
-
-  const edgeLabel = viewport.append("g").attr("class", "edge-labels").selectAll("text")
-    .data(edges).join("text")
-    .attr("class", "edge-label")
-    .text(d => d.type);
-
-  const node = viewport.append("g").attr("class", "nodes").selectAll("g.node")
-    .data(nodes).join("g")
-    .attr("class", "node")
-    .call(drag(sim));
-
-  node.append("circle")
-    .attr("r", d => TYPE_RADIUS[d.type] || 7)
-    .attr("fill", d => TYPE_COLORS[d.type] || "#888");
-  node.append("text")
-    .attr("dx", 11)
-    .attr("dy", 3)
-    .text(d => d.label || d.id);
-
-  node.on("click", (ev, d) => {
-    ev.stopPropagation();
-    openPanel(d);
-  });
-  svg.on("click", () => document.getElementById("panel").classList.remove("open"));
-
-  sim.on("tick", () => {
-    link.attr("x1", d => d.source.x).attr("y1", d => d.source.y)
-        .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
-    edgeLabel.attr("x", d => (d.source.x + d.target.x) / 2)
-             .attr("y", d => (d.source.y + d.target.y) / 2);
-    node.attr("transform", d => `translate(${d.x},${d.y})`);
-  });
-
-  function drag(sim) {
-    return d3.drag()
-      .on("start", (ev, d) => {
-        if (!ev.active) sim.alphaTarget(0.3).restart();
-        d.fx = d.x;
-        d.fy = d.y;
-      })
-      .on("drag", (ev, d) => {
-        d.fx = ev.x;
-        d.fy = ev.y;
-      })
-      .on("end", (ev, d) => {
-        if (!ev.active) sim.alphaTarget(0);
-        d.fx = null;
-        d.fy = null;
-      });
+  // The SITREP sidebar is a fixed overlay, not a layout column, so the graph
+  // has to steer clear of it on purpose. 860px matches the CSS breakpoint
+  // where the sidebar hides itself on narrow viewports.
+  const SIDEBAR_W = 336; // 312px panel + 12px left gap + 12px breathing room
+  function usableRect() {
+    const left = width > 860 ? SIDEBAR_W : 0;
+    return { left, top: 0, right: width, bottom: height,
+             w: Math.max(1, width - left), h: Math.max(1, height),
+             cx: left + Math.max(1, width - left) / 2, cy: height / 2 };
   }
+
+  let fittedReal = false;
+  function resize() {
+    const w = stage.clientWidth, h = stage.clientHeight;
+    if (w === 0 || h === 0) return; // container not laid out yet — wait for the observer
+    width = w;
+    height = h;
+    dpr = Math.max(1, window.devicePixelRatio || 1);
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
+    const rect = usableRect();
+    sim.force("center", d3.forceCenter(rect.cx, rect.cy));
+    sim.force("x", d3.forceX(rect.cx).strength(0.015));
+    sim.force("y", d3.forceY(rect.cy).strength(0.015));
+    // Re-fit once we have the container's real (non-fallback) size, in case
+    // it differs from the fallback used to seed the simulation.
+    if (!fittedReal) { fittedReal = true; fitToViewport(); }
+    render();
+  }
+  window.addEventListener("resize", resize);
+  new ResizeObserver(resize).observe(stage);
+
+  // ---- simulation, tuned to settle fast, spread out, and stay put ----
+  const initRect = usableRect();
+  const sim = d3.forceSimulation(nodes)
+    .force("link", d3.forceLink(edges).id(d => d.id).distance(105).strength(0.4))
+    .force("charge", d3.forceManyBody().strength(-420).theta(0.85))
+    .force("center", d3.forceCenter(initRect.cx, initRect.cy))
+    .force("x", d3.forceX(initRect.cx).strength(0.015))
+    .force("y", d3.forceY(initRect.cy).strength(0.015))
+    .force("collide", d3.forceCollide().radius(d => nodeRadius(d) + 14))
+    .alphaDecay(0.02)
+    .stop();
+
+  // Warm-start: pre-settle offline so the graph doesn't "explode" on load.
+  for (let i = 0; i < 180; i++) sim.tick();
+
+  let transform = d3.zoomIdentity;
+
+  // Fit the settled graph into the area clear of the sidebar, with breathing
+  // room, instead of leaving it clumped at native scale in a canvas corner.
+  function fitToViewport() {
+    const xs = nodes.map(n => n.x), ys = nodes.map(n => n.y);
+    const x0 = Math.min(...xs), x1 = Math.max(...xs);
+    const y0 = Math.min(...ys), y1 = Math.max(...ys);
+    const gw = Math.max(1, x1 - x0), gh = Math.max(1, y1 - y0);
+    const rect = usableRect();
+    const padding = 0.86;
+    const k = Math.min(2.2, Math.max(0.3, padding * Math.min(rect.w / gw, rect.h / gh)));
+    const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
+    transform = d3.zoomIdentity.translate(rect.cx - k * cx, rect.cy - k * cy).scale(k);
+    d3.select(canvas).call(zoom.transform, transform);
+  }
+  let hovered = null;
+  let selected = null;
+  let fadeIn = 0; // 0..1 entrance opacity
+  const startTime = performance.now();
+
+  const zoom = d3.zoom()
+    .scaleExtent([0.15, 5])
+    .on("start", () => { canvas.classList.add("grabbing"); })
+    .on("zoom", ev => { transform = ev.transform; render(); })
+    .on("end", () => { canvas.classList.remove("grabbing"); });
+  d3.select(canvas).call(zoom).on("dblclick.zoom", null);
+
+  function toGraph([sx, sy]) {
+    return [(sx - transform.x) / transform.k, (sy - transform.y) / transform.k];
+  }
+
+  function nodeAt(px, py) {
+    const [gx, gy] = toGraph([px, py]);
+    let best = null, bestDist = Infinity;
+    for (const n of nodes) {
+      const r = nodeRadius(n) + 3;
+      const dx = n.x - gx, dy = n.y - gy;
+      const dist = dx * dx + dy * dy;
+      if (dist <= r * r && dist < bestDist) { best = n; bestDist = dist; }
+    }
+    return best;
+  }
+
+  // ---- drag ----
+  d3.select(canvas).call(
+    d3.drag()
+      .subject(ev => {
+        const [px, py] = d3.pointer(ev, canvas);
+        return nodeAt(px, py);
+      })
+      .on("start", ev => {
+        if (!ev.subject) return;
+        if (!ev.active) sim.alphaTarget(0.25).restart();
+        ev.subject.fx = ev.subject.x;
+        ev.subject.fy = ev.subject.y;
+      })
+      .on("drag", ev => {
+        if (!ev.subject) return;
+        const [gx, gy] = toGraph([ev.x, ev.y]);
+        ev.subject.fx = gx;
+        ev.subject.fy = gy;
+      })
+      .on("end", ev => {
+        if (!ev.subject) return;
+        if (!ev.active) sim.alphaTarget(0);
+        ev.subject.fx = null;
+        ev.subject.fy = null;
+      })
+  );
+
+  canvas.addEventListener("mousemove", ev => {
+    const [px, py] = d3.pointer(ev, canvas);
+    const n = nodeAt(px, py);
+    if (n !== hovered) {
+      hovered = n;
+      canvas.classList.toggle("hovering", !!hovered);
+      render();
+    }
+  });
+  canvas.addEventListener("mouseleave", () => {
+    if (hovered) { hovered = null; canvas.classList.remove("hovering"); render(); }
+  });
+  canvas.addEventListener("click", ev => {
+    const [px, py] = d3.pointer(ev, canvas);
+    const n = nodeAt(px, py);
+    if (n) {
+      selected = n;
+      openPanel(n);
+    } else {
+      selected = null;
+      document.getElementById("panel").classList.remove("open");
+    }
+    render();
+  });
+
+  // ---- connectivity sets for hover/select highlighting ----
+  function neighborsOf(n) {
+    const ids = new Set([n.id]);
+    originalEdges.forEach(e => {
+      if (e.src === n.id) ids.add(e.dst);
+      if (e.dst === n.id) ids.add(e.src);
+    });
+    return ids;
+  }
+
+  function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+  function render() {
+    fadeIn = Math.min(1, (performance.now() - startTime) / 500);
+    const alphaGlobal = easeOutCubic(fadeIn);
+
+    ctx.save();
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, width, height);
+
+    // subtle vignette backdrop
+    const grad = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, Math.max(width, height) * 0.7);
+    grad.addColorStop(0, "#12141a");
+    grad.addColorStop(1, "#0a0b0e");
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.translate(transform.x, transform.y);
+    ctx.scale(transform.k, transform.k);
+
+    const focus = hovered || selected;
+    const activeIds = focus ? neighborsOf(focus) : null;
+
+    // edges
+    edges.forEach(e => {
+      const s = e.source, t = e.target;
+      if (!s || typeof s.x !== "number" || !t || typeof t.x !== "number") return;
+      const dim = activeIds && !(activeIds.has(s.id) && activeIds.has(t.id));
+      const baseOp = e.confidence === "high" ? 0.55 : e.confidence === "low" ? 0.16 : 0.32;
+      ctx.globalAlpha = (dim ? baseOp * 0.25 : baseOp) * alphaGlobal;
+      ctx.strokeStyle = "#4a5058";
+      ctx.lineWidth = (activeIds && !dim ? 1.4 : 0.9) / Math.max(0.6, transform.k ** 0.15);
+      if (e.confidence === "low") ctx.setLineDash([3, 3]); else ctx.setLineDash([]);
+
+      // gentle organic curve
+      const mx = (s.x + t.x) / 2, my = (s.y + t.y) / 2;
+      const dx = t.x - s.x, dy = t.y - s.y;
+      const bend = 0.06;
+      const cx = mx - dy * bend, cy = my + dx * bend;
+
+      ctx.beginPath();
+      ctx.moveTo(s.x, s.y);
+      ctx.quadraticCurveTo(cx, cy, t.x, t.y);
+      ctx.stroke();
+    });
+    ctx.setLineDash([]);
+
+    // edge type label for the focused node's connections only
+    if (focus) {
+      ctx.font = `${10 / transform.k}px ui-monospace, Menlo, monospace`;
+      ctx.fillStyle = "#9aa0a8";
+      ctx.textAlign = "center";
+      originalEdges.forEach(e => {
+        if (e.src !== focus.id && e.dst !== focus.id) return;
+        const s = nodeById.get(e.src), t = nodeById.get(e.dst);
+        if (!s || !t || typeof s.x !== "number") return;
+        ctx.globalAlpha = 0.85 * alphaGlobal;
+        ctx.fillText(e.type, (s.x + t.x) / 2, (s.y + t.y) / 2 - 3 / transform.k);
+      });
+    }
+
+    // nodes
+    nodes.forEach(n => {
+      if (typeof n.x !== "number") return;
+      const r = nodeRadius(n);
+      const dim = activeIds && !activeIds.has(n.id);
+      const color = TYPE_COLORS[n.type] || "#888";
+      const isFocus = focus && n.id === focus.id;
+
+      ctx.globalAlpha = (dim ? 0.22 : 1) * alphaGlobal;
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+      if (isFocus) {
+        ctx.shadowColor = color;
+        ctx.shadowBlur = 18;
+      } else {
+        ctx.shadowBlur = 0;
+      }
+      ctx.fillStyle = color;
+      ctx.fill();
+      ctx.shadowBlur = 0;
+      ctx.lineWidth = 1.4 / transform.k;
+      ctx.strokeStyle = "#0a0b0e";
+      ctx.stroke();
+
+      // labels: focused node always, otherwise top-degree nodes,
+      // fading in as the view zooms past a threshold so overview stays clean
+      const zoomShow = Math.max(0, Math.min(1, (transform.k - 0.55) / 0.5));
+      const priority = topDegreeIds.has(n.id) ? 1 : zoomShow;
+      const labelAlpha = isFocus ? 1 : (dim ? 0 : priority);
+      if (labelAlpha > 0.02) {
+        ctx.globalAlpha = labelAlpha * alphaGlobal;
+        ctx.font = `${(isFocus ? 12 : 10.5) / transform.k}px ui-monospace, Menlo, monospace`;
+        ctx.textAlign = "left";
+        ctx.textBaseline = "middle";
+        ctx.lineWidth = 3 / transform.k;
+        ctx.strokeStyle = "rgba(10,11,14,0.9)";
+        ctx.strokeText(n.label || n.id, n.x + r + 4, n.y);
+        ctx.fillStyle = isFocus ? "#ffffff" : "#dfe2e5";
+        ctx.fillText(n.label || n.id, n.x + r + 4, n.y);
+      }
+    });
+
+    ctx.restore();
+  }
+
+  sim.on("tick", render);
+
+  // Paint immediately at the fallback-safe size (canvas pixel dims + initial
+  // fit), then resize()/ResizeObserver correct it once real layout is known.
+  canvas.width = width * dpr;
+  canvas.height = height * dpr;
+  canvas.style.width = width + "px";
+  canvas.style.height = height + "px";
+  fitToViewport();
+  resize(); // no-ops until the container has real dimensions, then re-fits once
+  // gentle continued settle after the warm start, still visible but calm
+  sim.alpha(0.2).restart();
+
+  (function fadeLoop() {
+    render();
+    if (fadeIn < 1) requestAnimationFrame(fadeLoop);
+  })();
 
   function countBy(items, keyFn) {
     const counts = new Map();
@@ -225,17 +474,6 @@ function escapeHtml(value) {
     const mentioned = new Set(originalEdges.filter(e => e.type === "MENTIONED_IN").map(e => e.src));
     const nonSource = nodes.filter(n => n.type !== "source").length;
     const provenance = nonSource ? Math.round((mentioned.size / nonSource) * 100) : 100;
-    const degree = new Map(nodes.map(n => [n.id, { in: 0, out: 0, total: 0 }]));
-    originalEdges.forEach(edge => {
-      if (degree.has(edge.src)) {
-        degree.get(edge.src).out += 1;
-        degree.get(edge.src).total += 1;
-      }
-      if (degree.has(edge.dst)) {
-        degree.get(edge.dst).in += 1;
-        degree.get(edge.dst).total += 1;
-      }
-    });
     const topNodes = nodes
       .map(node => ({ node, degree: degree.get(node.id) || { total: 0 } }))
       .sort((a, b) => b.degree.total - a.degree.total || String(a.node.id).localeCompare(String(b.node.id)))
@@ -295,7 +533,7 @@ function escapeHtml(value) {
       el.addEventListener("click", ev => {
         ev.stopPropagation();
         const node = nodeById.get(el.dataset.id);
-        if (node) openPanel(node);
+        if (node) { selected = node; openPanel(node); render(); }
       });
     });
   }
@@ -330,14 +568,13 @@ function escapeHtml(value) {
         <ul>${inc.map(e =>
           `<li><a data-id="${escapeHtml(e.src)}">${escapeHtml(e.src)}</a> → ${escapeHtml(e.type)}</li>`).join("")}</ul></div>` : ""}
     `;
-    document.getElementById("close").onclick = () => panel.classList.remove("open");
+    document.getElementById("close").onclick = () => { panel.classList.remove("open"); selected = null; render(); };
     panel.querySelectorAll("a[data-id]").forEach(a => {
       a.onclick = () => {
         const target = nodeById.get(a.dataset.id);
-        if (target) openPanel(target);
+        if (target) { selected = target; openPanel(target); render(); }
       };
     });
   }
 })();
-
 </script>
