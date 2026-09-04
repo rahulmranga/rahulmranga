@@ -89,6 +89,7 @@ body.theme-dark .chain-arrow { color: #7f8dbb; }
 .card-description { color: #454e6b; margin-top: 3px; font-size: .95em; }
 .project-card small, .writing-card small { color: #6a7396; margin-top: 6px; font-size: .82em; font-weight: 600; letter-spacing: .3px; }
 .writing-card { display: grid; grid-template-columns: 64px 1fr; gap: 16px; align-items: center; padding: 14px 18px; border-radius: 16px; color: var(--ink) !important; transition: box-shadow .15s ease, transform .15s ease; }
+.writing-card.no-image { grid-template-columns: 1fr; }
 .writing-card img { width: 64px; height: 64px; object-fit: cover; object-position: top; border-radius: 10px; border: 1px solid var(--rule); }
 .writing-card strong { font-size: 1.2em; }
 .writing-card .card-description { margin-top: 6px; }

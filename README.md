@@ -5,8 +5,9 @@
     <nav class="site-nav" aria-label="Primary">
       <span class="site-name">rahulrangarao.dev</span>
       <a href="#projects">Projects</a>
-      <a href="#writing">Writing</a>
       <a href="#games">Games</a>
+      <a href="#showcase">Showcase</a>
+      <a href="#writing">Writing</a>
       <a class="resume-link" href="https://rahulrangarao.dev/resume.html">Resume</a>
     </nav>
     <div class="hero">
@@ -50,16 +51,6 @@
         </a>
       </div>
     </section>
-    <section id="writing" class="content-section" aria-labelledby="writing-heading">
-      <h2 id="writing-heading">Writing</h2>
-      <article>
-        <a class="writing-card" href="https://rahulrangarao.dev/blog/quantum-theory-decoded/">
-          <img src="assets/quantum-theory-note.jpg" alt="Handwritten quantum theory note" loading="lazy">
-          <span><strong>Quantum Theory Decoded</strong><span class="card-description">A readable decoding of a handwritten note: mass-energy equivalence, spacetime, entropy, observation — and the cross-entropy-of-future as a way to reason under uncertainty.</span><small>July 4, 2026 · essay + source note</small></span>
-        </a>
-        <p class="supporting-copy">more at <a href="https://medium.com/@rahulmohanrangarao">medium.com/@rahulmohanrangarao</a> · <a href="https://dev.to/rahulmranga">dev.to/rahulmranga</a></p>
-      </article>
-    </section>
     <section id="games" class="content-section" aria-labelledby="games-heading">
       <h2 id="games-heading">Games</h2>
       <div class="games-grid">
@@ -69,13 +60,26 @@
         <a class="game-widget night" href="/artifacts/stars.html"><span class="gw-icon">⭐</span><span class="gw-title">star catcher</span><span class="gw-desc">catch falling stars</span><span class="gw-tag">keys or touch</span></a>
       </div>
     </section>
-    <section class="content-section" aria-labelledby="showcase-heading">
+    <section id="showcase" class="content-section" aria-labelledby="showcase-heading">
       <h2 id="showcase-heading">Showcase</h2>
       <div class="showcase-grid">
         <a href="/artifacts/resume-graph.html"><strong>resume-graph</strong><span>72 nodes, every one cited</span></a>
         <a href="/artifacts/ohm.html"><strong>ohm</strong><span>ॐ · 136.1 Hz Earth year tone</span></a>
         <a href="/artifacts/spacetime.html"><strong>spacetime</strong><span>Jupiter, light cones, geodesics</span></a>
       </div>
+    </section>
+    <section id="writing" class="content-section" aria-labelledby="writing-heading">
+      <h2 id="writing-heading">Writing</h2>
+      <article>
+        <a class="writing-card no-image" href="https://medium.com/@rahulmohanrangarao/anthropic-named-their-models-after-poetic-forms-i-think-they-accidentally-mapped-the-human-brain-a0c71d94909e">
+          <span><strong>Anthropic named their models after poetic forms. I think they accidentally mapped the human brain?</strong><span class="card-description">Haiku, Sonnet, Opus as cognitive modes: matching the model to System 1 pattern-matching or System 2 deliberation, and why picking the wrong mode is where the work goes sideways.</span><small>May 10, 2026 · Medium</small></span>
+        </a>
+        <a class="writing-card" href="https://rahulrangarao.dev/blog/quantum-theory-decoded/">
+          <img src="assets/quantum-theory-note.jpg" alt="Handwritten quantum theory note" loading="lazy">
+          <span><strong>Quantum Theory Decoded</strong><span class="card-description">A readable decoding of a handwritten note: mass-energy equivalence, spacetime, entropy, observation — and the cross-entropy-of-future as a way to reason under uncertainty.</span><small>July 4, 2026 · essay + source note</small></span>
+        </a>
+        <p class="supporting-copy">more at <a href="https://medium.com/@rahulmohanrangarao">medium.com/@rahulmohanrangarao</a> · <a href="https://dev.to/rahulmranga">dev.to/rahulmranga</a></p>
+      </article>
     </section>
   </main>
   <footer class="site-footer">

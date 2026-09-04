@@ -8,6 +8,7 @@
 - entropy.om: open research and knowledge-sharing community · https://entropy-om.github.io/
 
 ## Writing
+- Anthropic named their models after poetic forms: Haiku/Sonnet/Opus as System 1 vs System 2 cognitive modes · https://medium.com/@rahulmohanrangarao/anthropic-named-their-models-after-poetic-forms-i-think-they-accidentally-mapped-the-human-brain-a0c71d94909e
 - Quantum Theory Decoded: cross-entropy-of-future note on uncertainty, entropy, and decision-making · https://rahulrangarao.dev/blog/quantum-theory-decoded/
 - Medium: https://medium.com/@rahulmohanrangarao
 - Dev.to: https://dev.to/rahulmranga
