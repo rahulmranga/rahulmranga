@@ -12,7 +12,7 @@
     <div class="hero">
       <div>
         <h1>Rahul Rangarao</h1>
-        <p class="tagline">Systems builder · durable agent memory, provenance-safe compression, agent protocols</p>
+        <p class="tagline">Systems builder · Data/Analytics Engineer · Building durable agent memory, provenance-safe compression </p>
         <p class="mission"><strong>Mission:</strong> a knowledge substrate where attribution survives compression, retrieval, and reuse — so plagiarism becomes structurally hard, not just discouraged.</p>
         <div class="profile-links" aria-label="Profiles elsewhere">
           <a href="https://github.com/rahulmranga"><img src="https://img.shields.io/badge/GitHub-rahulmranga-181717?style=flat&logo=github&logoColor=white" alt="GitHub: rahulmranga"></a>
@@ -72,7 +72,6 @@
     <section class="content-section" aria-labelledby="showcase-heading">
       <h2 id="showcase-heading">Showcase</h2>
       <div class="showcase-grid">
-        <a href="/app"><strong>graph</strong><span>the resume, queryable · SQL</span></a>
         <a href="/artifacts/resume-graph.html"><strong>resume-graph</strong><span>72 nodes, every one cited</span></a>
         <a href="/artifacts/ohm.html"><strong>ohm</strong><span>ॐ · 136.1 Hz Earth year tone</span></a>
         <a href="/artifacts/spacetime.html"><strong>spacetime</strong><span>Jupiter, light cones, geodesics</span></a>
