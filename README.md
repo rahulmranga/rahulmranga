@@ -74,6 +74,9 @@
         <a class="writing-card no-image" href="https://medium.com/@rahulmohanrangarao/anthropic-named-their-models-after-poetic-forms-i-think-they-accidentally-mapped-the-human-brain-a0c71d94909e">
           <span><strong>Anthropic named their models after poetic forms. I think they accidentally mapped the human brain?</strong><span class="card-description">Haiku, Sonnet, Opus as cognitive modes: matching the model to System 1 pattern-matching or System 2 deliberation, and why picking the wrong mode is where the work goes sideways.</span><small>May 10, 2026 · Medium</small></span>
         </a>
+        <a class="writing-card no-image" href="https://dev.to/rahulmranga/i-got-tired-of-re-explaining-myself-to-ai-so-i-built-a-memory-graph-3i11">
+          <span><strong>I got tired of re-explaining myself to AI. So I built a memory graph</strong><span class="card-description">Why context doesn't persist between sessions, why dumping notes and plain RAG both fall short, and the provenance-backed knowledge graph behind knowledge-worker.</span><small>May 18, 2026 · Dev.to</small></span>
+        </a>
         <a class="writing-card" href="https://rahulrangarao.dev/blog/quantum-theory-decoded/">
           <img src="assets/quantum-theory-note.jpg" alt="Handwritten quantum theory note" loading="lazy">
           <span><strong>Quantum Theory Decoded</strong><span class="card-description">A readable decoding of a handwritten note: mass-energy equivalence, spacetime, entropy, observation — and the cross-entropy-of-future as a way to reason under uncertainty.</span><small>July 4, 2026 · essay + source note</small></span>

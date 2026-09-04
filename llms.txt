@@ -9,6 +9,7 @@
 
 ## Writing
 - Anthropic named their models after poetic forms: Haiku/Sonnet/Opus as System 1 vs System 2 cognitive modes · https://medium.com/@rahulmohanrangarao/anthropic-named-their-models-after-poetic-forms-i-think-they-accidentally-mapped-the-human-brain-a0c71d94909e
+- I got tired of re-explaining myself to AI. So I built a memory graph: persistent, provenance-backed context for AI sessions · https://dev.to/rahulmranga/i-got-tired-of-re-explaining-myself-to-ai-so-i-built-a-memory-graph-3i11
 - Quantum Theory Decoded: cross-entropy-of-future note on uncertainty, entropy, and decision-making · https://rahulrangarao.dev/blog/quantum-theory-decoded/
 - Medium: https://medium.com/@rahulmohanrangarao
 - Dev.to: https://dev.to/rahulmranga
