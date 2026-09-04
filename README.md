@@ -26,17 +26,6 @@
     </div>
   </header>
   <main id="main">
-    <section class="chain-section" aria-labelledby="chain-heading">
-      <h2 id="chain-heading">The chain</h2>
-      <div class="chain-widget">
-        <a class="chain-node" href="https://innertrek.me">Mohan Ranga Rao</a>
-        <span class="chain-arrow" aria-hidden="true">→</span>
-        <span class="chain-node me">Rahul Rangarao</span>
-        <span class="chain-arrow" aria-hidden="true">→</span>
-        <a class="chain-node kids" href="#games">Artifacts &amp; games for the kids</a>
-      </div>
-      <p class="chain-caption">one chain, played three ways · dad writes at <a href="https://innertrek.me">innertrek.me</a></p>
-    </section>
     <section id="projects" class="content-section" aria-labelledby="projects-heading">
       <h2 id="projects-heading">Projects</h2>
       <div class="project-grid">
@@ -68,6 +57,17 @@
         <a href="/artifacts/spacetime.html"><strong>spacetime</strong><span>Jupiter, light cones, geodesics</span></a>
       </div>
     </section>
+     <section class="chain-section" aria-labelledby="chain-heading">
+      <h2 id="chain-heading">The chain</h2>
+      <div class="chain-widget">
+        <a class="chain-node" href="https://innertrek.me">Mohan Ranga Rao</a>
+        <span class="chain-arrow" aria-hidden="true">→</span>
+        <span class="chain-node me">Rahul Rangarao</span>
+        <span class="chain-arrow" aria-hidden="true">→</span>
+        <a class="chain-node kids" href="#games">Artifacts &amp; games for the kids</a>
+      </div>
+      <p class="chain-caption">one chain, played three ways · dad writes at <a href="https://innertrek.me">innertrek.me</a></p>
+    </section>
     <section id="writing" class="content-section" aria-labelledby="writing-heading">
       <h2 id="writing-heading">Writing</h2>
       <article>
@@ -84,6 +84,7 @@
         <p class="supporting-copy">more at <a href="https://medium.com/@rahulmohanrangarao">medium.com/@rahulmohanrangarao</a> · <a href="https://dev.to/rahulmranga">dev.to/rahulmranga</a></p>
       </article>
     </section>
+
   </main>
   <footer class="site-footer">
     <span>© 2026 Rahul Rangarao</span>
